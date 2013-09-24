@@ -1,0 +1,9 @@
+*.swp
+*.swo
+*.log
+*.aux
+*.toc
+*.pdf
+*.synctex.gz
+*~
+*.out
