@@ -14,8 +14,9 @@ except:
 pompate = []
 pressioni = []
 
-A = -0.0048671
-B = 8.6234e+04
+A = -0.0049373
+B = 8.7446e+04
+Pl = 9498
 
 with open('../Dati/dati.csv') as csvfile:
     data = csv.reader(csvfile)
@@ -34,7 +35,7 @@ if mpl:
     dots = ax.errorbar(x=pompate, y=pressioni,
         #xerr=sigma_res_p, yerr=sigma_res_l,
         fmt='o')
-    fit = ax.errorbar(x=range(0, 1001), y=[10000 + B*exp(A*n) for n in range(0, 1001)],
+    fit = ax.errorbar(x=range(0, 1001), y=[Pl + B*exp(A*n) for n in range(0, 1001)],
         #xerr=sigma_res_p, yerr=sigma_res_l,
         fmt='-')
 

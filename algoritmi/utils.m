@@ -9,6 +9,10 @@ function chi = chi2(y, x, dy, A, B)
 	chi = sum((y - A - B*x).^2 ./ (dy .^ 2));
 endfunction
 
+function chi = chi2_contributions(y, x, dy, A, B)
+	chi = (y - A - B*x).^2 ./ (dy .^ 2);
+endfunction
+
 function A, B, sA, sB = fit(y, x, w) % w = dy^(-2)
 	N = length(x);
 	
