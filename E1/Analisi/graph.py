@@ -14,6 +14,9 @@ except:
 pompate = []
 pressioni = []
 
+A = -0.0048671
+B = 8.6234e+04
+
 with open('../Dati/dati.csv') as csvfile:
     data = csv.reader(csvfile)
 
@@ -27,9 +30,13 @@ if mpl:
     f1.suptitle("Pressione in funzione del numero di pompaggi", y=0.93, fontsize=15)
 
     ax = f1.add_subplot(1, 1, 1)
+    
     dots = ax.errorbar(x=pompate, y=pressioni,
         #xerr=sigma_res_p, yerr=sigma_res_l,
         fmt='o')
+    fit = ax.errorbar(x=range(0, 1001), y=[10000 + B*exp(A*n) for n in range(0, 1001)],
+        #xerr=sigma_res_p, yerr=sigma_res_l,
+        fmt='-')
 
     #fit1 = ax.errorbar(x=(0, 1.4), y=(0, b*1.4))
     #fit2 = ax.errorbar(x=(0, 1.4), y=(0, 1.4/k0_s))
