@@ -1,19 +1,13 @@
-# Created by Octave 3.6.4, Mon Sep 30 16:05:15 2013 CEST <francesco@francesco-Aspire-1410>
-# name: pressione_vapore
-# type: matrix
-# rows: 12
-# columns: 2
- -90000 34.5
- -85000 49
- -80000 55
- -75000 60
- -70000 64
- -65000 68
- -60000 71
- -55000 74
- -50000 77
- -45000 80
- -40000 82
- -35000 84
-
-
+PRESSIONE DIFFERENZIALE,		TEMPERATURA CELSIUS
+-90000,						34.5
+-85000,						49
+-80000,						55
+-75000,						60
+-70000,						64
+-65000,						68
+-60000,						71
+-55000,						74
+-50000,						77
+-45000,						79.5
+-40000,						82
+-35000,						84

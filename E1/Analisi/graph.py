@@ -30,7 +30,7 @@ with open('../Dati/dati.csv') as csvfile:
             pressioni.append((730 - float(row[1])) * 133.322)
 
 if mpl:
-    f1 = plt.figure(figsize=(9, 6))
+    f1 = plt.figure(figsize=(11, 7))
     f1.suptitle("Pressione in funzione del numero di pompaggi", y=0.93, fontsize=15)
 
     ax = f1.add_subplot(1, 1, 1)
@@ -39,12 +39,10 @@ if mpl:
     prg = [p for n, p in enumerate(pressioni) if n + 1 not in indici_cannati]
     poc = [p for n, p in enumerate(pompate) if n + 1 in indici_cannati]
     prc = [p for n, p in enumerate(pressioni) if n + 1 in indici_cannati]
-    dots = ax.errorbar(x=pog, y=prg,
-        yerr=s_pressioni,
-        fmt='o')
-    dots = ax.errorbar(x=poc, y=prc,
-        #xerr=sigma_res_p, yerr=sigma_res_l,
-        fmt='o')
+    dots1 = ax.errorbar(x=pog, y=prg,
+        yerr=s_pressioni, fmt='o')
+    dots2 = ax.errorbar(x=poc, y=prc,
+        yerr=s_pressioni, fmt='o')
     fit = ax.errorbar(x=range(0, 1001), y=[Pl + B*exp(A*n) for n in range(0, 1001)],
         #xerr=sigma_res_p, yerr=sigma_res_l,
         fmt='-')
@@ -62,8 +60,8 @@ if mpl:
     ax.set_ylim(5000, 105000)
     #ax.text(-0.03, -0.005, "0")
 
-    #ax.legend((dots, fit1), ("Dati misurati", "Retta di fit"), 'upper left',
-    #    prop={'size': 12})
+    ax.legend((dots1, dots2, fit), ("Dati usati per il fit", "Dati tolti per aggiustare il $\chi^2$", "Regressione"), 'upper right',
+        prop={'size': 12})
 
     f1.subplots_adjust(left=0.13, right=0.93, top=0.85, bottom=0.13)
 
