@@ -13,10 +13,13 @@ except:
 
 pompate = []
 pressioni = []
+s_pressioni = 133.322 / sqrt(6)
 
 A = -0.0049373
 B = 8.7446e+04
 Pl = 9498
+
+indici_cannati = [67, 68, 69, 70, 71, 72, 73, 74, 75, 79, 80];
 
 with open('../Dati/dati.csv') as csvfile:
     data = csv.reader(csvfile)
@@ -32,7 +35,14 @@ if mpl:
 
     ax = f1.add_subplot(1, 1, 1)
     
-    dots = ax.errorbar(x=pompate, y=pressioni,
+    pog = [p for n, p in enumerate(pompate) if n + 1 not in indici_cannati]
+    prg = [p for n, p in enumerate(pressioni) if n + 1 not in indici_cannati]
+    poc = [p for n, p in enumerate(pompate) if n + 1 in indici_cannati]
+    prc = [p for n, p in enumerate(pressioni) if n + 1 in indici_cannati]
+    dots = ax.errorbar(x=pog, y=prg,
+        yerr=s_pressioni,
+        fmt='o')
+    dots = ax.errorbar(x=poc, y=prc,
         #xerr=sigma_res_p, yerr=sigma_res_l,
         fmt='o')
     fit = ax.errorbar(x=range(0, 1001), y=[Pl + B*exp(A*n) for n in range(0, 1001)],

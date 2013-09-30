@@ -51,8 +51,10 @@ Pl = best_Pl
 
 log_pressioni = log(pressioni .- Pl);
 s_log_pressioni = s_pressioni ./ pressioni;
-contributions = [(1:length(pressioni))', chi2_contributions(log_pressioni, pompate, s_log_pressioni, b, A)]
+contributions = chi2_contributions(log_pressioni, pompate, s_log_pressioni, b, A);
 
-indici_cannati = [67 68 69 70 71 72 73 74 79 80];
+[(1:length(pressioni))', contributions]
 
-chi = sum(contributions(indici_cannati))
+indici_cannati = [67 68 69 70 71 72 73 74 75 79 80];
+
+chi = sum(contributions) - sum(contributions([indici_cannati]))
