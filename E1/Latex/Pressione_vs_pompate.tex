@@ -25,8 +25,7 @@ della pressione nel tempo utilizzando una pompa meccanica, da qui il nome del pa
 \subsection{Acquisizione dei dati}
 
 \begin{itemize}
-	\item{Come prima operazione abbiamo ricavato il voume incognito della bottiglia riempiendola d'acqua distillata e misurando il volume del liquido contenuto travasandolo in cilindri graduati;}
-	\item{Successivamente abbiamo registrato l'andamento della pressione interna alla bottiglia in funzione del numero di pompate effettuate;}
+	\item{Abbiamo registrato l'andamento della pressione interna alla bottiglia in funzione del numero di pompate effettuate;}
 	\item{Di seguito abbiamo riempito la bottiglia di aria, grazie ad un compressore, fino a raggiungere una pressione
 	interna di circa a $3 \cdot 10^5$ \si{\pascal}, e abbiamo valutato l'andamento della pressione interna alla bottiglia
 	in funzione del tempo utilizzando la pompa meccanica a membrana a doppio stadio;}
@@ -34,19 +33,11 @@ della pressione nel tempo utilizzando una pompa meccanica, da qui il nome del pa
 
 \subsection{Analisi dei dati}
 
-La stima fatta del volume della bottiglia è la seguente:
-
-\begin{equation}
-	\mathcal{V} \, = \, (2.769 \pm 0.008) \; \si{\deci\meter}^3  
-\end{equation}
-%
-tuttavia non siamo molto fiduciosi della sua accuratezza dal momento che durante le operazioni di travaso del liquido dalla bottiglia nei cilindri graduati una minima parte di questo è andata persa. Inoltre non siamo riusciti a stimare con precisione il volume occupato dal tappo della bottiglia che comprendeva anche il manometro di Bourdon.
-
 Graficando i dati raccolti relativi all'andamento della pressione in funzione del numero di pompate effettuate otteniamo
 il grafico in figura \ref{fig:graph1}, che come possiamo notare ha un andamento esponenziale. Possiamo notare come a parità
 il numero di pompate, la variazione di pressione diventi via via più più piccola all'aumentare del numero delle
 compressioni già effettuate. La pressione tende asintoticamente ad un valore di pressione, il vuoto limite della pompa
-da noi utilizzata. Tale valore limite è risultato essere, da calcoli numerici di minimizzazzione del chi quadro, di circa 9960 \si{\pascal}.
+da noi utilizzata. Tale valore limite è risultato essere, da calcoli numerici di minimizzazzione del chi quadro, di circa \SI{10000}{\pascal}.
 
 Abbiamo eseguito una regressione, riportata in figura \ref{fig:graph1}, utilizzando come modello la seguente funzione:
 
@@ -56,21 +47,24 @@ Abbiamo eseguito una regressione, riportata in figura \ref{fig:graph1}, utilizza
 %
 dove n è il numero di pompaggi, $P_0$ e $a$ sono costanti e $P_l$ indica la pressione limite.
 
+\begin{figure}[t]
+    \includegraphics[width=160mm]{graph.pdf}
+    \caption{Grafico dei dati ottenuti durante l'esperimento. Il buco presente tra le 500 e le 580 pompate è dovuto ad una perdita d'aria
+    che ci ha costretto a fare 60 pompate per tornare al livello precedente. I punti verdi sono stati tolti per aggiustare il $\chi^2$.
+    Le barre d'errore sono piccole e non visibili. L'andamento riportato è il risultato della regressione.}
+    \label{fig:graph1}
+\end{figure}
+
 Col metodo dei minimi quadrati abbiamo ottenuto i valori:
 
 \begin{equation}
-    P_0 = 86660 \pm 10 \; \si{\pascal} \qquad a = 4.899 \cdot 10^{-3} \pm 0.001 \cdot 10^{-3} \qquad P_l = \SI{9960}{\pascal}
+    P_0 = 97990 \pm 50 \; \si{\pascal} \qquad a = 5.014 \cdot 10^{-3} \pm 0.006 \cdot 10^{-3} \qquad P_l \simeq \SI{10000}{\pascal}
 \end{equation}
 
-Le incertezze su quasti valori sono sicuramente sottostimate. Inoltre per il metodo utilizzato ci è risultato difficile
-stimare l'incertezza di $P_l$. Questo è dovuto anche al fatto che, come si vede anche dal grafico in figura \ref{fig:graph1},
+Come si vede anche dal grafico in figura \ref{fig:graph1},
 durante l'esperimento si è verificata una perdita attorno alla 500 pompata, che ci ha costretto a scartare alcuni punti.
-
-\begin{figure}
-    \includegraphics[width=16cm]{graph.pdf}
-    \caption{fasd}
-    \label{fig:graph1}
-\end{figure}
+Comunque abbiamo ottenuto un valore di $P_0$ di poco differente dal valore misurato di $97330 \pm 54 \; \si{\pascal}$.
+L'incompatibilità tra i due valori può essere dovuta alla perdita d'aria che ha guastato i nostri dati.
 
 %Per quanto riguarda l'andamento della pressione interna della bottiglia in funzione del tempo, quindi di una variabile che supponiamo continua, i dati da noi ricavati sono riportati nella seguente tabella:
 
