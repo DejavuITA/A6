@@ -3,7 +3,8 @@
 Gli strumenti che abbiamo utilizzato per eseguire questo esperimento sono i seguenti:
 \begin{itemize}
 	\item{Una bottigla di vetro a cui è applicato un manometro Bourdon di risoluzione di lettura pari a 0.1 bar;}
-	\item{Un sisiema di raccorderia utilizzato per collegare la pompa a vuoto con la bottiglia e il manometro a U di Torricelli con una risoluzione di lettura di 1 mmHg;}
+	\item{Un manometro a U di Torricelli con una risoluzione di lettura di 1 mmHg;}
+	\item{Un sistema di raccorderia utilizzato per collegare la pompa a vuoto con la bottiglia e il manometro di Torricelli;}
 	\item{Pompa a mano per raggiungere il basso vuoto;}
 	\item{Pompa meccanica a membrana doppio stadio (vuoto limite 500 Pa);}
 	\item{Cilindri graduati con le seguenti risoluzioni di misura: quello da 1 litro ha una risoluzione di 10 ml, quello da un quarto di litro ha una risoluzione pari a 5 ml ed infine il cilindro graduato da 100 ml ha una rsoluzione di 1 ml;}
@@ -16,14 +17,19 @@ in quanto abbiamo voluto lasciare le indicazione sulle modalità di misura dello
 
 \section{Andamento della pressione in funzione del tempo}
 
-Ci proponiamo ora di analizzare l'andamento della pressione interna della bottiglia rispetto a una variabile discreta, che nel nostro caso è rappresentata dal numero di pompate effettuate.
+Ci proponiamo ora di analizzare l'andamento della pressione interna della bottiglia rispetto a una
+variabile discreta, che nel nostro caso è rappresentata dal numero di pompate effettuate
+con la pompa a mano. Il risultato è molto simile a quello che si otterrebbe studiando l'andamento
+della pressione nel tempo utilizzando una pompa meccanica, da qui il nome del paragrafo.
 
 \subsection{Acquisizione dei dati}
 
 \begin{itemize}
 	\item{Come prima operazione abbiamo ricavato il voume incognito della bottiglia riempiendola d'acqua distillata e misurando il volume del liquido contenuto travasandolo in cilindri graduati;}
-	\item{Successivamente abbiamo valutato l'andamento della pressione interna alla bottiglia in funzione del numero di pompate effettuate;}
-	\item{Di seguito abbiamo riempito la bottiglia di aria, grazie ad un compressore, fino a raggiungere una pressione interna di 3 atmosfere, equivalenti circa a $3 \cdot 10^5$ \si{\pascal}, e abbiamo valutato l'andamento della pressione interna alla bottiglia in funzione del tempo utilizzando la pompa meccanica a membrana a doppio stadio;}
+	\item{Successivamente abbiamo registrato l'andamento della pressione interna alla bottiglia in funzione del numero di pompate effettuate;}
+	\item{Di seguito abbiamo riempito la bottiglia di aria, grazie ad un compressore, fino a raggiungere una pressione
+	interna di circa a $3 \cdot 10^5$ \si{\pascal}, e abbiamo valutato l'andamento della pressione interna alla bottiglia
+	in funzione del tempo utilizzando la pompa meccanica a membrana a doppio stadio;}
 \end{itemize}
 
 \subsection{Analisi dei dati}
@@ -31,14 +37,40 @@ Ci proponiamo ora di analizzare l'andamento della pressione interna della bottig
 La stima fatta del volume della bottiglia è la seguente:
 
 \begin{equation}
-	\mathcal{V} \, = \, (2769 \pm 8) \; \si{\deci\meter}^3  
+	\mathcal{V} \, = \, (2.769 \pm 0.008) \; \si{\deci\meter}^3  
 \end{equation}
-
+%
 tuttavia non siamo molto fiduciosi della sua accuratezza dal momento che durante le operazioni di travaso del liquido dalla bottiglia nei cilindri graduati una minima parte di questo è andata persa. Inoltre non siamo riusciti a stimare con precisione il volume occupato dal tappo della bottiglia che comprendeva anche il manometro di Bourdon.
 
-Graficando i dati raccolti relativi all'andamento della pressione in funzione del numero di pompate effettuate otteniamo il grafico seguente, che come possiamo notare ha un andameto esponenziale. Quindi possiamo notare come avvicinandosi al valore del vuoto limite della pompa da noi utilizzata la quantità di gas estratta diminuisca drasticamente e pertanto l'abbassamento della pressione interna della bottiglia risulti sempre più impercettibile, infatti vi è un andamento asintotico della pressione attorno al valore di x Pa.
+Graficando i dati raccolti relativi all'andamento della pressione in funzione del numero di pompate effettuate otteniamo
+il grafico in figura \ref{fig:graph1}, che come possiamo notare ha un andamento esponenziale. Possiamo notare come a parità
+il numero di pompate, la variazione di pressione diventi via via più più piccola all'aumentare del numero delle
+compressioni già effettuate. La pressione tende asintoticamente ad un valore di pressione, il vuoto limite della pompa
+da noi utilizzata. Tale valore limite è risultato essere, da calcoli numerici di minimizzazzione del chi quadro, di circa 9960 \si{\pascal}.
 
-GRAFICO
+Abbiamo eseguito una regressione, riportata in figura \ref{fig:graph1}, utilizzando come modello la seguente funzione:
+
+\begin{equation}
+    P = P_0 e^{-an} + P_l
+\end{equation}
+%
+dove n è il numero di pompaggi, $P_0$ e $a$ sono costanti e $P_l$ indica la pressione limite.
+
+Col metodo dei minimi quadrati abbiamo ottenuto i valori:
+
+\begin{equation}
+    P_0 = 86660 \pm 10 \; \si{\pascal} \qquad a = 4.899 \cdot 10^{-3} \pm 0.001 \cdot 10^{-3} \qquad P_l = \SI{9960}{\pascal}
+\end{equation}
+
+Le incertezze su quasti valori sono sicuramente sottostimate. Inoltre per il metodo utilizzato ci è risultato difficile
+stimare l'incertezza di $P_l$. Questo è dovuto anche al fatto che, come si vede anche dal grafico in figura \ref{fig:graph1},
+durante l'esperimento si è verificata una perdita attorno alla 500 pompata, che ci ha costretto a scartare alcuni punti.
+
+\begin{figure}
+    \includegraphics[width=16cm]{graph.pdf}
+    \caption{fasd}
+    \label{fig:graph1}
+\end{figure}
 
 %Per quanto riguarda l'andamento della pressione interna della bottiglia in funzione del tempo, quindi di una variabile che supponiamo continua, i dati da noi ricavati sono riportati nella seguente tabella:
 
@@ -46,4 +78,4 @@ GRAFICO
 
 \subsection{Conclusioni parziali}
 
-Non siamo riusciti purtroppo ad analizzare l'andamento della pressione in funzione del tempo, quindi di una variabile continua, a causa di una scarsa qualità del video realizzato e della mancanza nelle riprese della terminazione delle estremità del manometro di Torricelli, e pertanto del relativo anamento pressione vs tempo. Possiamo però supporre che la curva che avrebbe descritto la pressione in funzione del tempo sarebbe stata, come nel caso precedente, un'esponenziale, con un andamento asintotico verso pressioni tendenti al vuoto limite della pompa a membrana.
+Non siamo riusciti purtroppo ad analizzare l'andamento della pressione in funzione del tempo, quindi di una variabile continua, a causa di una scarsa qualità del video realizzato. Nella ripresa non si vedevano le estremità del manometro di Torricelli, e la lettura del cronometro risultava impossibile. Possiamo però supporre che la curva che avrebbe descritto la pressione in funzione del tempo sarebbe stata, come nel caso precedente, un'esponenziale descrescente, con un andamento asintotico verso la pressione di vuoto limite della pompa a membrana utilizzata.
