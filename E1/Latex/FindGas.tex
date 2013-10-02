@@ -10,7 +10,7 @@ sfrutteremo la legge dei gas ideali. Uno dei gas era incognito e dovevamo riusci
 	\item{Come prima operazione abbiamo ricavato il voume incognito della bottiglia riempiendola d'acqua distillata e misurando il volume del liquido contenuto travasandolo in cilindri graduati;}
 	\item{Come prima operazione abbiamo cercato di svuotare al massimo delle nostre capacità la bottiglia sfruttando la pompa meccanica a membrana a doppio stadio, in modo da rimuovere la maggior quantità di gas possibile. Successivamente abbiamo pesato la bottiglia "vuota" e abbiamo registrato il suo valore;}
 	\item{Di seguito abbiamo riempito la bottiglia di aria fino a raggiungere una pressione interna di circa $3 \cdot 10^3 \; \si{\pascal}$. Quindi abbiamo pesato nuovamente la bottiglia piena annotandone il peso;}
-	\item{Il procedimento è stato ripetuto con tutti i gas, compreso quello incognito.}
+	\item{Il procedimento è stato ripetuto con tutti i gas, compreso quello ignoto.}
 \end{itemize}
 
 \subsection{Analisi dei dati}
@@ -18,14 +18,15 @@ sfrutteremo la legge dei gas ideali. Uno dei gas era incognito e dovevamo riusci
 La stima fatta del volume della bottiglia è la seguente:
 
 \begin{equation}
-	\mathcal{V} \, = \, (2.769 \pm 0.008) \; \si{\deci\meter}^3  
+	\mathcal{V} \, = \, (2.769 \pm 0.005) \; \si{\deci\meter}^3  
 \end{equation}
 %
-tuttavia non siamo molto fiduciosi della sua accuratezza dal momento che durante le operazioni di
-travaso del liquido dalla bottiglia nei cilindri graduati una minima parte di questo è andata persa.
-Inoltre non siamo riusciti a stimare con precisione il volume occupato dal tappo della bottiglia che
+tuttavia non siamo molto fiduciosi sulla stima dell'incertezza dal momento che durante le operazioni di
+travaso del liquido dalla bottiglia nei cilindri graduati una parte di questo è andata persa ed inoltre
+il numero riportato è ricavato dalla sola incertezza di risoluzione.
+Non siamo riusciti a stimare con precisione il volume occupato dal tappo della bottiglia che
 comprendeva anche il manometro di Bourdon. Questi ultimi contributi tendono tuttavia a cancellarsi
-per cui non dovrebbero contribuire molto all'incertezza.
+per cui non dovrebbero contribuire molto al volume totale.
 
 Sfruttando la legge dei gas ideali:
 
@@ -46,11 +47,35 @@ abbiamo calcolato la massa molare dividendo la massa per il numero di moli:
 	M_{mol} \,=\, \frac{m}{n}
 \end{equation}
 
-Pertanto i risultati da noi ottenuti sono i seguenti:
+Applicando a tutti i gas questo procedimento e propagando opportunamente l'incertezza
+abbiamo ottenuto i seguenti risultati. 
 
-\begin{itemize}
-	\item{massa molare x}
-	\item{massa molare y}
-	\item{massa molare z}
-\end{itemize}
+\begin{center}
+    \begin{tabular}{c c c c c}
+        \toprule
+        Gas & Pressione [\si{\kilo\pascal}] & Massa [\si{\gram}] & Numero di moli [\si{\mole}] & Massa molare [\si{\gram\per\mole}] \\
+        \midrule
+        Aria            & 300 &  9.0 & 0.339 $\pm$ 0.004 & 26.6 $\pm$ 0.3 \\
+        He              & 300 &  1.4 & 0.339 $\pm$ 0.004 &  4.1 $\pm$ 0.1 \\
+        N$_2$           & 290 &  8.7 & 0.327 $\pm$ 0.003 & 26.6 $\pm$ 0.3 \\
+        CO$_2$          & 290 & 14.1 & 0.327 $\pm$ 0.003 & 43.1 $\pm$ 0.5 \\
+        Ignoto          & 290 & 12.3 & 0.327 $\pm$ 0.003 & 37.6 $\pm$ 0.4 \\
+        \bottomrule
+    \end{tabular}
+\end{center}
 
+L'incertezza sulla pressione è pari all'incertezza di risoluzione ovvero \SI{3}{\kilo\pascal}, quella sulla massa
+è anch'essa di risoluzione ed è pari a \SI{0.04}{\gram}.
+
+Come si vede i risultati sono abbastanza buoni. Nel caso dell'aria il valore riportati in letteratura è di \SI{29}{\gram\per\mole},
+ma si riferisca all'aria anidra, fatto che può spiegare la discrepanza con il valore da noi osservato. Nel caso dell'elio
+la massa molare ottenuta è compatibile entro l'incertezza con il valore ``vero''. Nel caso dell'azoto siamo
+abbastanza vicini al valore vero di \SI{28}{\gram\per\mole} e comunque il risultato è in accordo con la massa molare calcolata per l'aria,
+cosa rassicurante essendo l'aria composta principalmente di azoto. Il valore di massa molare del biossido di carbonio
+riportato da fonti attendibili è di circa \SI{44}{\gram\per\mole}, vicino al valore da noi trovato e compatibile entro due sigma.
+Infine il gas ignoto, che è sicuramente Argon, poiché era l'unico gas presente in laboratorio che non ci fosse stato
+ancora dato, mostra un valore misurato un po' minore di quello ``vero'' \SI{40}{\gram\per\mole}.
+
+A parte nel caso di elio e biossido di carbonio, i risultati ottenuti mostrano discrepanze piccole ma significative
+con i valori della letteratura, che ci impediscono di identificare con certezza il gas ignoto. Ipotizziamo che ciò sia
+dovuto alla presenza di gas all'interno della bottiglia quando ``vuota''.
