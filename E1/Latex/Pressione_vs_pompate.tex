@@ -20,7 +20,7 @@ in quanto abbiamo voluto lasciare le indicazione sulle modalità di misura dello
 Ci proponiamo ora di analizzare l'andamento della pressione interna della bottiglia rispetto a una
 variabile discreta, che nel nostro caso è rappresentata dal numero di pompate effettuate
 con la pompa a mano. Il risultato è molto simile a quello che si otterrebbe studiando l'andamento
-della pressione nel tempo utilizzando una pompa meccanica, da qui il nome del paragrafo.
+della pressione nel tempo utilizzando una pompa meccanica, da cui il nome del paragrafo.
 
 \subsection{Acquisizione dei dati}
 
@@ -33,20 +33,6 @@ della pressione nel tempo utilizzando una pompa meccanica, da qui il nome del pa
 
 \subsection{Analisi dei dati}
 
-Graficando i dati raccolti relativi all'andamento della pressione in funzione del numero di pompate effettuate otteniamo
-il grafico in figura \ref{fig:graph1}, che come possiamo notare ha un andamento esponenziale. Possiamo notare come a parità
-il numero di pompate, la variazione di pressione diventi via via più più piccola all'aumentare del numero delle
-compressioni già effettuate. La pressione tende asintoticamente ad un valore di pressione, il vuoto limite della pompa
-da noi utilizzata. Tale valore limite è risultato essere, da calcoli numerici di minimizzazzione del chi quadro, di circa \SI{10000}{\pascal}.
-
-Abbiamo eseguito una regressione, riportata in figura \ref{fig:graph1}, utilizzando come modello la seguente funzione:
-
-\begin{equation}
-    P = P_0 e^{-an} + P_l
-\end{equation}
-%
-dove n è il numero di pompaggi, $P_0$ e $a$ sono costanti e $P_l$ indica la pressione limite.
-
 \begin{figure}[t]
     \includegraphics[width=160mm]{graph.pdf}
     \caption{Grafico dei dati ottenuti durante l'esperimento. Il buco presente tra le 500 e le 580 pompate è dovuto ad una perdita d'aria
@@ -55,13 +41,27 @@ dove n è il numero di pompaggi, $P_0$ e $a$ sono costanti e $P_l$ indica la pre
     \label{fig:graph1}
 \end{figure}
 
+Graficando i dati raccolti relativi all'andamento della pressione in funzione del numero di pompate effettuate otteniamo
+il grafico in Figura \ref{fig:graph1}, che come possiamo notare ha un andamento esponenziale. Inoltre, a parità
+il numero di pompate, la variazione di pressione diventa via via più piccola all'aumentare del numero delle
+compressioni già effettuate. La pressione tende asintoticamente ad un valore di pressione specifico, il vuoto limite della pompa
+da noi utilizzata. Tale valore limite è risultato essere, da calcoli numerici di minimizzazzione del chi quadro, di circa \SI{10000}{\pascal}.
+
+Abbiamo eseguito una regressione, riportata in Figura \ref{fig:graph1}, utilizzando come modello la seguente funzione:
+
+\begin{equation}
+    P = P_0 e^{-an} + P_l
+\end{equation}
+%
+dove n è il numero di pompaggi, $P_0$ e $a$ sono costanti e $P_l$ indica la pressione limite.
+
 Col metodo dei minimi quadrati abbiamo ottenuto i valori:
 
 \begin{equation}
     P_0 = 97990 \pm 50 \; \si{\pascal} \qquad a = 5.014 \cdot 10^{-3} \pm 0.006 \cdot 10^{-3} \qquad P_l \simeq \SI{10000}{\pascal}
 \end{equation}
 
-Come si vede anche dal grafico in figura \ref{fig:graph1},
+Come si vede anche dal grafico in Figura \ref{fig:graph1},
 durante l'esperimento si è verificata una perdita attorno alla 500 pompata, che ci ha costretto a scartare alcuni punti.
 Comunque abbiamo ottenuto un valore di $P_0$ di poco differente dal valore misurato di $97330 \pm 54 \; \si{\pascal}$.
 L'incompatibilità tra i due valori può essere dovuta alla perdita d'aria che ha guastato i nostri dati.
@@ -70,9 +70,9 @@ L'incompatibilità tra i due valori può essere dovuta alla perdita d'aria che h
 
 %Il grafico dell'andamento della pressione in funzione del tempo trascorso dall'inizio del processo di svuotamento della bottiglia da parte della pompa meccanica a membrana a doppio stadio è riportato nel grafico sottostante, che come si può notare ha un andamento esponenziale come trovato sopra.
 
-\subsection{Conclusioni parziali}
+\subsection{Conclusioni prima parte}
 
 Nonostante la perdita di gas, l'esperimento è comunque andato a buon fine, e ci ha permesso di vedere come si comporta
 una pompa a vuoto durante la fase di pompaggio.
 
-Tuttavia, non siamo riusciti ad analizzare l'andamento della pressione in funzione del tempo, quindi di una variabile continua, a causa di una scarsa qualità del video realizzato. Nella ripresa non si vedevano le estremità del manometro di Torricelli, e la lettura del cronometro risultava impossibile. Possiamo però supporre che la curva che avrebbe descritto la pressione in funzione del tempo sarebbe stata, come nel caso precedente, un'esponenziale descrescente, con un andamento asintotico verso la pressione di vuoto limite della pompa a membrana utilizzata.
+Per quanto riguarda la parte dell'esperimento con la pompa a membrana, tuttavia, non siamo riusciti ad analizzare l'andamento della pressione in funzione del tempo, quindi di una variabile continua, a causa di una scarsa qualità del video realizzato. Nella ripresa non si vedevano le estremità del manometro di Torricelli, e la lettura del cronometro risultava impossibile. Possiamo però supporre che la curva che avrebbe descritto la pressione in funzione del tempo sarebbe stata, come nel caso precedente, un'esponenziale descrescente, con un andamento asintotico verso la pressione di vuoto limite della pompa a membrana utilizzata.
