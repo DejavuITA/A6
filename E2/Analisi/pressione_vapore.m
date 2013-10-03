@@ -32,3 +32,5 @@ p0 = exp(A)
 sp0 = exp(A) * sA
 DH = - B * 8.3144
 sDH = sB * 8.3144
+
+T_ebb = B / (log(101300) - A) - 273.15
