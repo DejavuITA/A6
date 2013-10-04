@@ -10,7 +10,7 @@ sp_atm = 1 * 133.322;
 
 # pressione 
 p = p_atm .+ dati(:, 1);
-sp = sqrt(sp_atm^2 + 5000^2/12);
+sp = sqrt(sp_atm^2 + 2279^2/12);
 # temperatura
 T = 273.15 .+ dati(:, 2);
 sT = 1 / sqrt(12);
@@ -33,4 +33,7 @@ sp0 = exp(A) * sA
 DH = - B * 8.3144
 sDH = sB * 8.3144
 
-T_ebb = B / (log(101300) - A) - 273.15
+T_ebb = B / (log(p_atm) - A) - 273.15
+s_T_ebb = sqrt((log(p_atm) - A) .^ -2 * sB .^ 2 +
+	(B ./ ((log(p_atm) - A) .^ 2 .* p_atm) .* sp_atm) .^ 2 +
+	(B ./ ((log(p_atm) - A) .^ 2) .* sA) .^ 2)
