@@ -32,9 +32,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1680621"
-     inkscape:cx="347.12423"
-     inkscape:cy="148.2561"
+     inkscape:zoom="0.63120279"
+     inkscape:cx="271.6753"
+     inkscape:cy="217.46974"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -661,5 +661,46 @@
          x="372.04724"
          y="618.79199"
          style="font-size:13px">Atmosfera</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
+       x="70.866142"
+       y="1013.3859"
+       id="text3118-8-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3120-6-1"
+         x="70.866142"
+         y="1013.3859"
+         style="font-size:13px">Pirani</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
+       x="524.40942"
+       y="726.37799"
+       id="text3118-8-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3120-6-5"
+         x="524.40942"
+         y="726.37799"
+         style="font-size:13px;text-align:center;text-anchor:middle">Catodo</tspan><tspan
+         sodipodi:role="line"
+         x="524.40942"
+         y="742.62799"
+         style="font-size:13px;text-align:center;text-anchor:middle"
+         id="tspan3123">caldo</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
+       x="503.1496"
+       y="910.62994"
+       id="text3118-8-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="503.1496"
+         y="910.62994"
+         style="font-size:13px"
+         id="tspan3125">Pirani</tspan></text>
   </g>
 </svg>
