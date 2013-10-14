@@ -3,7 +3,7 @@
 *.log
 *.aux
 *.toc
-*.pdf
+*Relazione.pdf
 *.synctex.gz
 *~
 *.out
