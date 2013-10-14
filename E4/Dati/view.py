@@ -27,7 +27,7 @@ if mpl:
                values[i].append(float(v) * 100)
 
     f = plt.figure(figsize=(8, 6))
-    f.suptitle(sys.argv[1].replace("-", " ").replace(".txt", "").lower().capitalize(), y=0.96, fontsize=15)
+    f.suptitle(sys.argv[0].replace("-", " ").replace(".txt", "").lower().capitalize(), y=0.96, fontsize=15)
 
     ax = f.add_subplot(1, 1, 1)
 
@@ -35,7 +35,7 @@ if mpl:
     for i in range(len(sys.argv)):
         d.append(ax.errorbar(x=times[i], y=values[i], fmt="o"))
 
-    if "pressione" in sys.argv[1].lower():
+    if "pressione" in sys.argv[0].lower():
         ax.set_ylabel(u'Pressione [Pa]', labelpad=6, fontsize=14)
     else: 
         ax.set_ylabel(u'Potenziale [V]', labelpad=6, fontsize=14)
