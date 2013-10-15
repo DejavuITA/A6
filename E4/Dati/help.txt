@@ -1,0 +1,15 @@
+il comando si usa così:
+
+python view.py <nome-file>
+
+occorre aver istallato matplotlib, che in caso si installa con:
+
+sudo apt-get install python-matplotlib
+
+si può usare con più file:
+
+python view.py <nome-file-1> <nome-file-2>
+
+o addirittura con tutti i file
+
+python view.py *
