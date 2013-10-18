@@ -6,6 +6,8 @@ source("../../algoritmi/utils.m");
 V = 5930 * 10^(-6);
 dV = 10 * 10^(-6);
 err = 0.1;
+P_atm = 98100;
+dP_atm = 100 / sqrt(12);
 Deg = csvread("../Dati/csv/deg.csv")(1:end, 1:2);
 dDeg = err .* Deg(:,2); % Deg(1,2) .* ones(length(Deg),1) .* err; 
 Giro1 = csvread("../Dati/csv/giro1.csv")(1:end, 1:2);
@@ -160,6 +162,12 @@ Q = V .* (B .- Bg);
 dQ = sqrt(V.^2 .* (dB .^2 .+ sBg.^2) .+ (B .- Bg).^2 .* (dV^2));
 [Q dQ]
 %errorbar(giri, Q, dQ, "~")
+
+vP = P_atm .- [mean(Giro1(:, 2)), mean(Giro2(:, 2)), mean(Giro3(:, 2)),   mean(Giro4(:, 2)), mean(Giro50(:, 2)), mean(Giro52(:, 2)),   mean(Giro54(:, 2)), mean(Giro56(:, 2)), mean(Giro58(:, 2)),    mean(Giro6(:, 2)), mean(Giro7(:, 2)), mean(Giro8(:, 2)), mean(Giro9(:, 2))]';
+C = Q ./ vP
+
+vm = sqrt(8 * 8.3144 * 293 / (pi * 0.029));
+d = (C .* 12 .* 0.08 / (pi * vm)) .^ (1/3);
 
 [
 chi_g, length(Deg) - 2; %length(Deg) - 2;
