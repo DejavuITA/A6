@@ -18,7 +18,7 @@ $^1 Nota$: la valvola a spillo presenta al suo interno un volume morto di aria a
 
 \section{Analisi dati}
 
-Grazie ai dati della pressione in camera in funzione del tempo acquisiti nell'esperienza si può ricavare una stima del flusso in entrata grazie alla seguente relazione:
+Per ogni serie di dati abbiamo ricavato, con il metodo della regressione lineare, un valore della variazione di pressione $\frac{dP}{dt}$. Grazie a questi dati abbiamo poi potuto ottenere una stima del flusso in entrata grazie alla seguente relazione:
 
 \begin{equation}
 	Q_{tot} \,\, = \,\, V \frac{dP}{dt}
@@ -31,3 +31,12 @@ Pertanto, per ricavare Q$_{valve}$ abbiamo dovuto sottrarre al flusso totale cal
 \begin{equation}
 	Q_{valve} \, = \, Q_{tot} \, - \, Q_{deg}
 \end{equation}
+
+I risultati numerici sono esposti nella Tabella \ref{tab:table}
+
+\begin{figure}[h!]
+    \includegraphics[width=16cm]{graph.pdf}
+    \caption{Il grafico mostra i valori elaborati del flusso in entrata a seconda dell'apertura della valvola a spillo. Le barre d'errore non sono
+    mostrate in quanto comparabili con la dimensione dei punti sul grafico.}
+    \label{fig:graph}
+\end{figure}
