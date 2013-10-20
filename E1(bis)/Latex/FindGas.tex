@@ -1,0 +1,91 @@
+\section{Grazie a misure di massa si ricava il tipo di gas presente in un dato volume}   
+
+In questa seconda parte della relazione vogliamo riuscire a ricavare mediante due misure di massa,
+a bottiglia piena di gas e a bottiglia vuota, la massa molare di alcuni comuni gas. Per fare ciò
+sfrutteremo la legge dei gas ideali. Uno dei gas era incognito e dovevamo riuscire a capire quale gas fosse.
+
+\subsection{Acquisizione dei dati}
+
+\begin{itemize}
+	\item{Come prima operazione abbiamo ricavato il voume incognito della nostra bottiglia riempiendo d'acqua distillata una bottiglia equivalente e misurando il volume del liquido contenuto travasandolo in cilindri graduati;}
+	\item{Una volta ricavato il volume, abbiamo ricavato il mioglior vuoto possobile utilizzando la pompa a membrana a doppio stadio. Successivamente abbiamo pesato la bottiglia "vuota" e abbiamo registrato il suo valore;}
+	\item{Di seguito abbiamo riempito la bottiglia di gas fino a raggiungere una pressione interna di circa $3 \cdot 10^3 \; \si{\pascal}$. Quindi abbiamo pesato nuovamente la bottiglia piena;}
+	\item{Il procedimento è stato ripetuto con tutti i gas, compreso quello ignoto.}
+\end{itemize}
+
+\subsection{Analisi dei dati}
+
+La stima fatta del volume della bottiglia è:
+
+\begin{equation}
+	\mathcal{V} \, = \, (2.769 \pm 0.005) \; \si{\deci\meter}^3  
+\end{equation}
+%
+tuttavia non siamo molto fiduciosi sulla stima dell'incertezza dal momento che, durante le operazioni di
+travaso del liquido dalla bottiglia nei cilindri graduati, una parte di questo è andata persa ed inoltre
+il numero riportato è ricavato dalla sola incertezza di risoluzione.
+%Non siamo riusciti a stimare con precisione il volume occupato dal tappo della bottiglia che comprendeva anche il manometro di Bourdon. Questi ultimi contributi tendono tuttavia a cancellarsi per cui non dovrebbero contribuire molto al volume totale.
+
+Per quanto riguarda la massa della bottiglia abbiamo ricavato un valore medio
+\begin{equation}
+	m \, = \, XYZ \pm XYZ \si{\kilogram}
+\end{equation}
+che si riferisce alla massa della bottiglia contentente un volume $\mathcal{V}$ di una miscela di gas alla pressione limite della pompa a membrana (P$_{l(2)}$ = 500 \si{\Pa}).
+
+
+Sfruttando la legge dei gas ideali:
+\begin{equation}
+	P\,V \,=\, n\,R\,T
+\end{equation}
+%
+si può ricavare il numero di moli di gas presente all'interno della bottiglia, ottenendo:
+
+\begin{equation}
+	n \,=\, \frac{P\,V}{R\,T}
+\end{equation}
+
+Quindi conoscendo il numero di moli contenute nella bottiglia, e conoscendo la massa del gas contenuto,
+abbiamo calcolato la massa molare dividendo la massa per il numero di moli:
+
+\begin{equation}
+	M_{mol} \,=\, \frac{m_{bott-piena} - m_{bott-vuota}}{n}\,=\,\frac{m}{n}
+\end{equation}
+
+Applicando a tutti i gas questo procedimento e propagando opportunamente l'incertezza
+abbiamo ottenuto i seguenti risultati. 
+
+\begin{center}
+    \begin{tabular}{c c c c c}
+        \toprule
+        Gas & P [\si{\kilo\pascal}] & m [\si{\gram}] & n [\si{\mole}] & M$_{mol}$ [\si{\gram\per\mole}] \\
+%        Gas & Pressione [\si{\kilo\pascal}] & Massa [\si{\gram}] & Numero di moli [\si{\mole}] & Massa molare [\si{\gram\per\mole}] \\
+        \midrule
+        Aria            & 300 &  9.0 & 0.339 $\pm$ 0.004 & 26.6 $\pm$ 0.3 \\
+        He              & 300 &  1.4 & 0.339 $\pm$ 0.004 &  4.1 $\pm$ 0.1 \\
+        N$_2$           & 290 &  8.7 & 0.327 $\pm$ 0.003 & 26.6 $\pm$ 0.3 \\
+        CO$_2$          & 290 & 14.1 & 0.327 $\pm$ 0.003 & 43.1 $\pm$ 0.5 \\
+        Ignoto          & 290 & 12.3 & 0.327 $\pm$ 0.003 & 37.6 $\pm$ 0.4 \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+L'incertezza sulla pressione è pari all'incertezza di risoluzione ovvero \SI{3}{\kilo\pascal}, quella sulla massa
+è anch'essa di risoluzione ed è pari a \SI{0.04}{\gram}.
+
+Come si vede i risultati sono abbastanza buoni. Nel caso dell'aria il valore riportati in letteratura è di \SI{29}{\gram\per\mole},
+ma si riferisce all'aria anidra, fatto che può spiegare la discrepanza con il valore da noi osservato. Nel caso dell'elio
+la massa molare ottenuta è compatibile entro l'incertezza con il valore ``vero''. Nel caso dell'azoto siamo
+abbastanza vicini al valore vero di \SI{28}{\gram\per\mole} e comunque il risultato è in accordo con la massa molare calcolata per l'aria,
+cosa rassicurante essendo l'aria composta principalmente di azoto. Il valore di massa molare del biossido di carbonio
+riportato da fonti attendibili è di circa \SI{44}{\gram\per\mole}, vicino al valore da noi trovato e compatibile entro due sigma.
+Infine il gas ignoto, che è sicuramente Argon, poiché era l'unico gas presente in laboratorio che non ci fosse stato
+ancora dato, mostra un valore misurato un po' minore di quello ``vero'' \SI{40}{\gram\per\mole}.
+
+\subsection{Conclusioni}
+
+Nonostante la perdita di gas nella prima parte dell'esperienza, siamo comunque riusciti a ricavare una discreta analisi dell'andamento della pressione in funzione del tempo e un buon valore di pressione limite, sia per la pompa a mano che per la pompa a membrana.
+
+A parte nel caso di elio e biossido di carbonio, i risultati ottenuti mostrano discrepanze piccole ma significative
+con i valori riportati in letteratura, che ci impediscono di identificare con certezza il gas ignoto. Ipotizziamo che ciò sia dovuto alla presenza di gas all'interno
+della bottiglia quando ``vuota''.
+Questo metodo, inoltre, è inconcludente nel caso in cui nel contenitore fosse presente una miscela al posto di un gas puro.
