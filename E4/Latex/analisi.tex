@@ -12,10 +12,16 @@ Una volta eseguita questa prima serie di misure abbiamo riportato la camera ad u
 	\item{togliere il tappo posto a chiusura della valvola a spillo e misurare, tramite il multimetro e il sistema di acquisizione dati, il variare della pressione interna della camera in funzione del tempo;}
 	\item{infine riportare la camera da vuoto ad una pressione dell'ordine $10^{-3}$ \si{\pascal}, isolando la pompa turbomolecolare e usando quella rotativa qualora necessario;}
 \end{itemize}
-
-Mentre la prima serie di misure è stata fatta con la valvola a spillo completamente chiusa, le misure successive hanno invece avuto lo scopo di ottenere i dati di flusso per un'apertura della valvola da 1 a 9 giri completi e di 5.2, 5.4, 5.6 e 5.8 giri.
+Mentre la prima serie di misure è stata fatta con la valvola a spillo completamente chiusa, le misure successive hanno invece avuto lo scopo di ottenere i dati di flusso per un'apertura della valvola da 1 a 9 giri completi e di 5.2, 5.4, 5.6 e 5.8 giri.\\
 
 Grazie alle condizioni meteorologiche stabili, l'intera esperienza è stata svolta in laboratorio ad una temperatura ambiente di $XY \pm xy$ \si{\kelvin}, una pressione atmosferica di $941 \pm 0.5$ hPa ed una umidità del $55 \pm 0.5$ \%.
+
+\begin{figure}[h!]
+    \includegraphics[width=15cm]{graph.pdf}
+    \caption{Il grafico mostra i valori elaborati del flusso in entrata a seconda dell'apertura della valvola a spillo. Le barre d'errore non sono
+    mostrate in quanto comparabili con la dimensione dei punti sul grafico. L'asse delle ordinate ha scala logaritmica.}
+    \label{fig:graph}
+\end{figure}
 
 \section{Analisi dati}
 
@@ -47,9 +53,10 @@ Nella prima riga è riportato il flusso di degasamento, e chiaramente non è pre
 
 \input{tab.tex}
 
-\begin{figure}[h!]
-    \includegraphics[width=16cm]{graph.pdf}
-    \caption{Il grafico mostra i valori elaborati del flusso in entrata a seconda dell'apertura della valvola a spillo. Le barre d'errore non sono
-    mostrate in quanto comparabili con la dimensione dei punti sul grafico. L'asse y ha scala logaritmica}
-    \label{fig:graph}
-\end{figure}
+La tabella ed il relativo grafico in Figura \ref{fig:graph} mostrano chiaramente che l'andamento del flusso non è lineare con
+l'apertura della valvola, anzi gli ultimi punti del grafico sembrano suggerire un andamento esponenziale (che su un grafico
+con scala logaritmica come quello riportato in figura, risulta in una linea retta). Tuttavia i primi 2/3
+punti deviano in maniera vistosa da tale andamento.
+
+Dal punto di vista didattico, l'esperienza mostra come i soli effetti di degasamento provochino un flusso circa pari ad una valvola a
+spillo aperta di 5.2 giri. Quindi sono effettu tutt'altro che trascurabili.
