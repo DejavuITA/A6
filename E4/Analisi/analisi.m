@@ -9,40 +9,40 @@ err = 0.1;
 P_atm = 98100;
 dP_atm = 100 / sqrt(12);
 Deg = csvread("../Dati/csv/deg.csv")(1:end, 1:2);
-dDeg = err .* Deg(:,2); % Deg(1,2) .* ones(length(Deg),1) .* err; 
+dDeg = err .* Deg(:,2) .* 100; % Deg(1,2) .* ones(length(Deg),1) .* err; 
 Giro1 = csvread("../Dati/csv/giro1.csv")(1:end, 1:2);
-dGiro1 = err .* Giro1(:,2);
+dGiro1 = err .* Giro1(:,2) .* 100;
 Giro2 = csvread("../Dati/csv/giro2.csv")(1:end, 1:2);
-dGiro2 = err .* Giro2(:,2);
+dGiro2 = err .* Giro2(:,2) .* 100;
 Giro3 = csvread("../Dati/csv/giro3.csv")(1:end, 1:2);
-dGiro3 = err .* Giro3(:,2);
+dGiro3 = err .* Giro3(:,2) .* 100;
 Giro4 = csvread("../Dati/csv/giro4.csv")(1:end, 1:2);
-dGiro4 = err .* Giro4(:,2);
+dGiro4 = err .* Giro4(:,2) .* 100;
 Giro50 = csvread("../Dati/csv/giro5.0.csv")(1:end, 1:2);
-dGiro50 = err .* Giro50(:,2);
+dGiro50 = err .* Giro50(:,2) .* 100;
 Giro52 = csvread("../Dati/csv/giro5.2.csv")(1:end, 1:2);
-dGiro52 = err .* Giro52(:,2);
+dGiro52 = err .* Giro52(:,2) .* 100;
 Giro54 = csvread("../Dati/csv/giro5.4.csv")(1:end, 1:2);
-dGiro54 = err .* Giro54(:,2);
+dGiro54 = err .* Giro54(:,2) .* 100;
 Giro56 = csvread("../Dati/csv/giro5.6.csv")(1:end, 1:2);
-dGiro56 = err .* Giro56(:,2);
+dGiro56 = err .* Giro56(:,2) .* 100;
 Giro58 = csvread("../Dati/csv/giro5.8.csv")(1:end, 1:2);
-dGiro58 = err .* Giro58(:,2);
+dGiro58 = err .* Giro58(:,2) .* 100;
 Giro6 = csvread("../Dati/csv/giro6.csv")(1:end, 1:2);
-dGiro6 = err .* Giro6(:,2);
+dGiro6 = err .* Giro6(:,2) .* 100;
 Giro7 = csvread("../Dati/csv/giro7.csv")(1:end, 1:2);
-dGiro7 = err .* Giro7(:,2);
+dGiro7 = err .* Giro7(:,2) .* 100;
 Giro8 = csvread("../Dati/csv/giro8.csv")(1:end, 1:2);
-dGiro8 = err .* Giro8(:,2);
+dGiro8 = err .* Giro8(:,2) .* 100;
 Giro9 = csvread("../Dati/csv/giro9.csv")(1:end, 1:2);
-dGiro9 = err .* Giro9(:,2);
+dGiro9 = err .* Giro9(:,2) .* 100;
 
 er = 0.001;
 
 # fit delle rette
 % function A, B, sA, sB = fit(y, x, w) % w = dy^(-2)
-y = Deg(:,2);
-x = Deg(:,1) .- 1236; %x = Deg(:,1);
+y = Deg(:,2) .* 100;
+x = Deg(:,1) .- 1237; %x = Deg(:,1);
 w = dDeg.^-2;
 #w = er * ones(length(Deg), 1);
 [Ag Bg sAg sBg] = fit( y, x, w);
@@ -50,7 +50,7 @@ w = dDeg.^-2;
 chi_g = chi2(y, x, w, Ag, Bg);
 #errorbar(x, y, dDeg, "o")
 
-y = Giro1(:,2);
+y = Giro1(:,2) .* 100;
 x = Giro1(:,1) - Giro1(1,1);
 w = dGiro1.^-2;
 #w = er * ones(length(Giro1), 1);
@@ -58,7 +58,7 @@ w = dGiro1.^-2;
 [B1 sB1];
 chi_1 = chi2(y, x, w, A1, B1);
 
-y = Giro2(:,2);
+y = Giro2(:,2) .* 100;
 x = Giro2(:,1) - Giro2(1,1);
 w = dGiro2.^-2;
 #w = er * ones(length(Giro2), 1);
@@ -66,7 +66,7 @@ w = dGiro2.^-2;
 [B2 sB2];
 chi_2 = chi2(y, x, w, A2, B2);
 
-y = Giro3(:,2);
+y = Giro3(:,2) .* 100;
 x = Giro3(:,1) - Giro3(1,1);
 w = dGiro3.^-2;
 #w = er * ones(length(Giro3), 1);
@@ -74,7 +74,7 @@ w = dGiro3.^-2;
 [B3 sB3];
 chi_3 = chi2(y, x, w, A3, B3);
 
-y = Giro4(:,2);
+y = Giro4(:,2) .* 100;
 x = Giro4(:,1) - Giro4(1,1);
 w = dGiro4.^-2;
 #w = er * ones(length(Giro4), 1);
@@ -82,7 +82,7 @@ w = dGiro4.^-2;
 [B4 sB4];
 chi_4 = chi2(y, x, w, A4, B4);
 
-y = Giro50(:,2);
+y = Giro50(:,2) .* 100;
 x = Giro50(:,1) - Giro50(1,1);
 w = dGiro50.^-2;
 #w = er * ones(length(Giro50), 1);
@@ -90,7 +90,7 @@ w = dGiro50.^-2;
 [B50 sB50];
 chi_50 = chi2(y, x, w, A50, B50);
 
-y = Giro52(:,2);
+y = Giro52(:,2) .* 100;
 x = Giro52(:,1) - Giro52(1,1);
 w = dGiro52.^-2;
 #w = er * ones(length(Giro52), 1);
@@ -98,7 +98,7 @@ w = dGiro52.^-2;
 [B52 sB52];
 chi_52 = chi2(y, x, w, A52, B52);
 
-y = Giro54(:,2);
+y = Giro54(:,2) .* 100;
 x = Giro54(:,1) - Giro54(1,1);
 w = dGiro54.^-2;
 #w = er * ones(length(Giro54), 1);
@@ -106,7 +106,7 @@ w = dGiro54.^-2;
 [B54 sB54];
 chi_54 = chi2(y, x, w, A54, B54);
 
-y = Giro56(:,2);
+y = Giro56(:,2) .* 100;
 x = Giro56(:,1) - Giro56(1,1);
 w = dGiro56.^-2;
 #w = er * ones(length(Giro56), 1);
@@ -114,7 +114,7 @@ w = dGiro56.^-2;
 [B56 sB56];
 chi_56 = chi2(y, x, w, A56, B56);
 
-y = Giro58(:,2);
+y = Giro58(:,2) .* 100;
 x = Giro58(:,1) - Giro58(1,1);
 w = dGiro58.^-2;
 #w = er * ones(length(Giro58), 1);
@@ -122,7 +122,7 @@ w = dGiro58.^-2;
 [B58 sB58];
 chi_58 = chi2(y, x, w, A58, B58);
 
-y = Giro6(:,2);
+y = Giro6(:,2) .* 100;
 x = Giro6(:,1) - Giro6(1,1);
 w = dGiro6.^-2;
 #w = ones(length(Giro6), 1);
@@ -130,7 +130,7 @@ w = dGiro6.^-2;
 [B6 sB6];
 chi_6 = chi2(y, x, w, A6, B6);
 
-y = Giro7(:,2);
+y = Giro7(:,2) .* 100;
 x = Giro7(:,1) - Giro7(1,1);
 w = dGiro7.^-2;
 #w = er * ones(length(Giro7), 1);
@@ -138,7 +138,7 @@ w = dGiro7.^-2;
 [B7 sB7];
 chi_7 = chi2(y, x, w, A7, B7);
 
-y = Giro8(:,2);
+y = Giro8(:,2) .* 100;
 x = Giro8(:,1) - Giro8(1,1);
 w = dGiro8.^-2;
 #w = er * ones(length(Giro8), 1);
@@ -146,7 +146,7 @@ w = dGiro8.^-2;
 [B8 sB8];
 chi_8 = chi2(y, x, w, A8, B8);
 
-y = Giro9(:,2);
+y = Giro9(:,2) .* 100;
 x = Giro9(:,1) - Giro9(1,1);
 w = dGiro9.^-2;
 #w = er * ones(length(Giro9), 1);
@@ -164,7 +164,9 @@ dQ = sqrt(V.^2 .* (dB .^2 .+ sBg.^2) .+ (B .- Bg).^2 .* (dV^2));
 %errorbar(giri, Q, dQ, "~")
 
 vP = P_atm .- [mean(Giro1(:, 2)), mean(Giro2(:, 2)), mean(Giro3(:, 2)),   mean(Giro4(:, 2)), mean(Giro50(:, 2)), mean(Giro52(:, 2)),   mean(Giro54(:, 2)), mean(Giro56(:, 2)), mean(Giro58(:, 2)),    mean(Giro6(:, 2)), mean(Giro7(:, 2)), mean(Giro8(:, 2)), mean(Giro9(:, 2))]';
-C = Q ./ vP
+C = Q ./ P_atm;
+dC = sqrt((dQ ./ P_atm) .^ 2 + (Q * dP_atm ./ (P_atm .^ 2)) .^ 2);
+[C dC]
 
 vm = sqrt(8 * 8.3144 * 293 / (pi * 0.029));
 d = (C .* 12 .* 0.08 / (pi * vm)) .^ (1/3);
