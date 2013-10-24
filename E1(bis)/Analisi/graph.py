@@ -44,10 +44,8 @@ if mpl:
     prg = [p for n, p in enumerate(pressioni) if n + 1 not in indici_cannati]
     poc = [p for n, p in enumerate(pompate) if n + 1 in indici_cannati]
     prc = [p for n, p in enumerate(pressioni) if n + 1 in indici_cannati]
-    dots1 = ax.errorbar(x=pog, y=prg,
-        yerr=s_pressioni, fmt='o')
-    dots2 = ax.errorbar(x=poc, y=prc,
-        yerr=s_pressioni, fmt='o')
+    dots1 = ax.errorbar(x=pog, y=prg, fmt='o')
+    dots2 = ax.errorbar(x=poc, y=prc, fmt='v')
     fit = ax.errorbar(x=range(0, 1001), y=[Pl + B*exp(A*n) for n in range(0, 1001)],
         #xerr=sigma_res_p, yerr=sigma_res_l,
         fmt='-')
@@ -63,6 +61,7 @@ if mpl:
     #ax.set_xticks((0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4))
     ax.set_yticks(range(10000, 110000, 10000))
     ax.set_ylim(5000, 105000)
+    #ax.set_ylabels((10, 20, 30, 40, 50, 60, 70, 80, 90, 100))
     #ax.text(-0.03, -0.005, "0")
 
     ax.legend((dots1, dots2, fit), ("Dati usati per il fit", "Dati tolti per aggiustare il $\chi^2$", "Regressione"), 'upper right',

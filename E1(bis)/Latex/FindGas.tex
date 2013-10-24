@@ -8,7 +8,7 @@ sfrutteremo la legge dei gas ideali. Uno dei gas era incognito e dovevamo riusci
 
 \begin{itemize}
 	\item{Come prima operazione abbiamo ricavato il voume incognito della nostra bottiglia riempiendo d'acqua distillata una bottiglia equivalente e misurando il volume del liquido contenuto travasandolo in cilindri graduati;}
-	\item{Una volta ricavato il volume, abbiamo ricavato il mioglior vuoto possobile utilizzando la pompa a membrana a doppio stadio. Successivamente abbiamo pesato la bottiglia "vuota" e abbiamo registrato il suo valore;}
+	\item{Una volta ricavato il volume, abbiamo ricavato il miglior vuoto possibile utilizzando la pompa a membrana. Successivamente abbiamo pesato la bottiglia ``vuota'' registrandone il valore;}
 	\item{Di seguito abbiamo riempito la bottiglia di gas fino a raggiungere una pressione interna di circa $3 \cdot 10^3 \; \si{\pascal}$. Quindi abbiamo pesato nuovamente la bottiglia piena;}
 	\item{Il procedimento è stato ripetuto con tutti i gas, compreso quello ignoto.}
 \end{itemize}
@@ -18,20 +18,13 @@ sfrutteremo la legge dei gas ideali. Uno dei gas era incognito e dovevamo riusci
 La stima fatta del volume della bottiglia è:
 
 \begin{equation}
-	\mathcal{V} \, = \, (2.769 \pm 0.005) \; \si{\deci\meter}^3  
+	\mathcal{V} \, = \, 2.769 \pm 0.005 \; \si{\deci\meter}^3  
 \end{equation}
 %
 tuttavia non siamo molto fiduciosi sulla stima dell'incertezza dal momento che, durante le operazioni di
 travaso del liquido dalla bottiglia nei cilindri graduati, una parte di questo è andata persa ed inoltre
 il numero riportato è ricavato dalla sola incertezza di risoluzione.
 %Non siamo riusciti a stimare con precisione il volume occupato dal tappo della bottiglia che comprendeva anche il manometro di Bourdon. Questi ultimi contributi tendono tuttavia a cancellarsi per cui non dovrebbero contribuire molto al volume totale.
-
-Per quanto riguarda la massa della bottiglia abbiamo ricavato un valore medio
-\begin{equation}
-	m \, = \, XYZ \pm XYZ \si{\kilogram}
-\end{equation}
-che si riferisce alla massa della bottiglia contentente un volume $\mathcal{V}$ di una miscela di gas alla pressione limite della pompa a membrana (P$_{l(2)}$ = 500 \si{\Pa}).
-
 
 Sfruttando la legge dei gas ideali:
 \begin{equation}
@@ -44,33 +37,37 @@ si può ricavare il numero di moli di gas presente all'interno della bottiglia, 
 	n \,=\, \frac{P\,V}{R\,T}
 \end{equation}
 
-Quindi conoscendo il numero di moli contenute nella bottiglia, e conoscendo la massa del gas contenuto,
-abbiamo calcolato la massa molare dividendo la massa per il numero di moli:
+Quindi conoscendo la massa del gas contenuto,
+abbiamo calcolato la massa molare dividendola per il numero di moli:
 
 \begin{equation}
-	M_{mol} \,=\, \frac{m_{bott-piena} - m_{bott-vuota}}{n}\,=\,\frac{m}{n}
+	M_{mol} \,=\, \frac{m\ped{piena} - m\ped{vuota}}{n}\,=\,\frac{m}{n}
 \end{equation}
+%
+dove $m\ped{piena}$ indica la massa della bottiglia contenente il gas in esame, mentre $m\ped{vuota}$
+è la massa della bottiglia misurata di volta in volta prima che fosse riempita riempita di gas.
 
 Applicando a tutti i gas questo procedimento e propagando opportunamente l'incertezza
 abbiamo ottenuto i seguenti risultati. 
 
 \begin{center}
-    \begin{tabular}{c c c c c}
+    \small
+    \begin{tabular}{c c c c c c c}
         \toprule
-        Gas & P [\si{\kilo\pascal}] & m [\si{\gram}] & n [\si{\mole}] & M$_{mol}$ [\si{\gram\per\mole}] \\
+        Gas & P [\si{\kilo\pascal}] & m\ped{piena} [\si{\gram}] & m\ped{vuota} [\si{\gram}] & m [\si{\gram}] & n [\si{\mole}] & M$_{mol}$ [\si{\gram\per\mole}] \\
 %        Gas & Pressione [\si{\kilo\pascal}] & Massa [\si{\gram}] & Numero di moli [\si{\mole}] & Massa molare [\si{\gram\per\mole}] \\
         \midrule
-        Aria            & 300 &  9.0 & 0.339 $\pm$ 0.004 & 26.6 $\pm$ 0.3 \\
-        He              & 300 &  1.4 & 0.339 $\pm$ 0.004 &  4.1 $\pm$ 0.1 \\
-        N$_2$           & 290 &  8.7 & 0.327 $\pm$ 0.003 & 26.6 $\pm$ 0.3 \\
-        CO$_2$          & 290 & 14.1 & 0.327 $\pm$ 0.003 & 43.1 $\pm$ 0.5 \\
-        Ignoto          & 290 & 12.3 & 0.327 $\pm$ 0.003 & 37.6 $\pm$ 0.4 \\
+        Aria            & 300 & 1579.9 & 1570.9 &  9.0 & 0.339 $\pm$ 0.004 & 26.6 $\pm$ 0.3 \\
+        He              & 300 & 1571.6 & 1570.2 &  1.4 & 0.339 $\pm$ 0.004 &  4.1 $\pm$ 0.1 \\
+        N$_2$           & 290 & 1579.1 & 1570.4 &  8.7 & 0.327 $\pm$ 0.003 & 26.6 $\pm$ 0.3 \\
+        CO$_2$          & 290 & 1584.3 & 1570.2 & 14.1 & 0.327 $\pm$ 0.003 & 43.1 $\pm$ 0.5 \\
+        Ignoto          & 290 & 1582.8 & 1570.5 & 12.3 & 0.327 $\pm$ 0.003 & 37.6 $\pm$ 0.4 \\
         \bottomrule
     \end{tabular}
 \end{center}
 
-L'incertezza sulla pressione è pari all'incertezza di risoluzione ovvero \SI{3}{\kilo\pascal}, quella sulla massa
-è anch'essa di risoluzione ed è pari a \SI{0.04}{\gram}.
+L'incertezza sulla pressione è pari all'incertezza di risoluzione ovvero \SI{3}{\kilo\pascal}, l'errore di risoluzione sulle masse $m\ped{piena}$ e $m\ped{vuota}$ è \SI{0.03}{\gram}, mentre
+l'errore su $m$ è pari a \SI{0.04}{\gram}.
 
 Come si vede i risultati sono abbastanza buoni. Nel caso dell'aria il valore riportati in letteratura è di \SI{29}{\gram\per\mole},
 ma si riferisce all'aria anidra, fatto che può spiegare la discrepanza con il valore da noi osservato. Nel caso dell'elio
@@ -83,7 +80,7 @@ ancora dato, mostra un valore misurato un po' minore di quello ``vero'' \SI{40}{
 
 \subsection{Conclusioni}
 
-Nonostante la perdita di gas nella prima parte dell'esperienza, siamo comunque riusciti a ricavare una discreta analisi dell'andamento della pressione in funzione del tempo e un buon valore di pressione limite, sia per la pompa a mano che per la pompa a membrana.
+Nonostante la perdita di gas nella prima parte dell'esperienza, siamo comunque riusciti a ricavare una discreta analisi dell'andamento della pressione in funzione del tempo e un buon valore di pressione limite, per la pompa a mano. Tuttavia per quanto riguarda la pompa a membrana, i dati erano di qualità sufficiente e siamo riusciti a ricavare solo alcuni dati indicativi.
 
 A parte nel caso di elio e biossido di carbonio, i risultati ottenuti mostrano discrepanze piccole ma significative
 con i valori riportati in letteratura, che ci impediscono di identificare con certezza il gas ignoto. Ipotizziamo che ciò sia dovuto alla presenza di gas all'interno
