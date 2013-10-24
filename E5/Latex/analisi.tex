@@ -1,0 +1,32 @@
+\section{Esecuzione}
+
+Avendo a disposizione due tipi di pompe da vuoto, abbiamo deciso di ricavare la velocità di pompaggio per entrambi gli strumenti.
+
+Qundi per calcolare la velocità di pompaggio della pompa rotativa ci siamo mossi come segue:
+
+\begin{itemize}
+	\item{abbiamo isolato la pompa turbomolecolare;}
+	\item{grazie al baypass abbiamo svuotato la camera da vuoto fino alla pressione limite della pompa rotativa, che risulta essere di qualche Pascal;}
+	\item{successivamente abbiamo prodotto mediante l'utilizzo della valvola a spillo un flusso costante di gas all'interno della camera da vuoto. Questo e stato possibile girando un numero opportuno di vote la vite micrometrica della valvola;}
+	\item{quindi grazie al sistema di acquisiziione dati abbiamo registrato l'andamento della pressione interna alla camera in funzione del tempo. I dati sono stati presi finchè la curva non ha assunto una configurazine asitotica, ovvero fino a che la pressione in camera non si è stabilizzata attorno ad un valore costante;}
+	\item{una volta che la pressione i camera si è stabilizzata abbiamo svitato la microvite della valvola a spillo di un ulteriore giro e abbiamo registrato la variazione della pressione interna della camera in funzone del tempo;}
+	\item{abbiamo ripetuto quest'ultimo passaggio fino a che la microvite non e stata svitata di 9 tornate;}
+\end{itemize}
+
+Per calcolare la velocità di pompaggio della pompa turbomolecolare abbiamo seguito lo stesso procedimento descritto sopra fatta eccezzione che in questo caso il baypass non era attivo, in quanto il vuoto in camera è effettuato mediante la pompa turbolecolare.
+Un'altra differenza tra le due procedure risiede nel numero di giri della vite micrometrica che si sono fatti. Per la pompa rotativa siamo partiti da quattro giri della valvola a spillo fino ad arrivare al nono giro. Per la pompa turbomolecolare invece siamo partiti con un flusso di gas equivalnte ad un giro di valvola a spillo e siamo arrivati fino a sei giri di valvola. Facciamo notare che per la pompa turbomolecolare non è stato possibile fare ulteriori misure con un numero più elevato di giri in quanto la pressione in camera sarebbe risultata troppo elevata per il corretto funzionamento della pompa turbo, che lavora orrettamnte in regime molecolare ovvero a pressioni inferiori a qualche Pascal.
+Infine è doveroso sottolineare che per misurare la pressione in camera, quando era in azione la pompa turbomolecolare, non ci siamo più potuti avvalere el sistema di aquisizione dati connesso ai vacuometri Pirani, ma abbiamo douto utilizzare il vacuometro a catodo freddo, Penning. Quindi la lettura della pressione è stata presa una volta che questa sembrava essersi stabilizzata e quindi non vi erano repentine variazioni della misura.  
+
+\section{Analisi dati}
+
+Le condizioni ambientali presenti durante lo svolgimento di questa sessione di laboratorio sono le seguenti: tra le ore 14:00 e le 18:00 la temperatura e passata da 25$^\circ$ C a 27$^\circ$ C mentre la pressione atmosferica è rimasta stabile attorno ad un valore di circa $9.84\,\,10^4\, Pa$
+
+Grazie all'esperienza di laboratorio precedente durante la quale abbiamo tarato la valvola a spillo noi conosciamo il flusso di gas in ingresso alla cera da vuoto in funzione del numero di giri porteti sulla microite della valvola.
+Pertanto per ricavare la velocità di pompaggio delle nostre pompe ci avvaliamo della seguente relazione:
+
+\begin{equation}
+	S \,=\, \frac{Q}{P}
+\end{equation}
+%
+dove $S$ rappresenta la velocità di pompaggio della pompa in esame, $Q$ il flusso di gas in entrata nella camera da vuoto e $P$ rappresenta il valore della pressione una volta raggiunto l'andamento asintotico sopracitato. 
+
