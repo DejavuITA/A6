@@ -55,8 +55,22 @@ dQ = (
    6.7334e-04
 )
 
+   1.3980e-04   1.8617e-06
+   1.3821e-04   1.9620e-06
+   1.6286e-04   2.2002e-06
+   3.0668e-04   2.7229e-06
+   1.0383e-03   1.3016e-05
+   1.3067e-03   8.3042e-06
+   1.8431e-03   1.1322e-05
+   2.6026e-03   1.6312e-05
+   4.3632e-03   2.6838e-05
+   9.6295e-03   1.2289e-04
+   6.5170e-02   5.5883e-04
+   4.1163e-01   5.6583e-03
+   2.9884e+00   6.7334e-02
+
 def limit(da, a):
-    return round(sum(pressione[da:a]) / (a - da), 1);
+    return sum(pressione[da:a]) / (a - da);
 
 P = (
     limit(1750, 1925),
@@ -80,9 +94,28 @@ P2 = (
     limit(4800, 4880)
 )
 
+P_turbo = (
+    4.8e-3,
+    4.8e-3,
+    5e-3,
+    8.5e-3,
+    2.6e-2,
+    3.2e-2,
+    4.2e-2,
+    5.5e-2,
+    9e-2,
+    2.1e-1
+)
+
+S = [Q[3 + n]/p for n, p in enumerate(P2)]
+
+print Q
+print
 print "\n".join(map(str, P))
 print 
 print "\n".join(map(str, P2))
+print
+print "\n".join(map(str, [s for s in S]))
 
 if mpl:
     f = plt.figure(figsize=(10, 7.5))

@@ -163,6 +163,9 @@ dQ = sqrt(V.^2 .* (dB .^2 .+ sBg.^2) .+ (B .- Bg).^2 .* (dV^2));
 [Q dQ]
 %errorbar(giri, Q, dQ, "~")
 
+Qg = V .* Bg
+dQg = sqrt(V.^2 * sBg ^2 + Bg^2 * dV ^ 2)
+
 vP = P_atm .- [mean(Giro1(:, 2)), mean(Giro2(:, 2)), mean(Giro3(:, 2)),   mean(Giro4(:, 2)), mean(Giro50(:, 2)), mean(Giro52(:, 2)),   mean(Giro54(:, 2)), mean(Giro56(:, 2)), mean(Giro58(:, 2)),    mean(Giro6(:, 2)), mean(Giro7(:, 2)), mean(Giro8(:, 2)), mean(Giro9(:, 2))]';
 C = Q ./ P_atm;
 dC = sqrt((dQ ./ P_atm) .^ 2 + (Q * dP_atm ./ (P_atm .^ 2)) .^ 2);
