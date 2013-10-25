@@ -17,6 +17,13 @@ Per calcolare la velocità di pompaggio della pompa turbomolecolare abbiamo segu
 Un'altra differenza tra le due procedure risiede nel numero di giri della vite micrometrica che si sono fatti. Per la pompa rotativa siamo partiti da quattro giri della valvola a spillo fino ad arrivare al nono giro. Per la pompa turbomolecolare invece siamo partiti con un flusso di gas equivalnte ad un giro di valvola a spillo e siamo arrivati fino a sei giri di valvola. Facciamo notare che per la pompa turbomolecolare non è stato possibile fare ulteriori misure con un numero più elevato di giri in quanto la pressione in camera sarebbe risultata troppo elevata per il corretto funzionamento della pompa turbomolecolare, che lavora correttamnte in regime molecolare ovvero a pressioni inferiori a qualche Pascal.
 Infine è doveroso sottolineare che per misurare la pressione in camera, quando era in azione la pompa turbomolecolare, non ci siamo più potuti avvalere del sistema di aquisizione dati connesso ai vacuometri Pirani, ma abbiamo douto utilizzare il vacuometro a catodo freddo Penning. Quindi la lettura della pressione è stata presa una volta che questa sembrava essersi stabilizzata e quindi non vi erano repentine variazioni della misura.  
 
+\begin{figure}[b!]
+	\centering
+		\includegraphics[width = 15cm]{rotativa.pdf}
+		\label{fig:rotativa}
+	\caption{Il grafico mostra i valori elaborati della velocità di pompaggio della pompa rotativa in funzione della pressione limite raggiunta in camera. L'asse delle ascisse ha scala logaritmica mentre l'asse delle ordinate ha scala lineare.}
+\end{figure}
+
 \section{Analisi dati}
 
 Le condizioni ambientali presenti durante lo svolgimento di questa sessione di laboratorio sono le seguenti: tra le ore 14:00 e le 18:00 la temperatura e passata da 25$^\circ$ C a 27$^\circ$ C mentre la pressione atmosferica è rimasta stabile attorno ad un valore di circa $9.84\,\,10^4\, Pa$
@@ -37,13 +44,19 @@ Infine abbiamo deciso di confrontare i valori relativi alle velocità di pompagg
 %
 %
 
-Come si può notare i valori da noi trovati risultano essere inferiori, a volte anche in modo significativo, rispetto alle velocità di pompaggio indicate sul manuale dello strumento.
+Come si può notare, i valori da noi trovati risultano essere inferiori, a volte anche in modo significativo, rispetto alle velocità di pompaggio indicate sul manuale dello strumento.
 Tra i motivi che possono incidere su queste discrepanze fra i valori sperimentali e quelli teorici abbiamo ipotizzato che i più rilevanti siano:
-% l'usura della pompa stessa che porta ad una minore efficienza
 
 \begin{itemize}
 	\item{l'usura della pompa stessa che porta ad una minore efficienza;}
-	\item{i valori forniti dal costruttore si riferisce alla velocità di pompaggio alla bocca della pompa e non tengono conto della conduttanza delle canalizzazioni tra i vari componenti dell'impianto da vuoto. Tale differenza è particolarmente evidente soprattutto per la pompa rotativa. Infatti questa non era collegata direttamente alla camera da vuoto come lo era la pompa turbomolecolare, ma tramite un tubo di circa un metro di lunghezza;}%stimiamo la conduttanza???
+	\item{i valori forniti dal costruttore si riferiscono alla velocità di pompaggio alla bocca della pompa e non tengono conto della conduttanza delle canalizzazioni tra i vari componenti dell'impianto da vuoto. Tale differenza è particolarmente evidente soprattutto per la pompa rotativa. Infatti questa non era collegata direttamente alla camera da vuoto come lo era la pompa turbomolecolare, ma tramite un tubo di circa un metro di lunghezza;}%stimiamo la conduttanza???
 \end{itemize}
 
 \input{tab.tex}
+
+\begin{figure}[b]
+	\centering
+		\includegraphics[width=14cm]{turbo.pdf}
+		\label{fig:turbo}
+	\caption{Il grafico mostra i valori elaborati della velocità di pompaggio della pompa turbomolecolare in funzione della pressione limite raggiunta in camera. L'asse delle ascisse ha scala logaritmica mentre l'asse delle ordinate ha scala lineare.}
+\end{figure}
