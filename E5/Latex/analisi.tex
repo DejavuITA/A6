@@ -22,58 +22,58 @@ si è raggiunto il vuoto limite della turbomolecolare prima di iniziare le misur
 Un'altra differenza tra le procedure seguite per le differenti pompe risiede nei flussi che abbiamo deciso di misurare.
 Mentre nel caso della pompa rotativa abbiamo misurato le pressioni limite aprendo la valvola a spillo da 4 a 9 giri,
 per la pompa turbomolecolare siamo partiti da un solo giro fino a 6 giri di valvola.
-Infatti la pompa rotativa ha una pressione di vuoto limite alta, che non avrebbe permesso
+La pompa rotativa ha infatti una pressione di vuoto limite alta, che non avrebbe permesso
 una corretta misura della velocità di pompaggio per flussi troppo piccoli (come si vede bene dal grafico
-riportato nella sezione di analisi dati), come quelli ottenibili per .
-Facciamo notare che per la pompa turbomolecolare non è stato possibile fare ulteriori misure
-con un numero più elevato di giri in quanto la pressione in camera sarebbe risultata troppo elevata per il corretto
-funzionamento della pompa turbomolecolare, che lavora correttamnte in regime molecolare ovvero a pressioni inferiori a qualche Pascal.
+riportato nella sezione di analisi dati), come quelli ottenibili al di sotto dei 4 giri della valvola a spillo.
+La turbomolecolare, invece, deve lavorare in regimi molecolari, e non ci siamo fidati ad aprire la valvola più di 6 giri.
+Un flusso in ingresso troppo alto può infatti danneggiare la pompa. 
 
 Infine è doveroso sottolineare che per misurare la pressione in camera, quando era in azione la pompa turbomolecolare,
-non ci siamo più potuti avvalere del sistema di aquisizione dati connesso ai vacuometri Pirani, ma abbiamo douto utilizzare
-il vacuometro a catodo freddo Penning. Quindi la lettura della pressione è stata presa una volta che questa sembrava
-essersi stabilizzata e quindi non vi erano repentine variazioni della misura.  
+non ci siamo più potuti avvalere del sistema di aquisizione dati informatizzato, connesso ai vacuometri Pirani, ma abbiamo douto utilizzare
+il vacuometro a catodo freddo (Penning). Quindi la lettura della pressione è stata presa una volta che questa si era stabilizzata.  
 
 \begin{figure}[b!]
 	\centering
 		\includegraphics[width = 15cm]{rotativa.pdf}
+	\caption{Il grafico mostra i valori elaborati della velocità di pompaggio della pompa rotativa in funzione della pressione limite raggiunta in camera. L'asse delle ascisse ha scala logaritmica mentre l'asse delle ordinate ha scala lineare. La velocità di pompaggio, ridotta a basse pressioni, aumenta e si stabilizza all'aumentare della pressione. Questo ha senso, poiché la pompa rotativa funziona bene in regimi viscosi, mentre a pressioni basse il gas è troppo rarefatto, e la pompa diventa poco efficiente.}
 		\label{fig:rotativa}
-	\caption{Il grafico mostra i valori elaborati della velocità di pompaggio della pompa rotativa in funzione della pressione limite raggiunta in camera. L'asse delle ascisse ha scala logaritmica mentre l'asse delle ordinate ha scala lineare.}
 \end{figure}
 
 \section{Analisi dati}
 
-Le condizioni ambientali presenti durante lo svolgimento di questa sessione di laboratorio sono le seguenti: tra le ore 14:00 e le 18:00 la temperatura e passata da 25$^\circ$ C a 27$^\circ$ C mentre la pressione atmosferica è rimasta stabile attorno ad un valore di circa $9.84\,\,10^4\, Pa$
+Le condizioni ambientali presenti durante lo svolgimento di questa sessione di laboratorio sono le seguenti: tra le ore 14:00 e le 18:00 la temperatura e passata da 25$^\circ$ C a 27$^\circ$ C mentre la pressione atmosferica è rimasta stabile attorno ad un valore di circa $9.84 \cdot 10^4\, \si{\Pa}$
 
-Grazie all'esperienza di laboratorio precedente durante la quale abbiamo tarato la valvola a spillo noi conosciamo il flusso di gas in ingresso alla camera da vuoto in funzione del numero di giri apportati alla vite micrometrica della valvola.
+Grazie all'esperienza di laboratorio precedente, durante la quale abbiamo tarato la valvola a spillo, conosciamo il flusso di gas in ingresso alla camera da vuoto per alcuni valori di apertura della valvola.
 Pertanto per ricavare la velocità di pompaggio delle nostre pompe ci avvaliamo della seguente relazione:
 
 \begin{equation}
 	S \,=\, \frac{Q}{P}
 \end{equation}
 %
-dove $S$ rappresenta la velocità di pompaggio della pompa in esame, $Q$ il flusso di gas in entrata nella camera da vuoto e $P$ rappresenta il valore della pressione una volta raggiunto l'andamento asintotico sopracitato. 
-%
-%
-%
-%
-Infine abbiamo deciso di confrontare i valori relativi alle velocità di pompaggio da noi ottenuti con quelli forniteci dai costruttori. I dati forniti dalle case costruttrici sono i seguenti:
-%
-%
+dove $S$ rappresenta la velocità di pompaggio della pompa in esame, $Q$ il flusso di gas in entrata nella camera da vuoto e $P$ rappresenta il valore della pressione una volta raggiunto l'andamento asintotico sopracitato. Infine abbiamo confrontato i valori relativi alle velocità di pompaggio da noi ottenuti con quelli forniti dai costruttori. I manuali riportano una velocità di pompaggio di $S\ped{r} = \SI{7.5}{\cubic\metre\per\hour} = \SI{2}{\cubic\deci\metre\per\second}$ per la pompa rotativa e di $S\ped{t} = \SI{60}{\cubic\deci\metre\per\second}$ per la turbo.
 
-Come si può notare, i valori da noi trovati risultano essere inferiori, a volte anche in modo significativo, rispetto alle velocità di pompaggio indicate sul manuale dello strumento.
-Tra i motivi che possono incidere su queste discrepanze fra i valori sperimentali e quelli teorici abbiamo ipotizzato che i più rilevanti siano:
+I dati calcolati con l'equazione precedente sono riportati in Tabella \ref{tab:speed}. I valori ottenuti sono buoni.
+Nel caso della rotativa si vede che, a 7, 8 e 9 giri di apertura della valvola, la velocità di pompaggio è vicina a quella riportata
+nel manuale. Anche nel caso della turbo, la velocità di pompaggio a pressione alte si avvicina abbastanza a quella riportata nel manuale.
+I grafici in Figura \ref{fig:rotativa} e in Figura \ref{fig:turbo}, sono un aiuto grafico alla lettura della tabella, e mostrano,
+rispettivamente, le velocità di pompaggio in funzione della pressione per la rotativa e la turbo.
 
-\begin{itemize}
-	\item{l'usura della pompa stessa che porta ad una minore efficienza;}
-	\item{i valori forniti dal costruttore si riferiscono alla velocità di pompaggio alla bocca della pompa e non tengono conto della conduttanza delle canalizzazioni tra i vari componenti dell'impianto da vuoto. Tale differenza è particolarmente evidente soprattutto per la pompa rotativa. Infatti questa non era collegata direttamente alla camera da vuoto come lo era la pompa turbomolecolare, ma tramite un tubo di circa un metro di lunghezza;}%stimiamo la conduttanza???
-\end{itemize}
+Tuttavia, i valori da noi trovati risultano essere inferiori, a volte anche in modo significativo,
+rispetto alle velocità di pompaggio di riferimento. Tra i motivi che possono incidere su
+queste discrepanze fra i valori sperimentali e quelli teorici abbiamo ipotizzato che i più rilevanti siano:
 
 \input{tab.tex}
+
+\begin{itemize}
+    \item{a basse pressione le pompe non lavorano al massimo della loro velocità di pompaggio poiché i gas sono rarefatti.}
+	\item{l'usura della pompa stessa che porta ad una minore efficienza dopo un certo periodo di tempo;}
+	\item{i valori forniti dal costruttore si riferiscono alla velocità di pompaggio alla bocca della pompa e non tengono conto della conduttanza delle canalizzazioni tra i vari componenti dell'impianto da vuoto. Tale differenza è particolarmente evidente soprattutto per la pompa rotativa. Infatti questa non era collegata direttamente alla camera da vuoto come lo era la pompa turbomolecolare, ma tramite un tubo di circa un metro di lunghezza;}
+\end{itemize}
+
 
 \begin{figure}[b]
 	\centering
 		\includegraphics[width=14cm]{turbo.pdf}
-		\label{fig:turbo}
 	\caption{Il grafico mostra i valori elaborati della velocità di pompaggio della pompa turbomolecolare in funzione della pressione limite raggiunta in camera. L'asse delle ascisse ha scala logaritmica mentre l'asse delle ordinate ha scala lineare.}
+		\label{fig:turbo}
 \end{figure}
