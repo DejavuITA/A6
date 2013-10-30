@@ -42,7 +42,7 @@ dQ = (
 
 if mpl:
     f = plt.figure(figsize=(10, 7.5))
-    f.suptitle("Portata in funzione del numero di giri",
+    f.suptitle("Flusso in funzione del numero di giri",
         y=0.96, fontsize=16)
 
     ax = f.add_subplot(1, 1, 1)
@@ -51,7 +51,7 @@ if mpl:
     ax.errorbar(x=N, y=Q, yerr=dQ,
         fmt="o", c="black")
 
-    ax.set_ylabel(r'Portata Q [$Pa \, m^3 s^{-1}$]',
+    ax.set_ylabel(r'Flusso $Q_{valve}$ [$Pa \, m^3 s^{-1}$]',
         labelpad=6, fontsize=14)
     ax.set_xlabel(u'Apertura del micrometro [giri]',
         labelpad=6, fontsize=14)

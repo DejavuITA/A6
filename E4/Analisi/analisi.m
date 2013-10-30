@@ -166,9 +166,10 @@ dQ = sqrt(V.^2 .* (dB .^2 .+ sBg.^2) .+ (B .- Bg).^2 .* (dV^2));
 Qg = V .* Bg
 dQg = sqrt(V.^2 * sBg ^2 + Bg^2 * dV ^ 2)
 
-vP = P_atm .- [mean(Giro1(:, 2)), mean(Giro2(:, 2)), mean(Giro3(:, 2)),   mean(Giro4(:, 2)), mean(Giro50(:, 2)), mean(Giro52(:, 2)),   mean(Giro54(:, 2)), mean(Giro56(:, 2)), mean(Giro58(:, 2)),    mean(Giro6(:, 2)), mean(Giro7(:, 2)), mean(Giro8(:, 2)), mean(Giro9(:, 2))]';
-C = Q ./ P_atm;
-dC = sqrt((dQ ./ P_atm) .^ 2 + (Q * dP_atm ./ (P_atm .^ 2)) .^ 2);
+vP = P_atm .- [mean(Giro1(:, 2) * 100), mean(Giro2(:, 2) * 100), mean(Giro3(:, 2) * 100), mean(Giro4(:, 2) * 100), mean(Giro50(:, 2) * 100), mean(Giro52(:, 2) * 100),   mean(Giro54(:, 2) * 100), mean(Giro56(:, 2) * 100), mean(Giro58(:, 2) * 100), mean(Giro6(:, 2) * 100), mean(Giro7(:, 2) * 100), mean(Giro8(:, 2) * 100), mean(Giro9(:, 2) * 100)]';
+dvP = sqrt(dP_atm.^2 .+ [dGiro1, dGiro2, dGiro3, dGiro4, dGiro50, dGiro52, dGiro54, dGiro56, dGiro58, dGiro6, dGiro7, dGiro8, dGiro9]);
+C = Q ./ vP;
+dC = sqrt((dQ ./ vP) .^ 2 + (Q * dvP ./ (vP .^ 2)) .^ 2);
 [C dC]
 
 vm = sqrt(8 * 8.3144 * 293 / (pi * 0.029));
