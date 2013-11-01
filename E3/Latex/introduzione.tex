@@ -35,22 +35,24 @@ ovvero che l'impianto soddisfacesse i seguenti requisiti:
 	\item{si deve poter misurare la pressione in camera con i diversi strumenti a nostra disposizione;}
 \end{itemize}
 
-Seguendo questi requisiti abbiamo realizzato uno schema su carta dell'impianto tenendo conto del materiale a nostra disposizione. Dopo aver realizzato lo schema, abbiamo montato l'impianto facendo attenzione ad associare ad ogni flangia il corretto O-ring e a fissarli con la corretta cravatta chiudendola adeguatamente. Lo schema dell'impianto è riportato in Figura \ref{fig:schema}.
+Seguendo questi requisiti abbiamo realizzato uno schema su carta dell'impianto tenendo conto del materiale a nostra disposizione. Dopo aver realizzato lo schema, abbiamo montato l'impianto facendo attenzione ad associare ad ogni flangia il corretto O-ring e la corretta cravatta, fissando il tutto adeguatamente. Lo schema dell'impianto è riportato in Figura \ref{fig:schema}.
 
 \subsection{Funzionamento dell'impianto da vuoto}
 \paragraph{Creazione del prevuoto\\}
 Il prevuoto, necessario per avviare la pompa turbomolecolare, è stato ottenuto avviando semplicemente avviando la pompa rotativa, tenendo chiusa la sola valvola che collega direttamente la camera da vuoto e l'atmosfera.
+\paragraph{Vuoto in camera\\}
+Per creare il vuoto in camera è sufficiente creare il prevuoto con la pompa rotativa. Una volta raggiunte le condizioni adatte, cioé il sistema è ad una pressione dell'ordine di qualche \si{\Pa}, si chiude la valvola del bypass e si può accendere la pompa turbomolecolare. Una volta eseguiti questi passi basta lasciare lavorare il sistema affinché arrivi alla sua pressione limite o alla pressione desiderata. % da rivedere, non mi piace come l'ho scritto. inoltre non sono sicuro sul vuoto limite della rotativa.
 \paragraph{Rientro di aria a pressione atmosferica in camera\\}
 Per effettuare il rientro di aria in camera è necessario prima di tutto chiudere la valvola gate, in modo che la pompa turbomolecolare non subisca variazioni di pressione, lasciando che la pompa rotativa aspiri il fondo della turbo. Quindi basta aprire la valvola che collega la camera da vuoto con l'atmosfera
 \paragraph{Vuoto in camera con pompa turbomolecolare isolata\\} % non mi piace il titolo
-Per ritornare ad una bassa pressione in camera, dalla situazione descritta nel paragrafo precedente, è necessario chiudere la valvola a fondo della turbo per isolarla completamente. In seguito si deve aprire la valvola del bypass in modo tale da creare il vuoto in camera con la pompa rotativa. Una volta che la pressione segnalata da entrambi i vacuometri Pirani è uguale, si può aprire la valvola a fondo della pompa turbomolecolare e chiudere la valvola del bypass. Le operazioni fin qui descritte vanno eseguite con una certa lena per evitare che a fondo della pompa turbomolecolare si crei una zona con pressione troppo elevata. L'ultima operazione è quella di aprire lentamente la valvola gate, in modo da non sforzare la pompa turbomolecolare, per poi lasciare che l'impianto si riporti in condizione di vuoto limite. % assolutamente da rivedere
+Per ritornare ad una bassa pressione in camera, dalla situazione descritta nel paragrafo precedente, è necessario chiudere la valvola a fondo della turbo per isolarla completamente. In seguito si deve aprire la valvola del bypass in modo tale da creare il vuoto in camera con la pompa rotativa. Una volta che la pressione segnalata da entrambi i vacuometri Pirani è uguale, si può aprire la valvola a fondo della pompa turbomolecolare e chiudere la valvola del bypass. Le operazioni fin qui descritte vanno eseguite con una certa lena per evitare che a fondo della pompa turbomolecolare si crei una zona con pressione troppo elevata. L'ultima operazione è quella di aprire lentamente la valvola gate, in modo da non sforzare la pompa turbomolecolare, per poi lasciare che l'impianto si riporti in condizione di vuoto limite. % *assolutamente* da rivedere
 \paragraph{Vacuometri a catodo caldo e a catodo freddo\\}
 Si è prestata attenzione all'accensione e allo spegnimento di tali vacuometri onde evitare di provocare danni. Il vacuometro a catodo caldo infatti deve operare al di sotto dei $10^{-4}$ \si{\pascal} affinché non si bruci il filamento al suo interno. Il vacuometro a catodo freddo invee deve operare al di sotto dei $10^{-4}$ affinché non si ossidi la superficie interna. % non ho idea di quello che sto dicendo (per il catodo freddo si intende...).
 
 \subsection{Taratura dei vacuometri Pirani}
 
 Per tarare il vacuometro Pirani, che misurava la pressione in camera, abbiamo portato la pressione oltre il limite inferiore
-della sensibilità dello strumento, specificato nel manuale. Il manuale riporta un range massimo di funzionamento che va da $10^{-2}$ \si{\pascal} fino a $10^5$ \si{\pascal}, anche se l'intervallo in cui la precisione è buona è tra 0.1 \si{\pascal} e $10^4$ \si{\pascal}. Abbiamo quindi impostato il voltaggio in uscita al valore di 2 Volt lavorando su un potenziometro. Dopo aver isolato la pompa turbomolecolare dal resto dell'impianto abbiamo riportato la pressione della camera alla pressione atmosferica. A questo punto si è impostato il valore di output del sensore a 10 Volt, lavorando su un secondo potenziometro. Infine abbiamo riportato la pressione in camera a bassa pressione per controllare che il voltaggio al limite inferiore fosse ancora 2 Volt. Può succedere infatti che nella regolazione del secondo potenziometro il primo si stari.
+della sensibilità dello strumento, specificato nel manuale. Il manuale riporta un range massimo di funzionamento che va da $10^{-2}$ \si{\pascal} fino a $10^5$ \si{\pascal}, anche se l'intervallo in cui la precisione è buona è tra 0.1 \si{\pascal} e $10^4$ \si{\pascal}. Abbiamo quindi impostato il voltaggio in uscita al valore di 2 Volt lavorando su un potenziometro. Dopo aver isolato la pompa turbomolecolare dal resto dell'impianto abbiamo riportato la pressione della camera alla pressione atmosferica. A questo punto si è impostato il valore di output del sensore a 10 Volt, lavorando su un secondo potenziometro. Infine abbiamo riportato la pressione in camera a bassa pressione per controllare che il voltaggio al limite inferiore fosse ancora 2 Volt. Può succedere infatti che nella regolazione del secondo potenziometro, il primo si stari.
 
 \subsection{Qualche dato}
 
@@ -59,6 +61,8 @@ La pressione da noi raggiunta, come misurata con il vacuometro a catodo caldo, �
 \begin{equation}
     P = 6.85 \cdot 10^{-4} \; \si{\pascal}
 \end{equation}
+
+% sarebbe meglio aggiungere anche il vuoto limite raggiunto con la sola pompa rotativa, se ce l'abbiamo.
 
 \begin{figure}[b!]
     \centering
@@ -72,3 +76,5 @@ La pressione da noi raggiunta, come misurata con il vacuometro a catodo caldo, �
 % direi che al grafico manca una legenda e dei riferimenti per capire cosa sono
 % le cose attaccate al sistema. per indicare quali sono i vacuometri pirani/a catodo
 % caldo/ a catodo freddo etc etc etc
+
+% continuo a sostenere le cose scritte qua sopra :) che programmino hai usato pasa per fare lo schema?
