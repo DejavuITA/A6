@@ -1,0 +1,98 @@
+source("../../algoritmi/alg1.m");
+source("../../algoritmi/utils.m");
+
+Q = csvread("../Dati/flussi.csv")(:, 1);
+dQ = csvread("../Dati/flussi.csv")(:, 2);
+
+% percentuale errore
+per_err = 0.1;
+
+% La nomenclatura fa cagare, lo so....
+% leggiamo i dati
+P1_L4 = csvread("../Dati/tubo_8000x4.csv")(:, 1);
+dP1_L4 = P1_L4 .* per_err;
+P2_L4 = csvread("../Dati/tubo_8000x4.csv")(:, 2);
+dP2_L4 = P2_L4 .* per_err;
+
+P1_C4 = csvread("../Dati/tubo_800x4.csv")(:, 1);
+dP1_C4 = P1_C4 .* per_err;
+P2_C4 = csvread("../Dati/tubo_800x4.csv")(:, 2);
+dP2_C4 = P2_C4 .* per_err;
+
+P1_L25 = csvread("../Dati/tubo_8000x2.5.csv")(:, 1);
+dP1_L25 = P1_L25 .* per_err;
+P2_L25 = csvread("../Dati/tubo_8000x2.5.csv")(:, 2);
+dP2_L25 = P2_L25 .* per_err;
+
+P1_C25 = csvread("../Dati/tubo_800x2.5.csv")(:, 1);
+dP1_C25 = P1_C25 .* per_err;
+P2_C25 = csvread("../Dati/tubo_800x2.5.csv")(:, 2);
+dP2_C25 = P2_C25 .* per_err;
+
+% ora abbiamo due dati per ciascun valore di flusso, mediamoli :-) neologismo
+% è un po' un bordello, perché devo rovesciare l'ordine dei di metà sequenza di pressioni
+P1_L4_m = mean([P1_L4(1:6)'; P1_L4(12:-1:7)'])';
+dP1_L4_m = sqrt(dP1_L4(1:6)'.^2 .+ dP1_L4(12:-1:7)'.^2)';
+P2_L4_m = mean([P2_L4(1:6)'; P2_L4(12:-1:7)'])';
+dP2_L4_m = sqrt(dP2_L4(1:6)'.^2 .+ dP2_L4(12:-1:7)'.^2)';
+
+P1_C4_m = mean([P1_C4(1:6)'; P1_C4(12:-1:7)'])';
+dP1_C4_m = sqrt(dP1_C4(1:6)'.^2 .+ dP1_C4(12:-1:7)'.^2)';
+P2_C4_m = mean([P2_C4(1:6)'; P2_C4(12:-1:7)'])';
+dP2_C4_m = sqrt(dP2_C4(1:6)'.^2 .+ dP2_C4(12:-1:7)'.^2)';
+
+P1_L25_m = mean([P1_L25(1:6)'; P1_L25(12:-1:7)'])';
+dP1_L25_m = sqrt(dP1_L25(1:6)'.^2 .+ dP1_L25(12:-1:7)'.^2)';
+P2_L25_m = mean([P2_L25(1:6)'; P2_L25(12:-1:7)'])';
+dP2_L25_m = sqrt(dP2_L25(1:6)'.^2 .+ dP2_L25(12:-1:7)'.^2)';
+
+P1_C25_m = mean([P1_C25(1:6)'; P1_C25(12:-1:7)'])';
+dP1_C25_m = sqrt(dP1_C25(1:6)'.^2 .+ dP1_C25(12:-1:7)'.^2)';
+P2_C25_m = mean([P2_C25(1:6)'; P2_C25(12:-1:7)'])';
+dP2_C25_m = sqrt(dP2_C25(1:6)'.^2 .+ dP2_C25(12:-1:7)'.^2)';
+
+% calcolo il delta pressione
+DP_L4 = P2_L4_m .- P1_L4_m;
+dDP_L4 = sqrt(dP1_L4_m .^ 2 .+ dP2_L4_m .^ 2);
+
+DP_C4 = P2_C4_m .- P1_C4_m;
+dDP_C4 = sqrt(dP1_C4_m .^ 2 .+ dP2_C4_m .^ 2);
+
+DP_L25 = P2_L25_m .- P1_L25_m;
+dDP_L25 = sqrt(dP1_L25_m .^ 2 .+ dP2_L25_m .^ 2);
+
+DP_C25 = P2_C25_m .- P1_C25_m;
+dDP_C25 = sqrt(dP1_C25_m .^ 2 .+ dP2_C25_m .^ 2);
+
+% calcolo la pressione a metà tubo (interpolazione lineare)
+P_L4 = P1_L4_m .+ DP_L4 ./ 2;
+P_C4 = P1_C4_m .+ DP_C4 ./ 2;
+P_L25 = P1_L25_m .+ DP_L25 ./ 2;
+P_C25 = P1_C25_m .+ DP_C25 ./ 2;
+
+% conduttanze
+C_L4 = Q(5:end) ./ DP_L4(2:end);
+dC_L4 = sqrt((dQ(5:end) ./ DP_L4(2:end)).^2 .+ (Q(5:end) ./ (DP_L4(2:end).^2) .* dDP_L4(2:end)).^2);
+
+C_C4 = Q(5:end) ./ DP_C4(2:end);
+dC_C4 = sqrt((dQ(5:end) ./ DP_C4(2:end)).^2 .+ (Q(5:end) ./ (DP_C4(2:end).^2) .* dDP_C4(2:end)).^2);
+
+C_L25 = Q(5:end) ./ DP_L25(2:end);
+dC_L25 = sqrt((dQ(5:end) ./ DP_L25(2:end)).^2 .+ (Q(5:end) ./ (DP_L25(2:end).^2) .* dDP_L25(2:end)).^2);
+
+C_C25 = Q(5:end) ./ DP_C25(2:end);
+dC_C25 = sqrt((dQ(5:end) ./ DP_C25(2:end)).^2 .+ (Q(5:end) ./ (DP_C25(2:end).^2) .* dDP_C25(2:end)).^2);
+
+display("CONDUTTANZE");
+
+display("Lungo 4");
+display([C_L4, dC_L4]);
+
+display("Corto 4");
+display([C_C4, dC_C4]);
+
+display("Lungo 2.5");
+display([C_L25, dC_L25]);
+
+display("Corto 2.5");
+display([C_C25, dC_C25]);
