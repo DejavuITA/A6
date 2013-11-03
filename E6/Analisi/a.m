@@ -7,6 +7,13 @@ dQ = csvread("../Dati/flussi.csv")(:, 2);
 % percentuale errore
 per_err = 0.1;
 
+% ambiente...
+T = 23 + 273;
+dT = 1 / sqrt(12);
+
+% viscosità aria a 23 °C
+n = 1.85e-5;
+
 % La nomenclatura fa cagare, lo so....
 % leggiamo i dati
 P1_L4 = csvread("../Dati/tubo_8000x4.csv")(:, 1);
@@ -66,9 +73,26 @@ dDP_C25 = sqrt(dP1_C25_m .^ 2 .+ dP2_C25_m .^ 2);
 
 % calcolo la pressione a metà tubo (interpolazione lineare)
 P_L4 = P1_L4_m .+ DP_L4 ./ 2;
+dP_L4 = sqrt(dP1_L4_m.^2 .+ dDP_L4.^2 / 4);
+
 P_C4 = P1_C4_m .+ DP_C4 ./ 2;
+dP_C4 = sqrt(dP1_C4_m.^2 .+ dDP_C4.^2 / 4);
+
 P_L25 = P1_L25_m .+ DP_L25 ./ 2;
+dP_L25 = sqrt(dP1_L25_m.^2 .+ dDP_L25.^2 / 4);
+
 P_C25 = P1_C25_m .+ DP_C25 ./ 2;
+dP_C25 = sqrt(dP1_C25_m.^2 .+ dDP_C25.^2 / 4);
+
+% discriminante
+j_L4 = P_L4(2:end) .* 0.004;
+j_C4 = P_C4(2:end) .* 0.004;
+j_L25 = P_L25(2:end) .* 0.0025;
+j_C25 = P_C25(2:end) .* 0.0025;
+
+% numero di Reynolds
+r_4 = 4 / (pi * n * 0.004) * 0.029 / (8.314 * T) * Q(5:end)
+r_25 = 4 / (pi * n * 0.0025) * 0.029 / (8.314 * T) * Q(5:end)
 
 % conduttanze
 C_L4 = Q(5:end) ./ DP_L4(2:end);
@@ -83,16 +107,32 @@ dC_L25 = sqrt((dQ(5:end) ./ DP_L25(2:end)).^2 .+ (Q(5:end) ./ (DP_L25(2:end).^2)
 C_C25 = Q(5:end) ./ DP_C25(2:end);
 dC_C25 = sqrt((dQ(5:end) ./ DP_C25(2:end)).^2 .+ (Q(5:end) ./ (DP_C25(2:end).^2) .* dDP_C25(2:end)).^2);
 
+% conduttanze teoriche
+C_lam_L4 = 1350 .* P_L4(2:end) .* 0.004.^4 ./ 8;
+C_lam_C4 = 1350 .* P_C4(2:end) .* 0.004.^4 ./ 0.8;
+C_lam_L25 = 1350 .* P_L25(2:end) .* 0.0025.^4 ./ 8;
+C_lam_C25 = 1350 .* P_C25(2:end) .* 0.0025.^4 ./ 0.8;
+
+C_mol_L4 = 120 .* 0.004.^3 ./ 8
+C_mol_C4 = 120 .* 0.004.^3 ./ 0.8
+C_mol_L25 = 120 .* 0.0025.^3 ./ 8
+C_mol_C25 = 120 .* 0.0025.^3 ./ 0.8
+
+% empty line
+display("");
+
+
+% data printing
 display("CONDUTTANZE");
 
 display("Lungo 4");
-display([C_L4, dC_L4]);
+display([C_L4, dC_L4, j_L4, C_lam_L4]);
 
 display("Corto 4");
-display([C_C4, dC_C4]);
+display([C_C4, dC_C4, j_C4, C_lam_C4]);
 
 display("Lungo 2.5");
-display([C_L25, dC_L25]);
+display([C_L25, dC_L25, j_L25, C_lam_L25]);
 
 display("Corto 2.5");
-display([C_C25, dC_C25]);
+display([C_C25, dC_C25, j_C25, C_lam_C25]);
