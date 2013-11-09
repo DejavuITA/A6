@@ -7,12 +7,13 @@
 \section{Esecuzione}
 
 L'impianto realizzato è schematizzato in figura \ref{fig:schema}. I vacuometri pirani sono stati disposti
-immediatamente ai capi del tubo. Indicheremo le pressioni ai due capi come $P1$ e $P2$, come riportato in figura.
+immediatamente ai capi del tubo. Indicheremo le pressioni ai due capi come $P_1$ e $P_2$, come riportato in figura.
 La valvola a spillo è stata collocata in fondo all'impianto. È stata mantenuta
 aperta la valvola ausiliaria della stessa al fine di evitare problemi con i volumi morti. 
 
+% vuoto limite???
 Dopo aver montato l'impianto abbiamo avviato la pompa rotativa, e aspettato di raggiungere il vuoto limite all'interno
-del tubo. Per fare ciò abbiamo monitorato al PC l'andamento della pressione al capo $P2$, assicurandoci che la pressione
+del tubo. Per fare ciò abbiamo monitorato al PC l'andamento della pressione al capo $P_2$, assicurandoci che la pressione
 si fosse stabilizzata prima di aprire la valvola micrometrica.
 
 Una volta raggiunta la pressione limite abbiamo aperto la valvola micrometrica ad un valore per il quale ci fosse noto
@@ -24,8 +25,93 @@ tubi in esame. Inoltre, per ogni tubo, abbiamo misurato le pressioni aumentando 
 a spillo per poi misurarle nuovamente chiudendola fino a tornare al valore iniziale.
 
 Durante la sessione di laboratorio abbiamo registrato delle condizioni atmosferiche stabili: $P\ped{atm} = 981 \pm 1$ hPa,
-$T = 296 \pm 1 \si{\kelvin}$. Entrambe le misure riportano incertezze di risoluzione.
+$T = 296 \pm 1 \, \si{\kelvin}$. Entrambe le misure riportano incertezze di risoluzione.
 
 \section{Analisi dati}
 
+% qui non si sa se serve fare la media delle medie.... roba assurda lo so
+Vogliamo ora calcolare i valori di conduttanza dei tubi. Poiché abbiamo registrato due volte le pressioni per ogni valore
+di apertura della valvola (una salendo ed una scendendo), dobbiamo prima fare la media tra questi due dati
 
+Ora disponiamo, per ciascun tubo e per ciascun valore di apertura della valvola, delle pressioi ai capi del tubo.
+A noi interessa la differenza di pressione $\Delta P = P_2 - P_1$, che possiamo usare per calcolare la conduttanza:
+
+\begin{equation}
+    C = \frac{Q}{\Delta P}
+\end{equation}
+
+I risultati sono riportati nelle tabelle in fondo alla sezione di analisi dati.
+
+Dopo aver ottenuto le conduttanze, vogliamo confrontare i valori ricavati con i valori teorici.
+Per ottenere i valori teorici dobbiamo essere a conoscenza del tipo di regime di flusso in cui è stato svolto l'esperimento,
+poichè le formule che permettono di calcolare la conduttanza sono differenti per diversi regimi di flusso.
+A questo fine calcoliamo il \emph{numero di Knudsen}, o meglio un indicatore equivalente che risulta più comodo da
+ottenere con i dati in nostro possesso. L'indicatore è il prodotto $\bar{P}d$, dove $\bar{P}$ è la pressione media misurata nel
+tubo e $d$ è il diametro del tubo. Questo indicatore discrimina i regimi di flusso secondo la seguente tabella.
+
+\begin{center}
+    \begin{tabular}{l c c}
+        \toprule
+        Regime & Tipo di vuoto & $\bar{P} d \; [\si{\pascal\metre}]$ \\
+        \midrule
+        Viscoso & Basso & $\bar{P} d > 0.6$ \\
+        Transitorio & Medio & $1.3\cdot10^{-2} \le \bar{P} d \le 0.6$ \\
+        Intermedio & Alto & $\bar{P} d < 1.3\cdot10^{-2}$ \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+Per calcolare l'indicatore ci serve $\bar{P}$, che si ottiene con una semplice operazione di media:
+
+\begin{equation}
+    \bar{P} = \frac{P_1 + P_2}{2}
+\end{equation}
+
+Calcolando l'indicatore per ogni tubo e per ogni apertura della valvola, abbiamo scoperto che gran parte
+del nostro esperimento si è svolto in regime transitorio ed in regime viscoso, mentre in neanche un caso abbiamo
+lavorato in regime molecolare. Le conduttanze si possono calcolare teoricamente per il regime molecolare e quello
+viscoso laminare, mentre per quello intermedio non esiste una formula esplicita. Ci aspettiamo quindi che le nostre
+conduttanze siano una via di mezzo tra quelle teoriche per i due casi.
+
+Prima di passare ai calcoli teorici, dobbiamo però verificare che i flussi in camera fossero laminari nel
+caso in cui il sistema lavorasse in regime viscoso. % sorry for the mess
+A questo fine usiamo il \emph{numero di Reynolds}, che per un tubo è definito come segue:
+
+\begin{equation}
+    R_e = \frac{4 M Q}{\pi \eta d R T}
+\end{equation}
+%
+dove $M$ è la massa molare del gas, $Q$ il flusso, $\eta$ la viscosità\footnote{ per calcolare la viscosità dell'aria
+alla temperatura del laboratorio abbiamo usato un calcolatore online, reperibile alla pagina http://www.lmnoeng.com/Flow/GasViscosity.htm.
+Il calcolatore ignora il fatto che la pressione in camera non è quella atmosferica. Tuttavia il coefficiente di viscosità
+dipende solo debolemente dalla pressione e quindi trascuriamo l'effetto della pressione.},
+$d$ il diametro della canalizzazione, $R$ la constante dei gas perfetti e $T$ la temperatura.
+
+Il numero di Reynolds dipende solo dal diametro del tubo e dal flusso e non dalla lunghezza o dalle pressioni ai capi.
+Otteniamo quindi soltanto 10 valori del numero di Reynolds (i dati sono misurati in \si{\kg\per\m\per\s}):
+
+\begin{center}
+    \begin{tabular}{l c c}
+        \toprule
+        & \multicolumn{2}{c}{Diametro} \\
+        Nr. giri & 4 mm & 2.5 mm \\
+        \midrule
+        4 & $(2.433 \pm 0.004) \cdot 10^{-2}$ & $(3.893 \pm 0.006) \cdot 10^{-2}$ \\
+        5 & $(1.196 \pm 0.001) \cdot 10^{-1}$ & $1.914 \pm 0.002) \cdot 10^{-1}$  \\
+        6 & $1.115 \pm 0.002$ &                 $1.784 \pm 0.003$                 \\
+        7 & $12.57 \pm 0.02$ &                  $20.11 \pm 0.04$                  \\
+        8 & $79.1 \pm 0.2$ &                    $126.5 \pm 0.2$                   \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\textbf{Tubo 8000x4} \\
+\begin{center}
+    \begin{tabular}{c c c c}
+        \toprule
+        C & dC & & \\
+        \midrule
+        & & & \\
+        \bottomrule
+    \end{tabular}
+\end{center}

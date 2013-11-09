@@ -39,9 +39,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.75653846"
-     inkscape:cx="559.50165"
-     inkscape:cy="-76.440015"
+     inkscape:zoom="1.7673679"
+     inkscape:cx="363.651"
+     inkscape:cy="9.380015"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -68,7 +68,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -136,7 +136,7 @@
       </g>
     </g>
     <g
-       transform="translate(8.9211282,309.97647)"
+       transform="matrix(0,-1,1,0,-662.5356,1052.2993)"
        id="g3216">
       <g
          style="stroke:#000000;stroke-width:2.80142879;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -323,7 +323,7 @@
          sodipodi:role="line"
          x="165.87532"
          y="978.41748"
-         id="tspan4235">P1</tspan></text>
+         id="tspan4235">P</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
@@ -338,7 +338,7 @@
          sodipodi:role="line"
          x="401.36438"
          y="978.66943"
-         id="tspan4237">P2</tspan></text>
+         id="tspan4237">P</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
@@ -366,5 +366,27 @@
          x="495.37018"
          y="45.865013"
          id="tspan4247">a spillo</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
+       x="168.95137"
+       y="976.58252"
+       id="text3038"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3040"
+         x="168.95137"
+         y="976.58252">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
+       x="404.06207"
+       y="976.70801"
+       id="text3038-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3040-3"
+         x="404.06207"
+         y="976.70801">2</tspan></text>
   </g>
 </svg>

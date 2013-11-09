@@ -91,8 +91,18 @@ j_L25 = P_L25(2:end) .* 0.0025;
 j_C25 = P_C25(2:end) .* 0.0025;
 
 % numero di Reynolds
-r_4 = 4 / (pi * n * 0.004) * 0.029 / (8.314 * T) * Q(5:end)
-r_25 = 4 / (pi * n * 0.0025) * 0.029 / (8.314 * T) * Q(5:end)
+k_4 = (4 * 0.029) / (pi * n * 0.004 * 8.314);
+k_25 = (4 * 0.029) / (pi * n * 0.0025 * 8.314);
+r_4 = k_4 * Q(5:end) / T;
+dr_4 = sqrt((k_4 .* dQ(5:end) ./ T).^2 .+ (k_4 .* Q(5:end) * dT ./ T.^2).^2);
+r_25 = k_25 * Q(5:end) / T;
+dr_25 = sqrt((k_25 .* dQ(5:end) ./ T).^2 .+ (k_25 .* Q(5:end) * dT ./ T.^2).^2);
+
+display("Reynolds 4");
+display([r_4 dr_4]);
+
+display("Reynolds 2.5");
+display([r_25 dr_25]);
 
 % conduttanze
 C_L4 = Q(5:end) ./ DP_L4(2:end);
