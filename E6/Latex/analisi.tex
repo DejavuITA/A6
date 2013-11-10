@@ -69,12 +69,13 @@ Per calcolare l'indicatore ci serve $\bar{P}$, che si ottiene con una semplice o
 
 Calcolando l'indicatore per ogni tubo e per ogni apertura della valvola, abbiamo scoperto che gran parte
 del nostro esperimento si è svolto in regime transitorio ed in regime viscoso, mentre in neanche un caso abbiamo
-lavorato in regime molecolare. Le conduttanze si possono calcolare teoricamente per il regime molecolare e quello
+lavorato in regime molecolare. I valori di $\bar{P}d$ sono riportati nelle tabelle in fondo a questa sezione,
+assieme agli altri dati. Le conduttanze si possono calcolare teoricamente per il regime molecolare e quello
 viscoso laminare, mentre per quello intermedio non esiste una formula esplicita. Ci aspettiamo quindi che le nostre
 conduttanze siano una via di mezzo tra quelle teoriche per i due casi.
 
-Prima di passare ai calcoli teorici, dobbiamo però verificare che i flussi in camera fossero laminari nel
-caso in cui il sistema lavorasse in regime viscoso. % sorry for the mess
+Prima di passare ai calcoli teorici, dobbiamo però verificare che i flussi in camera siano stati laminari nel
+caso in cui il sistema fosse in regime viscoso. % sorry for the mess
 A questo fine usiamo il \emph{numero di Reynolds}, che per un tubo è definito come segue:
 
 \begin{equation}
@@ -91,10 +92,10 @@ Il numero di Reynolds dipende solo dal diametro del tubo e dal flusso e non dall
 Otteniamo quindi soltanto 10 valori del numero di Reynolds (i dati sono misurati in \si{\kg\per\m\per\s}):
 
 \begin{center}
-    \begin{tabular}{l c c}
+    \begin{tabular}{l  c c}
         \toprule
-        & \multicolumn{2}{c}{Diametro} \\
-        Nr. giri & 4 mm & 2.5 mm \\
+        \multirow{2}*{Nr. giri} & \multicolumn{2}{c}{Diametro} \\
+         & 4 mm & 2.5 mm \\
         \midrule
         4 & $(2.433 \pm 0.004) \cdot 10^{-2}$ & $(3.893 \pm 0.006) \cdot 10^{-2}$ \\
         5 & $(1.196 \pm 0.001) \cdot 10^{-1}$ & $1.914 \pm 0.002) \cdot 10^{-1}$  \\
@@ -105,7 +106,55 @@ Otteniamo quindi soltanto 10 valori del numero di Reynolds (i dati sono misurati
     \end{tabular}
 \end{center}
 
-\textbf{Tubo 8000x4} \\
+La seguente tabella ci permette di discriminare, usando il numero di Reynolds, i vari regimi di flusso viscoso:
+
+\begin{center}
+    \begin{tabular}{l c }
+        \toprule
+        Regime & $R_e [\si{\kg\per\m\per\s}]$ \\
+        \midrule
+        Viscoso laminare    & $R_e \le 1200$ \\
+        Viscoso transitorio & $1200 \le R_e \le 2200$ \\
+        Viscoso turbolento  & $R_e \ge 2200$ \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+Quindi in tutti i casi il sistema ha lavorato in regime laminare. Possiamo applicare le formule per il calcolo
+teorico della conduttanza, al fine di confrontarle con i nostri dati.
+
+Assumendo un regime molecolare, si può calcolare che per un tubo di diametro $d$ e lunghezza $l$ la conduttanza vale:
+
+\begin{equation}
+    C\ped{mol} = 120 \frac{d^3}{l}
+\end{equation}
+
+Si ottengono 4 diversi valori della conduttanza, uno per ogni tubo. I valori calcolati con questa formula
+sono riportati nella seguente tabella.
+
+\begin{center}
+    \begin{tabular}{c c c c}
+        \toprule
+        8000x4 & 800x4 & 8000x2.5 & 800x2.5 \\
+        \midrule
+        $9.6 \cdot 10^{-7}$ & $9.6 \cdot 10^{-6}$ & $2.34 \cdot 10^{-7}$ & $2.34 \cdot 10^{-6}$ \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+Nel caso di regime viscoso laminare, si può invece dimostrare che la conduttanza dipende anche dalla pressione media
+$\bar{P}$ (già introdotta sopra per calcolare l'indicatore $\bar{P}d$):
+
+\begin{equation}
+    C\ped{lam} = 1350 \frac{\bar{P} d^4}{l}
+\end{equation}
+
+Poiché le conduttanze teoriche in regime viscoso laminare dipendono dalla pressione esse variano al variare del tubo 
+e al variare del flusso in ingresso. I valori di $C\ped{lam}$ sono elencati nelle seguenti tabelle che includono anche
+tutti gli altri dati calcolati sopra.
+
+\paragraph{Tubo 8000x4 \\}
+
 \begin{center}
     \begin{tabular}{c c c c}
         \toprule

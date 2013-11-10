@@ -85,10 +85,10 @@ P_C25 = P1_C25_m .+ DP_C25 ./ 2;
 dP_C25 = sqrt(dP1_C25_m.^2 .+ dDP_C25.^2 / 4);
 
 % discriminante
-j_L4 = P_L4(2:end) .* 0.004
-j_C4 = P_C4(2:end) .* 0.004
-j_L25 = P_L25(2:end) .* 0.0025
-j_C25 = P_C25(2:end) .* 0.0025
+j_L4 = P_L4(2:end) .* 0.004;
+j_C4 = P_C4(2:end) .* 0.004;
+j_L25 = P_L25(2:end) .* 0.0025;
+j_C25 = P_C25(2:end) .* 0.0025;
 
 % numero di Reynolds
 k_4 = (4 * 0.029) / (pi * n * 0.004 * 8.314);
