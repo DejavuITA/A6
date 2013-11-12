@@ -7,10 +7,11 @@
 \section{Esecuzione}
 
 L'impianto realizzato è schematizzato in figura \ref{fig:schema}. I vacuometri pirani sono stati disposti
-immediatamente ai capi del tubo. Indicheremo le pressioni ai due capi come $P_1$ e $P_2$, come riportato in figura.
+immediatamente ai capi del tubo. Indicheremo le pressioni ai due capi con $P_1$ e $P_2$, come riportato in figura.
 La valvola a spillo è stata collocata in fondo all'impianto. È stata mantenuta
 aperta la valvola ausiliaria della stessa al fine di evitare problemi con i volumi morti. 
 
+% vuoto limite???
 Dopo aver montato l'impianto abbiamo avviato la pompa rotativa, e aspettato di raggiungere il vuoto limite all'interno
 del tubo. Per fare ciò abbiamo monitorato al PC l'andamento della pressione al capo $P_2$, assicurandoci che la pressione
 si fosse stabilizzata prima di aprire la valvola micrometrica.
@@ -28,10 +29,11 @@ $T = 296 \pm 1 \, \si{\kelvin}$. Entrambe le misure riportano incertezze di riso
 
 \section{Analisi dati}
 
+% qui non si sa se serve fare la media delle medie.... roba assurda lo so
 Vogliamo ora calcolare i valori di conduttanza dei tubi. Poiché abbiamo registrato due volte le pressioni per ogni valore
 di apertura della valvola (una salendo ed una scendendo), dobbiamo prima fare la media tra questi due dati
 
-Ora disponiamo, per ciascun tubo e per ciascun valore di apertura della valvola, delle pressioi ai capi del tubo.
+Ora disponiamo, per ciascun tubo e per ciascun valore di apertura della valvola, delle pressioni ai capi del tubo.
 A noi interessa la differenza di pressione $\Delta P = P_2 - P_1$, che possiamo usare per calcolare la conduttanza:
 
 \begin{equation}
@@ -53,7 +55,7 @@ tubo e $d$ è il diametro del tubo. Questo indicatore discrimina i regimi di flu
         \midrule
         Viscoso & Basso & $\bar{P} d > 0.6$ \\
         Transitorio & Medio & $1.3\cdot10^{-2} \le \bar{P} d \le 0.6$ \\
-        Intermedio [non Moecolare???] & Alto & $\bar{P} d < 1.3\cdot10^{-2}$ \\
+        Molecolare & Alto & $\bar{P} d < 1.3\cdot10^{-2}$ \\
         \bottomrule
     \end{tabular}
 \end{center}
@@ -66,12 +68,13 @@ Per calcolare l'indicatore ci serve $\bar{P}$, che si ottiene con una semplice o
 
 Calcolando l'indicatore per ogni tubo e per ogni apertura della valvola, abbiamo scoperto che gran parte
 del nostro esperimento si è svolto in regime transitorio ed in regime viscoso, mentre in neanche un caso abbiamo
-lavorato in regime molecolare. Le conduttanze si possono calcolare teoricamente per il regime molecolare e quello
-viscoso laminare, mentre per quello intermedio non esiste una formula esplicita. Ci aspettiamo quindi che le nostre
+lavorato in regime molecolare. I valori di $\bar{P}d$ sono riportati nelle tabelle in fondo a questa sezione,
+assieme agli altri dati. Le conduttanze si possono calcolare teoricamente per il regime molecolare e quello
+viscoso laminare, mentre per quello transitorio non esiste una formula esplicita. Ci aspettiamo quindi che le nostre
 conduttanze siano una via di mezzo tra quelle teoriche per i due casi.
 
-Prima di passare ai calcoli teorici, dobbiamo però verificare che i flussi in camera fossero laminari nel
-caso in cui il sistema lavorasse in regime viscoso. % sorry for the mess
+Prima di passare ai calcoli teorici, dobbiamo però verificare che i flussi in camera siano stati laminari nel
+caso in cui il sistema fosse in regime viscoso.
 A questo fine usiamo il \emph{numero di Reynolds}, che per un tubo è definito come segue:
 
 \begin{equation}
@@ -83,31 +86,32 @@ alla temperatura del laboratorio abbiamo usato un calcolatore online, reperibile
 Il calcolatore ignora il fatto che la pressione in camera non è quella atmosferica. Tuttavia il coefficiente di viscosità
 dipende solo debolemente dalla pressione e quindi trascuriamo l'effetto della pressione.},
 $d$ il diametro della canalizzazione, $R$ la constante dei gas perfetti e $T$ la temperatura.
-Quindi sapendo che in base al valore assunto dal numero di Reynolds il regime di flusso viscoso si suddivide in queste tre categorie:
+Sapendo che in base al valore assunto dal numero di Reynolds il regime di flusso viscoso si suddivide in queste tre categorie
 
 \begin{center}
     \begin{tabular}{l c c}
         \toprule
         Regime & Numero di Reynolds \\
         \midrule
-        Regime Laminare & $Re < 1200$ \\
-        Regime Intermedio & $1200 < Re < 2200$ \\
-        Regime Turbolento & $Re > 2200$ \\
+        Viscoso laminare & $Re < 1200$ \\
+        Viscoso intermedio & $1200 < Re < 2200$ \\
+        Viscoso turbolento & $Re > 2200$ \\
         \bottomrule
     \end{tabular}
 \end{center}
 
-e ricordando che il numero di Reynolds dipende solo dal diametro del tubo e dal flusso e non dalla lunghezza o dalle pressioni ai capi, possiamo classificare il regime di flusso viscoso nel quele abbiamo svolto l'esperienza:
+e ricordando che il numero di Reynolds dipende solo dal diametro del tubo e dal flusso e non dalla lunghezza o dalle pressioni ai capi,
+possiamo classificare il regime di flusso viscoso nel quale abbiamo svolto l'esperienza.
 Otteniamo quindi soltanto 10 valori del numero di Reynolds (i dati sono misurati in \si{\kg\per\m\per\s}):
 
 \begin{center}
     \begin{tabular}{l c c}
         \toprule
-        & \multicolumn{2}{c}{Diametro} \\
-        Nr. giri & 4 mm & 2.5 mm \\
+        \multirow{2}*{Nr. giri} & \multicolumn{2}{c}{Diametro} \\
+         & 4 mm & 2.5 mm \\
         \midrule
         4 & $(2.433 \pm 0.004) \cdot 10^{-2}$ & $(3.893 \pm 0.006) \cdot 10^{-2}$ \\
-        5 & $(1.196 \pm 0.001) \cdot 10^{-1}$ & $1.914 \pm 0.002) \cdot 10^{-1}$  \\
+        5 & $(1.196 \pm 0.001) \cdot 10^{-1}$ & $(1.914 \pm 0.002) \cdot 10^{-1}$  \\
         6 & $1.115 \pm 0.002$ &                 $1.784 \pm 0.003$                 \\
         7 & $12.57 \pm 0.02$ &                  $20.11 \pm 0.04$                  \\
         8 & $79.1 \pm 0.2$ &                    $126.5 \pm 0.2$                   \\
@@ -115,16 +119,38 @@ Otteniamo quindi soltanto 10 valori del numero di Reynolds (i dati sono misurati
     \end{tabular}
 \end{center}
 
-In base hai valori del numero di Reynolds da noi ottenuti possiamo osservare che tutte le nostre misure si sono svolte in un regime di flusso viscoso laminare. Grazie a questo risultato siamo quindi in grado di calcolare il valore teorico che dovrebbe avere la conduttanza per i raccordi da noi usati.
-Ricordiamoci che in regime di flusso viscoso laminare la conduttanza teorica ha la seguente espressione:
+Quindi in tutti i casi il sistema ha lavorato in regime laminare. Possiamo applicare le formule per il calcolo
+teorico della conduttanza, al fine di confrontarle con i nostri dati.
+
+Assumendo un regime molecolare, si può calcolare che per un tubo di diametro $d$ e lunghezza $l$ la conduttanza vale:
 
 \begin{equation}
-    C\ped{lam} \,=\, 1350\,\frac{\bar{P}d^4}{l}
+    C\ped{mol} = 120 \frac{d^3}{l}
 \end{equation}
 
-Quindi per concludere riporteremo per ogni tubo da noi esaminato una tabella riportante il valore sperimentale della conduttanza, la relativa incertezza e il valore teorica di quest'ultima e discuteremo brevemente i risultati da noi ottenuti.
+Si ottengono 4 diversi valori della conduttanza, uno per ogni tubo. I valori calcolati con questa formula
+sono riportati nella seguente tabella.
 
-[NELLE TABELLE NON HO MESSO LE UNITÀ DI NISURA E POI LE MISURE SONO INSERITE BRUTALMENTE, GUARDARE CON PASA PER IL NUMERO DI CIFRE SIGNIFICATIVE. SORRY SONO INUTILE:(]
+\begin{center}
+    \begin{tabular}{c c c c}
+        \toprule
+        8000x4 & 800x4 & 8000x2.5 & 800x2.5 \\
+        \midrule
+        $9.6 \cdot 10^{-7}$ & $9.6 \cdot 10^{-6}$ & $2.34 \cdot 10^{-7}$ & $2.34 \cdot 10^{-6}$ \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+Nel caso di regime viscoso laminare, si può invece dimostrare che la conduttanza dipende anche dalla pressione media
+$\bar{P}$ (già introdotta sopra per calcolare l'indicatore $\bar{P}d$):
+
+\begin{equation}
+    C\ped{lam} = 1350 \frac{\bar{P} d^4}{l}
+\end{equation}
+
+Poiché le conduttanze teoriche in regime viscoso laminare dipendono dalla pressione esse variano al variare del tubo 
+e al variare del flusso in ingresso. I valori di $C\ped{lam}$ sono elencati nelle seguenti tabelle che includono anche
+tutti gli altri dati calcolati sopra.
 
 \textbf{Tubo 8000x4 mm} \\
 \begin{center}
