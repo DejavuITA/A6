@@ -11,7 +11,6 @@ immediatamente ai capi del tubo. Indicheremo le pressioni ai due capi con $P_1$ 
 La valvola a spillo è stata collocata in fondo all'impianto. È stata mantenuta
 aperta la valvola ausiliaria della stessa al fine di evitare problemi con i volumi morti. 
 
-% vuoto limite???
 Dopo aver montato l'impianto abbiamo avviato la pompa rotativa, e aspettato di raggiungere il vuoto limite all'interno
 del tubo. Per fare ciò abbiamo monitorato al PC l'andamento della pressione al capo $P_2$, assicurandoci che la pressione
 si fosse stabilizzata prima di aprire la valvola micrometrica.
@@ -29,9 +28,13 @@ $T = 296 \pm 1 \, \si{\kelvin}$. Entrambe le misure riportano incertezze di riso
 
 \section{Analisi dati}
 
-% qui non si sa se serve fare la media delle medie.... roba assurda lo so
 Vogliamo ora calcolare i valori di conduttanza dei tubi. Poiché abbiamo registrato due volte le pressioni per ogni valore
-di apertura della valvola (una salendo ed una scendendo), dobbiamo prima fare la media tra questi due dati
+di apertura della valvola (una salendo ed una scendendo), dobbiamo prima fare la media tra questi due dati per ottenere
+un unico valore di pressione:
+
+\begin{equation}
+    P_1 = \frac{P\ped{1,salita} + P\ped{1,discesa}}{2} \qquad P_2 = \frac{P\ped{2,salita} + P\ped{2,discesa}}{2}
+\end{equation}
 
 Ora disponiamo, per ciascun tubo e per ciascun valore di apertura della valvola, delle pressioni ai capi del tubo.
 A noi interessa la differenza di pressione $\Delta P = P_2 - P_1$, che possiamo usare per calcolare la conduttanza:
@@ -49,6 +52,7 @@ ottenere con i dati in nostro possesso. L'indicatore è il prodotto $\bar{P}d$, 
 tubo e $d$ è il diametro del tubo. Questo indicatore discrimina i regimi di flusso secondo la seguente tabella.
 
 \begin{center}
+    \small
     \begin{tabular}{l c c}
         \toprule
         Regime & Tipo di vuoto & $\bar{P} d \; [\si{\pascal\metre}]$ \\
@@ -89,13 +93,14 @@ $d$ il diametro della canalizzazione, $R$ la constante dei gas perfetti e $T$ la
 Sapendo che in base al valore assunto dal numero di Reynolds il regime di flusso viscoso si suddivide in queste tre categorie
 
 \begin{center}
+    \small
     \begin{tabular}{l c c}
         \toprule
         Regime & Numero di Reynolds \\
         \midrule
-        Viscoso laminare & $Re < 1200$ \\
-        Viscoso intermedio & $1200 < Re < 2200$ \\
-        Viscoso turbolento & $Re > 2200$ \\
+        Viscoso laminare & $R_e < 1200$ \\
+        Viscoso intermedio & $1200 < R_e < 2200$ \\
+        Viscoso turbolento & $R_e > 2200$ \\
         \bottomrule
     \end{tabular}
 \end{center}
@@ -105,6 +110,7 @@ possiamo classificare il regime di flusso viscoso nel quale abbiamo svolto l'esp
 Otteniamo quindi soltanto 10 valori del numero di Reynolds (i dati sono misurati in \si{\kg\per\m\per\s}):
 
 \begin{center}
+    \small
     \begin{tabular}{l c c}
         \toprule
         \multirow{2}*{Nr. giri} & \multicolumn{2}{c}{Diametro} \\
@@ -122,7 +128,7 @@ Otteniamo quindi soltanto 10 valori del numero di Reynolds (i dati sono misurati
 Quindi in tutti i casi il sistema ha lavorato in regime laminare. Possiamo applicare le formule per il calcolo
 teorico della conduttanza, al fine di confrontarle con i nostri dati.
 
-Assumendo un regime molecolare, si può calcolare che per un tubo di diametro $d$ e lunghezza $l$ la conduttanza vale:
+Assumendo un regime molecolare, si può calcolare che per un tubo di diametro $d$ e lunghezza $l$, la conduttanza vale:
 
 \begin{equation}
     C\ped{mol} = 120 \frac{d^3}{l}
@@ -132,6 +138,7 @@ Si ottengono 4 diversi valori della conduttanza, uno per ogni tubo. I valori cal
 sono riportati nella seguente tabella.
 
 \begin{center}
+    \small
     \begin{tabular}{c c c c}
         \toprule
         8000x4 & 800x4 & 8000x2.5 & 800x2.5 \\
@@ -152,8 +159,9 @@ Poiché le conduttanze teoriche in regime viscoso laminare dipendono dalla press
 e al variare del flusso in ingresso. I valori di $C\ped{lam}$ sono elencati nelle seguenti tabelle che includono anche
 tutti gli altri dati calcolati sopra.
 
-\textbf{Tubo 8000x4 mm} \\
+\paragraph{Tubo 8000x4 \\}
 \begin{center}
+    \small
     \begin{tabular}{c c c c c}
         \toprule
         Nr. giri & Regime & C $[\si{\metre^3\s^{-1}}]$ & dC $[\si{\metre^3\s^{-1}}]$ & C\ped{teorica} $[\si{\metre^3\s^{-1}}]$ \\
@@ -167,8 +175,9 @@ tutti gli altri dati calcolati sopra.
     \end{tabular}
 \end{center}
 
-\textbf{Tubo 800x4 mm} \\
+\paragraph{Tubo 800x4 \\}
 \begin{center}
+    \small
     \begin{tabular}{c c c c c}
         \toprule
         Nr. giri & Regime & C $[\si{\metre^3\s^{-1}}]$ & dC $[\si{\metre^3\s^{-1}}]$ & C\ped{teorica} $[\si{\metre^3\s^{-1}}]$ \\
@@ -182,8 +191,9 @@ tutti gli altri dati calcolati sopra.
     \end{tabular}
 \end{center}
 
-\textbf{Tubo 8000x2.5 mm} \\
+\paragraph{Tubo 8000x2.5 \\}
 \begin{center}
+    \small
     \begin{tabular}{c c c c c}
         \toprule
         Nr. giri & Regime & C $[\si{\metre^3\s^{-1}}]$ & dC $[\si{\metre^3\s^{-1}}]$ & C\ped{teorica} $[\si{\metre^3\s^{-1}}]$ \\
@@ -197,8 +207,9 @@ tutti gli altri dati calcolati sopra.
     \end{tabular}
 \end{center}
 
-\textbf{Tubo 800x2.5 mm} \\
+\paragraph{Tubo 800x2.5 \\} 
 \begin{center}
+    \small
     \begin{tabular}{c c c c c}
         \toprule
         Nr. giri & Regime & C $[\si{\metre^3\s^{-1}}]$ & dC $[\si{\metre^3\s^{-1}}]$ & C\ped{teorica} $[\si{\metre^3\s^{-1}}]$ \\
