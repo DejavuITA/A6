@@ -11,33 +11,6 @@ try:
 except:
     print "installa: sudo apt-get install python-matplotlib"
 
-pressione_atm = 719 * 133.322
-R = 8.3144
-
-pressione = []
-temperatura = []
-sp =  671.26
-
-A =  25.802
-B = -5278.0
-sA =  0.23529
-sB =  82.333
-chi_square =  10.000
-p0 =  1.6055e+11
-sp0 =  3.7775e+10
-DH =  4.3883e+04
-sDH =  684.55
-T_ebb =  95.135
-s_T_ebb =  8.3407
-
-with open('../Dati/pressioni_vapore.csv') as csvfile:
-    data = csv.reader(csvfile)
-
-    for n, row in enumerate(data):
-        if n != 0:
-            pressione.append(pressione_atm + float(row[0]))
-            temperatura.append(273.15 + float(row[1]))
-
 if mpl:
     f1 = plt.figure(figsize=(11, 11))
     f1.suptitle("Pressione di vapore in funzione della temperatura", y=0.96, fontsize=15)
