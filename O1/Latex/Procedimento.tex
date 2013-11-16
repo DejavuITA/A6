@@ -37,7 +37,7 @@ Per non appesantire la lettura, nel seguito indicheremo con queste lettere le se
 \end{equation}
 
 
-Come primo obbiettivo ci siamo posti di calcolare il fuoco della lente convergente. Per ottenere questo riultato abbiamo misurato per dodici valori di $p$ al variare di $q$. Questo è stato fatto tenendo ferma la sorgente luminosa, incrementando di volta in volta la distanza tra la lente e la sorgente luminosa e mettendo a fuoco l'immagine sullo schermo. Si è poi misurata la distanza lente-schermo $q$, e la distanza oggetto-lente $p$. Le misure sono state eseguite con il metro a nastro prestando attenzione a minimizzare l'inclinazione del metro rispetto all'asse ottico. Inoltre la lettura è stata eseguita nel centro della lente.
+Come primo obbiettivo ci siamo posti di calcolare il fuoco della lente convergente e l'ingrandimento della lente per diversi valori di $p$ e $q$. Per ottenere questo riultato abbiamo misurato per dodici valori di $p$ al variare di $q$. Questo è stato fatto tenendo ferma la sorgente luminosa, incrementando di volta in volta la distanza tra la lente e la sorgente luminosa e mettendo a fuoco l'immagine sullo schermo. Si è poi misurata la distanza lente-schermo $q$, la distanza oggetto-lente $p$ e la dimensione $h\ped{imm}$ dell'immagine. Le misure di distanza sono state eseguite con il metro a nastro prestando attenzione a minimizzare l'inclinazione del metro rispetto all'asse ottico. Inoltre la lettura è stata eseguita nel centro della lente. Le misure di dimensione dell'immagine sono invece state eseguite con il calibro ventesimale.
 
 Ovviamente, la distanza oggetto-lente è stata mantenuta maggiore della distanza focale ($p > f$). In caso contrario si avrebbe infatti un immagine virtuale e sarebbe impossibile mettere a fuoco l'immagine sullo schermo.
 
@@ -46,28 +46,36 @@ E' importante sottolineare che nel caso in cui l'immagine si è formata ad una g
 Una volta ottenuti i valori  di $p$ e $q$, abbiamo calcolato per ognuno il relativo valore di $f$ utilizzando la formula \ref{eq:coniugati} (legge dei punti coniugati). Infine è stata calcolata la media aritmetica dei valori, con la quale abbiamo ottenuto il seguente valore della focale:
 
 \begin{equation}
-	f \ped{conv} \,=\, XXX
+    f \ped{conv} \,=\, 24 \pm 1 \; \si{\centi\metre}
 \end{equation}
 
-Inoltre vogliamo ricavare il valore della magnificazione per ogni coppia $p$ e $q$. Ricordiamo che la magnificazione è il rapporto tra le dimensioni dell'immagine ottenuta ($h \ped{imm}$) rispetto alle dimensioni reali dell'oggetto ($h$).
+Inoltre vogliamo ricavare il valore della magnificazione per ogni coppia $p$ e $q$. Ricordiamo che la magnificazione è il rapporto tra le dimensioni dell'immagine ottenuta ($h \ped{imm}$) rispetto alle dimensioni reali dell'oggetto ($h$). La dimensione dell'oggetto era $h = \SI{9}{\milli\metre}$.
 
 \begin{equation}
 	m_{1} \,=\, \frac{h \ped{imm}}{h}
 \end{equation}
 
-Infine per avere una verifica della correttezza dei dati da noi presi possiamo mettere a confronto il valore della magnificazione trovato empiricamente con quello che si può ricavare dalla seguente relazione:
+Infine per avere una verifica della correttezza dei dati registrati, possiamo mettere a confronto il valore della magnificazione trovato empiricamente con quello che si può ricavare dalla seguente relazione:
 
 \begin{equation}
 	m_{2} \,=\, \frac{q}{p}
 \end{equation}
 
-[Tabella m e m\']
+[Tabella $m_1$, $m_2$, p, q, $h_{imm}$ e incertezze. Forse f?]
+% in realtà non so se vuole tutti sti dati, però secondo me è meglio metterceli, perché
+% in una relazione scientifica si mettono sempre tutti io dati per permettere agli altri di controllare eventuali
+% errori. Comunque almeno m_1 e m_2... FRAPA X BUZZ
 
 Come si può osservare dai dati in tabella i due valori della magnificazione ricavati con entrambi i procedimenti risultano compatibili entro i propri errori. 
+% X BUZZ: metti a posto anche il commento qui quando hai fatto la tabella.
 
 \subsection{Aberrazione cromatica relativa alla lente convergente}
 
-Per valutare e osservare il fenomeno dell'aberrazione cromatica per la lente convergente abbiamo calcolato grazie alla relazione (\ref{coniugati}) il fuoco relativo ai raggi luminosi monocromatici rossi e blu. Per ottenere i raggi monocromatici non abbiamo fatto altro che porre un vetrino colorato difronte alla sorgente luminosa. I valori di $p$ e $q$ sono stati presi seguendo lo stesso procedimento adottato per la lente convergente, salvo il fatto che è stato preso solo un valore dei due parametri.
+Ogni lente è soggetta a un difetto, detto aberrazione cromatica, dovuto al fatto che l'indice di rifrazione del vetro della lente varia al variare della lunghezza d'onda della luce incidente.
+Per valutare e osservare il fenomeno dell'aberrazione cromatica, abbiamo calcolato, sempre utilizzando la relazione (\ref{eq:coniugati}), il fuoco della lente convergente usando luce monocromatica rossa e blu. Per ottenere luce monocromatica non abbiamo fatto altro che porre un filtro colorato di fronte alla sorgente luminosa. I valori $p$ e $q$ sono stati presi seguendo lo stesso procedimento adottato per la lente convergente, salvo il fatto che è stato preso solo un valore dei due parametri invece che 12.
+
+Rosso e blu sono stati scelti per massimizzare la differenza tra i fuochi e facilitare le misure; essi si trovano infatti agli estremi opposti dell'intervallo di lunghezze d'onda della luce visibile e quindi i fuochi sono il più distante possibile tra di loro. Inoltre abbiamo mantenuto $p \simeq q$ per facilitare la misura. Infatti se $p$ è piccolo e $q$ grande (come implica la legge dei punti coniugati \ref{eq:coniugati}) la misura è difficile a causa dell'effetto di profondità di campo, metre per $q$ piccoli la distanza tra i fuochi è molto piccola.
+
 Un piccolo accorgimento che è stato preso nell'eseguire questa misura è stato quello di scegliere una distanza $p$ che fosse simile alla distanza $q$.
 I risultati da noi ottenuti sono riportati nella tabella sottostante:
 
