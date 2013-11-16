@@ -1,18 +1,25 @@
 \section{Procedimento \& Analisi Dati}
 
-Poichè stiamo lavorando in ambito di ottica geometrica e affinchè valgana la legge del costruttore di lenti e quella dei punti coniugati, dobbiamo fare alcune assunzioni relative all'apparato.
-L'ipotesi fondamentale sulla quale si basa tutta l'esperieza e che i raggi luminosi incidenti sulle nostre lenti siano raggi parassiali, ovvero ci dobbiamo porre nell'ipotesi di raggi lontani.
-Inoltre per non appesantire la lettura, nel seguito indicheremo con queste lettere le seguenti quantità:
+Nell'ottica geometrica si usano le leggi del costruttore di lenti e dei punti coniugati.
+Tali leggi si basano sulle ipotesi di raggi parassiali e lenti sottili, che dobbiamo quindi supporre verificate
+nel nostro apparato sperimentale. Una parte dell'esperienza (quella relativa all'abberrazione sferica)
+è dedicata alla misura dei limiti di tali approssimazioni.
 
-%\begin{figure}[b!]
-%	\includegraphics[width=16cm]{drawing.pdf}
-%\end{figure}
+\begin{figure}[b!]
+	\includegraphics[width=16cm]{drawing.pdf}
+    \caption{Schema dell'apparato sperimentale usato per la misura del fuoco della lente convergente.}
+    \label{fig:conv}
+\end{figure}
+
+\subsection{Fuoco della lente convergente}
+
+Per non appesantire la lettura, nel seguito indicheremo con queste lettere le seguenti quantità (si veda la Figura \ref{fig:conv}):
 
 \begin{equation*}
-	p \,=\, \text{distanza tra il cento della lente e la posizione dell'oggetto}
+	p \,=\, \text{distanza tra il centro della lente e la posizione dell'oggetto}
 \end{equation*}
 \begin{equation*}
-	q \,=\, \text{distanza tra il cento della lente e la posizione dell'immagine}
+	q \,=\, \text{distanza tra il centro della lente e la posizione dell'immagine}
 \end{equation*}
 \begin{equation*}
 	f \,=\, \text{fuoco della lente analizzata}
@@ -21,26 +28,25 @@ Inoltre per non appesantire la lettura, nel seguito indicheremo con queste lette
 	h \ped{imm} \,=\, \text{altezza dell'immagine sullo schermo}
 \end{equation*}
 \begin{equation}
-	\text{Legge dei puni coniugati:} \qquad \frac{1}{f} \,=\, \frac{1}{p} + \frac{1}{q}
-	\label{coniugati}
+	\text{Legge dei punti coniugati:} \qquad \frac{1}{f} \,=\, \frac{1}{p} + \frac{1}{q}
+	\label{eq:coniugati}
 \end{equation}
 \begin{equation}
 	\text{Legge del costruttore di lenti:} \qquad \frac{1}{f} \,=\, (n-1)\left(\frac{1}{R\ped{1}}-\frac{1}{R\ped{2}}\right)
-	\label{costruttore}
+	\label{eq:costruttore}
 \end{equation}
 
 
-\subsection{Fuoco della lente convergente}
+Come primo obbiettivo ci siamo posti di calcolare il fuoco della lente convergente. Per ottenere questo riultato abbiamo misurato per dodici valori di $p$ al variare di $q$. Questo è stato fatto tenendo ferma la sorgente luminosa, incrementando di volta in volta la distanza tra la lente e la sorgente luminosa e mettendo a fuoco l'immagine sullo schermo. Si è poi misurata la distanza lente-schermo $q$, e la distanza oggetto-lente $p$. Le misure sono state eseguite con il metro a nastro prestando attenzione a minimizzare l'inclinazione del metro rispetto all'asse ottico. Inoltre la lettura è stata eseguita nel centro della lente.
 
-Come primo obbiettivo ci siamo posti quello di calcolare il fuoco della lente convergente. Per ottenere questo riultato abbiamo misurato per dodici volte il valore che il parametro $q$ assume al variare del parametro $p$. Questo è stato fatto tenendo ferma la sorgente luminosa e incrementando di volta in volta la distanza tra la lente e la sorgente luminosa. Quindi abbiamo rilevato i valori di $q$ mettendo a fuoco l'immagine proiettata sullo schermo.
+Ovviamente, la distanza oggetto-lente è stata mantenuta maggiore della distanza focale ($p > f$). In caso contrario si avrebbe infatti un immagine virtuale e sarebbe impossibile mettere a fuoco l'immagine sullo schermo.
 
-E' importante sottolineare che nel caso in cui l'immagine si è formata ad una grande distanza dalla lente, riuscire a metterla a fuoco non è stato semplice a causa dell'effetto di profondità di campo. Abbiamo deciso quindi di prendere due misure di $q$. Pertanto una volta che l'immagine ci sembrava essere a fuoco abbiamo mosso lo schermo in avanti e in dietro in modo da avere l'immagine leggermente fuori fuoco in entrambe le situazioni e abbiamo annotato le due posizioni. Facendone la media di questi due valori dovremmo ottenere un valore più probabile per la nostra variabile $q$, rispetto ad un singolo dato preso quando l'immagine è a ``fuoco''.
+E' importante sottolineare che nel caso in cui l'immagine si è formata ad una grande distanza dalla lente, riuscire a metterla a fuoco non è stato semplice a causa dell'effetto di profondità di campo. Abbiamo deciso quindi di prendere due misure di $q$, $q_1$ e $q_2$, secondo la seguente procedura. Quando l'immagine era circa a fuoco, abbiamo mosso lo schermo in avanti e in dietro in modo da avere l'immagine leggermente fuori fuoco in entrambe le direzione; abbiamo quindi annotato le due distanze. Siccome è facile vedere quando un oggetto è appena fuori fuoco, facendo la media di questi due valori si ottiene un valore di $q$ più preciso rispetto alla misura diretta.
 
-Una volta ottenuti i valori  di $p$ e $q$, abbiamo calcolato per ognuno il relativo valore di $f$ e infine ne abbiamo fatto una media.
-Il valore ottenuto della focale $f$ della lente convergente è:
+Una volta ottenuti i valori  di $p$ e $q$, abbiamo calcolato per ognuno il relativo valore di $f$ utilizzando la formula \ref{eq:coniugati} (legge dei punti coniugati). Infine è stata calcolata la media aritmetica dei valori, con la quale abbiamo ottenuto il seguente valore della focale:
 
 \begin{equation}
-	f \ped{div} \,=\, XXX
+	f \ped{conv} \,=\, XXX
 \end{equation}
 
 Inoltre vogliamo ricavare il valore della magnificazione per ogni coppia $p$ e $q$. Ricordiamo che la magnificazione è il rapporto tra le dimensioni dell'immagine ottenuta ($h \ped{imm}$) rispetto alle dimensioni reali dell'oggetto ($h$).
@@ -83,6 +89,11 @@ Quindi grazie ai valori di $q$ possiamo ora ricavare i valori della focale nei d
 [TABELLA!!!]
 
 Come si può notare per il facio di luce divergente il valore della focale della lene risulta essere minore rispetto al valore ottenuto per i raggi centrali. Questo succede proprio perchè nel secondo caso per i raggi luminosi non era più valida l'approssimazione di raggi parassiali.
+
+
+\begin{figure}[b!]
+	\includegraphics[width=16cm]{drawing2.pdf}
+\end{figure}
 
 \subsection{Fuoco della lente divergente}
 
