@@ -2,8 +2,7 @@
 
 Nell'ottica geometrica si usano le leggi del costruttore di lenti e dei punti coniugati.
 Tali leggi si basano sulle ipotesi di raggi parassiali e lenti sottili, che dobbiamo quindi supporre verificate
-nel nostro apparato sperimentale. Una parte dell'esperienza (quella relativa all'abberrazione sferica)
-è dedicata alla misura dei limiti di tali approssimazioni.
+nel nostro apparato sperimentale. Una parte dell'esperienza, quella relativa alle due tipologie di aberrazione, è dedicata alla misura dei limiti di tali approssimazioni.
 
 \begin{figure}[b!]
 	\includegraphics[width=16cm]{drawing.pdf}
@@ -27,44 +26,55 @@ Per non appesantire la lettura, nel seguito indicheremo con queste lettere le se
 \begin{equation*}
 	h \ped{imm} \,=\, \text{altezza dell'immagine sullo schermo}
 \end{equation*}
-\begin{equation}
-	\text{Legge dei punti coniugati:} \qquad \frac{1}{f} \,=\, \frac{1}{p} + \frac{1}{q}
-	\label{eq:coniugati}
-\end{equation}
+%\begin{equation}
+%	\text{Legge dei punti coniugati:} \qquad \frac{1}{f} \,=\, \frac{1}{p} + \frac{1}{q}
+%	\label{eq:coniugati}
+%\end{equation}
 \begin{equation}
 	\text{Legge del costruttore di lenti:} \qquad \frac{1}{f} \,=\, (n-1)\left(\frac{1}{R\ped{1}}-\frac{1}{R\ped{2}}\right)
 	\label{eq:costruttore}
 \end{equation}
 
 
-Come primo obbiettivo ci siamo posti di calcolare il fuoco della lente convergente e l'ingrandimento della lente per diversi valori di $p$ e $q$. Per ottenere questo riultato abbiamo misurato per dodici valori di $p$ al variare di $q$. Questo è stato fatto tenendo ferma la sorgente luminosa, incrementando di volta in volta la distanza tra la lente e la sorgente luminosa e mettendo a fuoco l'immagine sullo schermo. Si è poi misurata la distanza lente-schermo $q$, la distanza oggetto-lente $p$ e la dimensione $h\ped{imm}$ dell'immagine. Le misure di distanza sono state eseguite con il metro a nastro prestando attenzione a minimizzare l'inclinazione del metro rispetto all'asse ottico. Inoltre la lettura è stata eseguita nel centro della lente. Le misure di dimensione dell'immagine sono invece state eseguite con il calibro ventesimale.
+Come primo obiettivo ci siamo posti di calcolare il fuoco e l'ingrandimento della lente convergente per diversi valori di $p$ e $q$. Abbiamo quindi misurato dodici valori di $q$ e di $h\ped{imm}$ al variare di $p$.
+Questo è stato fatto tenendo ferma la sorgente luminosa e allontanando la lente divergente in modo tale da aumentare $p$, mettendo a fuoco di volta in volta l'immagine sullo schermo. %<-- questa frase ha sostituito questa -->%Questo è stato fatto tenendo ferma la sorgente luminosa, incrementando di volta in volta la distanza tra la lente e la sorgente luminosa e mettendo a fuoco l'immagine sullo schermo.
+Una volta definita la distanza oggetto lente $p$, si è poi misurata la distanza lente-schermo $q$ e la dimensione $h\ped{imm}$ dell'immagine proiettata sullo schermo. Le misure di distanza sono state eseguite con il metro a nastro prestando attenzione a minimizzare l'inclinazione del metro rispetto all'asse ottico. Inoltre la lettura è stata eseguita nel centro della lente. Le misure di dimensione dell'immagine sono invece state eseguite con il calibro ventesimale.
 
 Ovviamente, la distanza oggetto-lente è stata mantenuta maggiore della distanza focale ($p > f$). In caso contrario si avrebbe infatti un immagine virtuale e sarebbe impossibile mettere a fuoco l'immagine sullo schermo.
 
-E' importante sottolineare che nel caso in cui l'immagine si è formata ad una grande distanza dalla lente, riuscire a metterla a fuoco non è stato semplice a causa dell'effetto di profondità di campo. Abbiamo deciso quindi di prendere due misure di $q$, $q_1$ e $q_2$, secondo la seguente procedura. Quando l'immagine era circa a fuoco, abbiamo mosso lo schermo in avanti e in dietro in modo da avere l'immagine leggermente fuori fuoco in entrambe le direzione; abbiamo quindi annotato le due distanze. Siccome è facile vedere quando un oggetto è appena fuori fuoco, facendo la media di questi due valori si ottiene un valore di $q$ più preciso rispetto alla misura diretta.
+E' importante sottolineare che nel caso in cui l'immagine si è formata ad una grande distanza dalla lente, riuscire a metterla a fuoco non è stato semplice a causa dell'effetto di profondità di campo. Abbiamo deciso quindi di prendere due misure $q_1$ e $q_2$, con la seguente procedura: quando l'immagine era circa a fuoco, abbiamo mosso lo schermo in avanti e in dietro in modo da avere l'immagine leggermente fuori fuoco in entrambe le direzioni e abbiamo quindi annotato le due distanze. Ciò ci è stato utile in quanto per l'occhio umano è più facile vedere quando un oggetto è fuori fuoco rispetto al fuoco perfetto. Facendo la media di questi due valori abbiamo ottenuto un valore di $q$ %probabilmente? mah...
+più preciso rispetto alla misura diretta.
 
-Una volta ottenuti i valori  di $p$ e $q$, abbiamo calcolato per ognuno il relativo valore di $f$ utilizzando la formula \ref{eq:coniugati} (legge dei punti coniugati). Infine è stata calcolata la media aritmetica dei valori, con la quale abbiamo ottenuto il seguente valore della focale:
+Una volta ottenuti i valori  di $p$ e $q$, abbiamo calcolato per ognuno il relativo valore di $f$ utilizzando la formula seguente:
+\begin{equation}
+	\text{Legge dei punti coniugati:} \qquad \frac{1}{f} \,=\, \frac{1}{p} + \frac{1}{q}
+	\label{eq:coniugati}
+\end{equation}
 
+Quindi è stata calcolata la media aritmetica dei valori, con la quale abbiamo ottenuto il seguente valore della focale:
 \begin{equation}
     f \ped{conv} \,=\, 24 \pm 1 \; \si{\centi\metre}
 \end{equation}
 
-Inoltre vogliamo ricavare il valore della magnificazione per ogni coppia $p$ e $q$. Ricordiamo che la magnificazione è il rapporto tra le dimensioni dell'immagine ottenuta ($h \ped{imm}$) rispetto alle dimensioni reali dell'oggetto ($h$). La dimensione dell'oggetto era $h = \SI{9}{\milli\metre}$.
+Vogliamo inoltre ricavare il valore della magnificazione per ogni coppia $p$ e $q$.
+%io salterei questa frase -->%Ricordiamo che la magnificazione è il rapporto tra le dimensioni dell'immagine ottenuta ($h \ped{imm}$) rispetto alle dimensioni reali dell'oggetto ($h$).
+Considerando la dimensione dell'oggetto $h = \SI{9}{\milli\metre}$ senza errore, vale:
 
 \begin{equation}
 	m_{1} \,=\, \frac{h \ped{imm}}{h}
 \end{equation}
 
-Infine per avere una verifica della correttezza dei dati registrati, possiamo mettere a confronto il valore della magnificazione trovato empiricamente con quello che si può ricavare dalla seguente relazione:
+Infine per avere una verifica della correttezza dei dati registrati, abbiamo messo a confronto il valore della magnificazione trovato empiricamente con quello che si può ricavare dalla seguente relazione:
 
 \begin{equation}
 	m_{2} \,=\, \frac{q}{p}
 \end{equation}
 
-[Tabella $m_1$, $m_2$, p, q, $h_{imm}$ e incertezze. Forse f?]
+\input{tabella_f_mag.tex}
 % in realtà non so se vuole tutti sti dati, però secondo me è meglio metterceli, perché
-% in una relazione scientifica si mettono sempre tutti io dati per permettere agli altri di controllare eventuali
+% in una relazione scientifica si mettono sempre tutti i dati per permettere agli altri di controllare eventuali
 % errori. Comunque almeno m_1 e m_2... FRAPA X BUZZ
+%vediamo quanto occupano dai... intanto io li ho messi BUZZ X FRAPA
 
 Come si può osservare dai dati in tabella i due valori della magnificazione ricavati con entrambi i procedimenti risultano compatibili entro i propri errori. 
 % X BUZZ: metti a posto anche il commento qui quando hai fatto la tabella.
@@ -87,8 +97,8 @@ Come si può notare dai dati in tabella i valori per il fuoco della lente conver
 
 Per descrivere questo fenomeno diamo un'idea di quello che si intende con:
 \begin{itemize}
-	\item{Fascio di luce cenrale: è l'insieme dei raggi luminosi che investono la lente convergente nel suo centro;}
-	\item{Fascio di luce divergente: e l'insieme dei raggi luminosi che incidono sulla periferia della lente ovvero sulla sezione circolare, più distante dal centro, di quest'ultima;}
+	\item{Fascio di luce centrale: è l'insieme dei raggi luminosi che investono la lente convergente nel suo centro;}
+	\item{Fascio di luce divergente: è l'insieme dei raggi luminosi che incidono sulla periferia della lente ovvero sulla sezione circolare, più distante dal centro, di quest'ultima;}
 \end{itemize}
 Adottato lo stesso accorgimento del punto precedente e fissata la distanza $p$ abbiamo esaminato il valore di $q$ selezionando solo il fascio di luce centrale. Questo è stato possibile perchè abbiamo posto sula lente un diaframma che ne oscurava tutta la superficie a parte la sezione centrale. Quindi si poteva supporre che i raggi incidenti formassero un angolo di $\frac{\pi}{2}$ con la superficie.
 Successivamente per troare il valore di $q$ relativo al fascio di luce divergente abbiamo posto sulla lente un diaframma, ma con una fenditura circolare distante dal centro, in modo che i raggi incidenti sulla superficie non siano perpendicolari.
@@ -108,7 +118,7 @@ Come si può notare per il facio di luce divergente il valore della focale della
 Dal momento che per una lente divergente l'immagine che si ottiene è un immagine virtuale e non reale, ovvero l'immagine non si forma per intersezione dei raggi reali, ma per il loro prolungamento. Quindi risulterebbe impossibile misurare dirttamente il valre di $q$ usando solamente la lente divergente.
 A tal fine abbiamo assemblato un sistema di lenti illustrato nella figura sottostante.
 
-[STESSA FIGURA PRECEDENTE CON AGGIUNTA LA LENTE DIVERGENTE TRA LA SORENTE E LA LENTE DIVERGENTE]
+[STESSA FIGURA PRECEDENTE CON AGGIUNTA LA LENTE DIVERGENTE TRA LA SORGENTE E LA LENTE DIVERGENTE]
 
 Quindi indicando con:
 \begin{itemize}
