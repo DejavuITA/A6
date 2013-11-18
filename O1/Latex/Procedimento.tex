@@ -45,9 +45,9 @@ Ovviamente, la distanza oggetto-lente è stata mantenuta maggiore della distanza
 E' importante sottolineare che nel caso in cui l'immagine si è formata ad una grande distanza dalla lente, riuscire a metterla a fuoco non è stato semplice a causa dell'effetto di profondità di campo. Abbiamo deciso quindi di prendere due misure $q_1$ e $q_2$, con la seguente procedura: quando l'immagine era circa a fuoco, abbiamo mosso lo schermo in avanti e in dietro in modo da avere l'immagine leggermente fuori fuoco in entrambe le direzioni e abbiamo quindi annotato le due distanze. Ciò ci è stato utile in quanto per l'occhio umano è più facile vedere quando un oggetto è fuori fuoco rispetto al fuoco perfetto. Facendo la media di questi due valori abbiamo ottenuto un valore di $q$ %probabilmente? mah...
 più preciso rispetto alla misura diretta.
 
-Una volta ottenuti i valori  di $p$ e $q$, abbiamo calcolato per ognuno il relativo valore di $f$ utilizzando la formula seguente:
+Una volta ottenuti i valori  di $p$ e $q$, abbiamo calcolato per ognuno il relativo valore di $f$ utilizzando la legge dei punti coniugati:
 \begin{equation}
-	\text{Legge dei punti coniugati:} \qquad \frac{1}{f} \,=\, \frac{1}{p} + \frac{1}{q}
+	\frac{1}{f} \,=\, \frac{1}{p} + \frac{1}{q}
 	\label{eq:coniugati}
 \end{equation}
 
@@ -58,16 +58,16 @@ Quindi è stata calcolata la media aritmetica dei valori, con la quale abbiamo o
 
 Vogliamo inoltre ricavare il valore della magnificazione per ogni coppia $p$ e $q$.
 %io salterei questa frase -->%Ricordiamo che la magnificazione è il rapporto tra le dimensioni dell'immagine ottenuta ($h \ped{imm}$) rispetto alle dimensioni reali dell'oggetto ($h$).
-Considerando la dimensione dell'oggetto $h = \SI{9}{\milli\metre}$ senza errore, vale:
+Sapendo che la dimensione dell'oggetto era $h = \SI{9}{\milli\metre}$, dato che consideriamo privo di errore, l'ingrandimento vale: 
 
 \begin{equation}
-	m_{1} \,=\, \frac{h \ped{imm}}{h}
+    m\ped{h} \,=\, \frac{h \ped{imm}}{h}
 \end{equation}
 
 Infine per avere una verifica della correttezza dei dati registrati, abbiamo messo a confronto il valore della magnificazione trovato empiricamente con quello che si può ricavare dalla seguente relazione:
 
 \begin{equation}
-	m_{2} \,=\, \frac{q}{p}
+    m\ped{pq} \,=\, \frac{q}{p}
 \end{equation}
 
 \input{tabella_conv.tex}
@@ -80,7 +80,7 @@ Infine per avere una verifica della correttezza dei dati registrati, abbiamo mes
 Come si può osservare dai dati nella Tabella \ref{tab:conv} i due valori della magnificazione ricavati con entrambi i procedimenti non risultano compatibili entro i propri errori solo nei casi in cui è stato necessario.
 % X BUZZ: metti a posto anche il commento qui quando hai fatto la tabella.
 
-\subsection{Aberrazione cromatica relativa alla lente convergente}
+\subsection{Aberrazione cromatica della lente convergente}
 
 Ogni lente è soggetta a un difetto, detto aberrazione cromatica, dovuto al fatto che l'indice di rifrazione del vetro della lente varia al variare della lunghezza d'onda della luce incidente.
 Per valutare e osservare il fenomeno dell'aberrazione cromatica, abbiamo misurato i fuochi della lente convergente per la luce monocromatica rossa e per la luce blu, utilizzando la relazione (\ref{eq:coniugati}).
@@ -90,48 +90,48 @@ Rosso e blu sono stati scelti per massimizzare la differenza tra i fuochi e faci
 I risultati da noi ottenuti sono riportati nella tabella sottostante:
 \input{tabella_ab_crom.tex}
 
-Come si può notare dai dati in tabella \ref{tab:ab_crom} i valori per il fuoco della lente convergente sono differerenti a seconda della lunghezza d'onda (colore) dei raggi luminosi incidenti.
+Come si può notare dai dati della tabella i valori per il fuoco della lente convergente sono differenti a seconda della lunghezza d'onda (colore) dei raggi luminosi incidenti.
 
-\subsection{Aberrazione sferica relativa alla lente convergente}
+\subsection{Aberrazione sferica della lente convergente}
 
-Per descrivere questo fenomeno diamo un'idea di quello che si intende con:
+L'aberrazione sferica è un difetto delle lenti che si verifica quando una lente viene colpita dalla luce in punti lontani dall'asse ottico.
+Per osservare il fenomeno dell'aberrazione sferica e valutarne l'importanza, abbiamo misurato il fuoco della lente nel caso in cui la luce incidente fosse:
 \begin{itemize}
-	\item{fascio di luce centrale: è l'insieme dei raggi luminosi che investono la lente convergente nel suo centro;}
-	\item{fascio di luce divergente: è l'insieme dei raggi luminosi che incidono sulla periferia della lente ovvero sulla sezione circolare, più distante dal centro, di quest'ultima;}
+    \item{un fascio di luce centrale: cioè un insieme di raggi luminosi che investono la lente convergente nel suo centro (raggi parassiali);}
+	\item{un fascio di luce divergente: l'insieme dei raggi luminosi che incidono sulla periferia della lente, ovvero sull'anello più distante dal centro;}
 \end{itemize}
 
-Adottato lo stesso accorgimento del punto precedente e fissata la distanza $p$ abbiamo esaminato il valore di $q$ selezionando solo il fascio di luce centrale, ponendo sulla lente un diaframma che ne oscurava tutta la superficie a parte una sezione centrale. Quindi si poteva supporre che i raggi incidenti formassero un angolo di $\frac{\pi}{2}$ con la superficie della lente.
-
-Successivamente per trovare il valore di $q$ relativo al fascio di luce divergente abbiamo posto sulla lente un diaframma che oscurava tutta la superficie tranne un anello centrato alla periferia della lente. %non mi piace tanto periferia della lente % con una fenditura circolare distante dal centro, in modo che i raggi incidenti sulla superficie non siano perpendicolari.
-In questo modo i raggi incidenti sulla superficie della lente non erano perpendicolari.
-%Quindi grazie ai valori di $q$ possiamo ora ricavare i valori della focale nei due casi.
-
-I risultati sono riportati nela tabella sottostante:
+Abbiamo adottato lo stesso accorgimento del punto precedente, ovvero quello di mantenere $p \simeq p$ al fine di aumentare la differenza tra i fuochi ed evitare una difficile messa a fuoco. Fissata la distanza $p$ abbiamo esaminato il valore di $q$ selezionando prima solo il fascio di luce centrale e poi solo quello periferico. Per selezionari i fasci abbiamo usato un semplice un diaframma; il primo oscurava tutta la superficie a parte una sezione centrale mentre il secondo oscurava tutta la lente a parte un anello circolare vicino al bordo.
+I risultati sono riportati nella tabella sottostante:
 
 \input{tabella_ab_sf.tex}
 
-Come si può notare per il fascio di luce divergente il valore della focale della lente risulta essere minore rispetto al valore ottenuto per i raggi centrali. Questo succede proprio perché nel secondo caso per i raggi luminosi non era più valida l'approssimazione di raggi parassiali.
+Come si può notare per il fascio di luce divergente il valore della focale della lente risulta essere minore rispetto al valore ottenuto per i raggi centrali.
 
 \subsection{Fuoco della lente divergente}
 
 Dal momento che per una lente divergente l'immagine che si ottiene è un immagine virtuale e non reale, ovvero l'immagine non si forma per intersezione dei raggi reali, ma per il loro prolungamento, risulta impossibile mettere a fuoco l'immagine e quindi misurare direttamente il valore di $q$ usando solamente la lente divergente.
-A tal fine abbiamo assemblato un sistema di lenti illustrato nella figura sottostante.
+Per risolvere il problema abbiamo usato una lente convergente per proiettare l'immagine virtuale su uno schermo (vedi Figura \ref{fig:div}).
 
 \begin{figure}[b!]
 	\includegraphics[width=16cm]{drawing2.pdf}
+    \caption{Schema della disposizione delle lenti per la misura della focale della lente divergente. È riportata l'immagine
+    virtuale della lente divergente e l'immagine finale sullo schermo.}
+    \label{fig:div}
 \end{figure}
 
 %questa non è la figura con le freccette in fondo alla pagina? [STESSA FIGURA PRECEDENTE CON AGGIUNTA LA LENTE DIVERGENTE TRA LA SORGENTE E LA LENTE DIVERGENTE]
 % PS che diamine state dicendo? lente Div, tra lente Div e sorgente? quante lenti Div abbiamo? LOL
 
-Quindi indicando con:
+Specifichiamo da subito la notazione che abbiamo usato (si usi la Figura \ref{fig:div} per riferimento):
 \begin{itemize}
-	\item{$p\ped{d}\,\,$ la distanza tra la sorgente luminosa e il centro della lente divergente;}
-	\item{$D\,\,$ la distanza tra le due lenti;}
-	\item{$q\ped{c}\,\,$ la distanza tra il centro della lente convergente e l'immagine;}
-	\item{$x\,\,$ la distanza incognita tra il centro della lente divergente e l'immagine data da questa;}
+	\item{$p\ped{d} = $ distanza tra la sorgente luminosa e il centro della lente divergente;}
+	\item{$D = $ distanza tra i centro delle due lenti;}
+    \item{$q\ped{c} = $ distanza tra il centro della lente convergente e l'immagine (lo schermo);}
+	\item{$x = $ distanza incognita tra il centro della lente divergente e la sua immagine virtuale;}
 \end{itemize}
-Il sistema ideato funziona nel seguente modo: la lente divergente produce un'mmagine virtuale tra la sorgente e se stessa. Qusta immagine diventa quindi il nuovo oggetto per la lente convergente che produce un immagine reale sullo schermo. Quindi potendo misurare tutti i parametri sopraelencati ad eccezione di $x$ e $f\ped{d}$ (focale lente divergente) e conoscendo $f\ped{c}$ (focale lente convergente) si può risolvere il seguente sistema
+
+Il sistema di lenti realizzato funziona nel seguente modo: la lente divergente produce un'mmagine virtuale tra la sorgente e se stessa. Qusta immagine diventa quindi il nuovo oggetto per la lente convergente che produce un immagine reale sullo schermo. Quindi potendo misurare tutti i parametri sopraelencati ad eccezione di $x$ e $f\ped{d}$ (focale lente divergente) e conoscendo $f\ped{c}$ (focale lente convergente) si può risolvere il seguente sistema
 
 %\begin{equation}
 %	\frac{1}{f\ped{d}} \,=\, \frac{1}{p\ped{d}} + \frac{1}{x}
@@ -146,20 +146,18 @@ Il sistema ideato funziona nel seguente modo: la lente divergente produce un'mma
 \right.
 \end{equation}
 %
-ottenendo i valori di $x$ e $f\ped{d}$. Inoltre per ottenere un valore più accurato di $f\ped{d}$ abbiamo tenuto ferma la distanza $p\ped{d}$ e abbiamo variato la distanza $D$ e quindi anche $q\ped{c}$, per tre volte. Quindi per ogni tripletta abbiamo sfruttato la relazione (\ref{eq:coniugati}) e abbiamo ottenuto tre valori di $f\ped{d}$. Facendone pertanto la media otterremo un valore più accurato di $f\ped{d}$.
-Quindi abbiamo ottenuto che: % <-- questo paragrafo è da rielaborare %
-
+ottenendo i valori di $x$ e $f\ped{d}$. Inoltre per ottenere un valore più accurato di $f\ped{d}$, abbiamo eseguito tre misure tenendo ferma la distanza $p\ped{d}$ e variando $D$ e $q\ped{c}$. Quindi per ogni set di misure abbiamo sfruttato la legge dei punti coniugati (\ref{eq:coniugati}) e abbiamo ottenuto tre valori di $f\ped{d}$. Facendone la media si ottiene un valore più accurato di $f\ped{d}$. I risultati sono i seguenti (Il segno negativo indica che l'immagine virtuale ed il fuoco si trovano sul lato sinistro della lente come vista in Figura \ref{fig:div}. Chiaramente esiste anche un altro fuoco dal lato opposto):
 \begin{equation}
-	x \,=\, (-12 \pm 2) \,\text{cm} \qquad \text{e} \qquad f\ped{d} \,=\, (-20 \pm 7) \,\text{cm}
+	x \,=\, (-12 \pm 2) \;\si{\centi\metre} \qquad \qquad f\ped{d} \,=\, (-20 \pm 7) \;\si{\centi\metre}
 \end{equation}
 
 Infine anche per questo sistema di lenti abbiamo calcolato il valore della magnificazione nei due modi possibili, cioè indirettamente con i valori $p\ped{d}$, $x$, $D$ e $q\ped{c}$
 \begin{equation}
-	m \,=\, m_1 \cdot m_2 \,=\, \frac{p_d}{x} \cdot \frac{q_c}{D+x}
+    m\ped{pq} \,=\, m_1 \cdot m_2 \,=\, \frac{p_d}{x} \cdot \frac{q_c}{D+x}
 \end{equation} %	|m| \,=\, \frac{x}{p\ped{d}} \,=\,
 dove $x$ non è altro che il valore di $q\ped{d}$ e direttamente con i valori di $h$\ped{imm}
 \begin{equation}
-	m \,=\, \frac{h\ped{imm}}{h}
+    m\ped{h} \,=\, \frac{h\ped{imm}}{h}
 \end{equation}
 
 \input{tabella_div.tex}
@@ -173,20 +171,35 @@ dove $x$ non è altro che il valore di $q\ped{d}$ e direttamente con i valori di
 %\end{equation}
 %e abbiamo ottenuto che $m \'=\' XXX$
 
-\subsection{indice di rifrazione della lente convergente}
+\subsection{Indice di rifrazione della lente convergente}
 
-Per ricavare il valore dell'indice di rifrazione $n$ della lente convergente non dobbiamo fare altro che sfruttare la seguente relazione:
+Per ricavare il valore dell'indice di rifrazione $n$ della lente convergente non dobbiamo fare altro che usare la legge del costruttore di lenti:
 \begin{equation}
-	\text{Legge del costruttore di lenti:} \qquad \frac{1}{f} \,=\, (n-1)\left(\frac{1}{R\ped{1}}-\frac{1}{R\ped{2}}\right)
+\frac{1}{f} \,=\, (n-1)\left(\frac{1}{R\ped{1}}-\frac{1}{R\ped{2}}\right) \,=\, \frac{2(n-1)}{R}
 	\label{eq:costruttore}
 \end{equation}
-A tal fine abbiamo usato il calibro per misurare i diametro della lente, il suo spessore al centro e quello al bordo. Tutti questi dati sono necessari in quanto nella legge sopracitata sono necessari i valori di $R\ped{1}$ e $R\ped{2}$ che nel nostro caso hanno valore uguale. $R\ped{1}$ e $R\ped{2}$ non sono altro che le distanze tra il centro della lente e la superficie della stessa. Quindi il problema di ricavare $R\ped{1}$ e $R\ped{2}$ si riduce ad un semplice problema di geometria elementare.
-Il valore ottenuto di $R$ è: $R \,=\, XXX$.
-Quindi per concludere il valore dell'indice di rifrazione ($n$) della lente convergente risulta essere:
+dove $f$ è la focale della lente convergente, $R_1$ e $R_2$ sono i raggi delle facce sferiche della lente. La nostra lente era simmetrica per cui $|R_1| = |R_2| \equiv R$ per cui vale la seconda uguaglianza.
 
-\begin{equation}
-	n \,=\, XXX
-\end{equation}
+\begin{wrapfigure}{r}{20mm}
+  \begin{center}
+    \includegraphics{lente.pdf}
+  \end{center}
+\end{wrapfigure}
+
+Per ottenere il raggio $R$ della lente abbiamo misurato col calibro il diametro della lente, il suo spessore al centro e quello al bordo. Con questi dati ricavare il raggio è un problema di geometria elementare. Tuttavia la nostra lente presentava uno smusso (in figura a lato una sezione), per cui non era chiaro il valore dello spessore al bordo. Abbiamo registrato i valori di spessore al bordo sia includendo lo smusso che non misurandolo. Sono stati ricavati due valori di raggio e dell'indice di rifrazione, in un caso è stata eliminata solo la parte grigio chiaro (senza smusso) mentre nell'altro anche quella grigio scuro (con smusso). I valori ottenuto sono:
+
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabular}{l c c}
+        \toprule
+        Smusso & $R [\si{\centi\metre}]$ & $n$ \\
+        \midrule
+		Con smusso & $29 \pm 5$ & $1.6 \pm 0.1$  \\
+		Senza smusso & $16 \pm 2$ & $1.3 \pm 0.1$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 
 
