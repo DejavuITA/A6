@@ -6,8 +6,8 @@
         \toprule
         Diaframma & $p \; [\si{\centi\metre}]$ & $q \; [\si{\centi\metre}]$ & $f \; [\si{\centi\metre}]$ \\
         \midrule
-		Foro centrale & $47.3 \pm 0.1$ & $48.8 \pm 0.1$ & $24 \pm 2$ \\
-		Anello periferico & $47.3 \pm 0.1$ & $49.7 \pm 0.1$ & $24 \pm 2$ \\
+		Foro centrale & $47.3 \pm 0.05$ & $48.8 \pm 0.05$ & $24 \pm 2$ \\
+		Anello periferico & p$_r$ & q$_r$ & $24 \pm 2$ \\
         \bottomrule
     \end{tabular}
 \end{table}

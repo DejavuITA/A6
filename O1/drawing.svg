@@ -68,9 +68,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.0694713"
-     inkscape:cx="561.28862"
-     inkscape:cy="51.125785"
+     inkscape:zoom="1.3506565"
+     inkscape:cx="265.86415"
+     inkscape:cy="80.021587"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -236,27 +236,25 @@
          y="928.34644">Schermo</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 248.0315,95.669292 0,-10.629921"
+       d="m 301.18212,1006.2992 0,-10.62992"
        id="path6428"
        inkscape:connector-curvature="0"
-       transform="translate(0,910.62991)"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 248.0315,85.039371 c -10.62993,-17.716535 -10.62993,-46.062992 0,-63.779527 10.62992,17.716535 10.62992,46.062992 0,63.779527 z"
+       d="m 301.18212,995.66928 c -10.62993,-17.71653 -10.62993,-46.06299 0,-63.77953 10.62992,17.71654 10.62992,46.063 0,63.77953 z"
        id="path6430"
        inkscape:connector-curvature="0"
-       transform="translate(0,910.62991)"
        sodipodi:nodetypes="ccc" />
     <text
        xml:space="preserve"
        style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
-       x="230.31496"
+       x="283.46558"
        y="928.34644"
        id="text6432"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="230.31496"
+         x="283.46558"
          y="928.34644"
          id="tspan6436">Lente</tspan></text>
     <path
@@ -303,13 +301,13 @@
     <text
        xml:space="preserve"
        style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
-       x="389.76379"
+       x="425.19684"
        y="1034.6456"
        id="text6454"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6456"
-         x="389.76379"
+         x="425.19684"
          y="1034.6456">q</tspan></text>
     <path
        style="fill:none;stroke:#646464;stroke-width:0.53149605;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -320,7 +318,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#646464;stroke-width:0.53149605;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 124.01575,24.803151 124.01575,0 276.37795,63.779527"
+       d="m 124.01575,24.803151 177.16535,0 223.22835,63.779527"
        id="path3025"
        inkscape:connector-curvature="0"
        transform="translate(0,910.62991)"
@@ -378,20 +376,19 @@
        sodipodi:cy="53.143246"
        sodipodi:rx="1.6755706"
        sodipodi:ry="1.783672"
-       d="m 373.59821,53.143246 c 0,0.985095 -0.75018,1.783672 -1.67557,1.783672 -0.92539,0 -1.67557,-0.798577 -1.67557,-1.783672 0,-0.985095 0.75018,-1.783672 1.67557,-1.783672 0.92539,0 1.67557,0.798577 1.67557,1.783672 z"
-       transform="matrix(1.0573434,0,0,0.99326197,-21.202702,910.99435)" />
+       d="m 373.59821,53.143246 a 1.6755706,1.783672 0 1 1 -3.35114,0 1.6755706,1.783672 0 1 1 3.35114,0 z"
+       transform="matrix(1.0573434,0,0,0.99326197,7.7336837,910.99435)" />
     <text
        xml:space="preserve"
        style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
-       x="353.45477"
-       y="35.328941"
+       x="382.39117"
+       y="945.95886"
        id="text4193"
-       sodipodi:linespacing="125%"
-       transform="translate(0,910.62991)"><tspan
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4195"
-         x="353.45477"
-         y="35.328941">Fuoco</tspan></text>
+         x="382.39117"
+         y="945.95886">Fuoco</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 248.0315,1031.102 0,7.0866"
@@ -399,28 +396,37 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 248.0315,1034.6453 124.01574,0"
+       d="m 248.0315,1034.6453 152.3622,4e-4"
        id="path4201"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 372.04724,1031.102 0,7.0866"
+       d="m 400.3937,1031.1024 0,7.0866"
        id="path4203"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math"
-       x="308.26773"
+       x="322.44095"
        y="1048.8188"
        id="text4205"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4207"
-         x="308.26773"
+         x="322.44095"
          y="1048.8188">f</tspan><tspan
          sodipodi:role="line"
-         x="308.26773"
+         x="322.44095"
          y="1065.0688"
          id="tspan4209" /></text>
+    <path
+       style="fill:none;stroke:#646464;stroke-width:0.70866141999999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 124.01575,24.803151 400.3937,63.779527"
+       id="path3042"
+       inkscape:connector-curvature="0"
+       transform="translate(0,910.62991)"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
