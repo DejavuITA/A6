@@ -26,10 +26,10 @@ alpha = pi / 3;
 %clear [dat_theta_colori_gradi, dat_theta_colori_primi, dat_theta_dev_gradi, dat_theta_dev_primi, dat_theta_rifl_gradi, dat_theta_rifl_primi] ;
 
 % inizio analisi parte 1 (traviamo n in funzione di theta e lambda)
-th_max = (th_col .- th_0);
-	dth_max = sqrt(dth_col.^2 .+ dth_0^2);
-n = (sin((alpha .+ th_max)./2)) ./ (sin(alpha / 2));
-	dn = (abs(cos((alpha .+ th_max) ./ 2) .* dth_max)) ./ (2 .* sin(alpha ./ 2));
+th_max = (th_col .- th_0)
+	dth_max = sqrt(dth_col.^2 .+ dth_0^2)
+n = (sin((alpha .+ th_max)./2)) ./ (sin(alpha / 2))
+	dn = (abs(cos((alpha .+ th_max) ./ 2) .* dth_max)) ./ (2 .* sin(alpha ./ 2))
 
 % inizio analisi parte 2
 th_i = (th_rifl .- th_0) ./2;
