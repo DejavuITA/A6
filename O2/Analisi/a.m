@@ -4,20 +4,24 @@ source("../../algoritmi/utils.m");
 % input dei dati della prima parte, cioè di theta_max in funzione di lambda - th_0 = 128.31
 th_0 = pi.*(128 .+ 31./60)./180;
  dth_0 = pi.*(1./60)./180;
+ 
 dat_theta_colori_gradi = csvread("../Dati/thetamax.csv")(2:end, 2);
 dat_theta_colori_primi = csvread("../Dati/thetamax.csv")(2:end, 3);
+
 th_col = pi.*(dat_theta_colori_gradi .+ dat_theta_colori_primi./60)./180;
- dth_col = ones(6,1) .* pi.*(1./60)./180;
+ dth_col = ones(6,1) .* pi.*(1./60)./180; % WTF???
 
 % input dei dati della seconda parte, cioè di theta in funzione di theta_in
 dat_theta_rifl_gradi = csvread("../Dati/deviazione.csv")(2:end, 1);
 dat_theta_rifl_primi = csvread("../Dati/deviazione.csv")(2:end, 2);
+
 th_rifl = pi.*(dat_theta_rifl_gradi .+ dat_theta_rifl_primi./60)./180;
  dth_rifl = ones(23,1) .* pi.*(1./60)./180;
 %	[th_rifl dth_rifl]
 
 dat_theta_dev_gradi = csvread("../Dati/deviazione.csv")(2:end, 3);
 dat_theta_dev_primi = csvread("../Dati/deviazione.csv")(2:end, 4);
+
 th_dev = pi.*(dat_theta_dev_gradi .+ dat_theta_dev_primi./60)./180;
  dth_dev = ones(23,1) .* pi.*(1./60)./180;
 %	[th_dev dth_dev]
@@ -31,6 +35,8 @@ clear dat_theta_colori_gradi dat_theta_colori_primi dat_theta_dev_gradi dat_thet
 % inizio analisi parte 1 (traviamo n in funzione di theta e lambda)
 th_max = (th_col .- th_0);
  dth_max = sqrt(dth_col.^2 .+ dth_0^2);
+ 
+ 
 n = (sin((alpha .+ th_max)./2)) ./ (sin(alpha / 2));
  dn = (abs(cos((alpha .+ th_max) ./ 2) .* dth_max)) ./ (2 .* sin(alpha ./ 2));
 
