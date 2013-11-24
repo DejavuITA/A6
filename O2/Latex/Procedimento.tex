@@ -47,9 +47,24 @@ In questa seconda parte dell'esperienza vogliamo verificare la seguente relazion
 	\label{eq:brutta}
 \end{equation}
 
-dove: $\theta$ indica l'angolo di incidenza del raggio luminoso su di una faccia del prisma, $\alpha$ non è altro che l'angolo di apertura del prisma, e $r$, ops non ho il disegno, seriamente che cosa rappresenta r...
+dove: $\theta$ indica l'angolo che ha il raggio monocromatico uscente dal prisma rispetto al prolungamento del raggio incidente, $\alpha$ non è altro che l'angolo di apertura del prisma, e $r$, rappresenta l'angolo di rifrazione interno al prisma, ovvero l'angolo del raggio rifratto rispetto alla perpendicolare. Infatti il suo valore è immediatamente ricavabile dalla legge di Snell:
 
-r rappresenta l'angolo di Rifrazione, cioè quello del raggio rifratto da un primo passaggio nel prisma del raggio incidente. dalla legge di snell $n_isin(i) = n_rsin(r)$
+\begin{equation}
+	 n\ped{i} \, \sin{\theta\ped{i}} = n\ped{r} \, \sin{r}
+	 \label{snell}
+\end{equation}
+
+dove $n_i$ rappresenta l'indice di rifrazione dell'aria, mentre $n_r$ rappresenta l'indice di rifrazione che assume il materiale a seconda del raggio considerato in quanto il valore di $n_r$ varia a seconda della lunghezza d'onda ($\lambda$) del raggio in esame. Ricordiamo che i valori di $n_r$ in relazione a $\lambda$ sono stati ricavati nella prima parte dell'esperienza. Infine $\theta\ped{i}$ rappresenta l'angolo di incidenza del raggio luminoso sulla faccia del prisma.
+Quindi usando $r$ come variabile e conoscendo, per misura diretta $\theta\ped{i}$, posso ricavare $\theta$ dalla (\ref{eq:brutta}).
+
+Pertanto quello che dobbiamo fare, in pratica, è misurare $\theta\ped{i}$ col seguente procedimento:
+
+\begin{itemize}
+	\item{abbiamo scelto di ricavare $\theta$ per il raggio monocromatico di colore verde, quindi di lunghezza d'onda pari a XXX;}
+	\item{non potendo tuttavia misurare direttamente l'angolo di incidenza ($\theta\ped{i}$) abbiamo misurato l'angolo di riflessione del raggio riflesso allineando il canocchiale col crocifilo la raggio riflesso. Quindi sapendo che l'angolo di incidenza non è altro che la metà dell'angolo misurato abbiamo trovato $\theta\ped{i}$;}
+	\item{quindi per ognuno dei 23 angoli di incidenza misurati abbiamo preso il corrispettivo valore di $\theta$ allineando il canocchiale col crocifilo con il raggio monocromatico verede uscente al prisma;}
+	\item{infine confronteremo i $\theta$ sperimentali con i valori trovati grazie alla relazione (\ref{eq:brutta}) e scoprimemo pertanto se quest'utima è una relazione valida;}
+\end{itemize}
 
 \begin{figure}[b]
     \includegraphics[width=16cm]{graph.pdf}
