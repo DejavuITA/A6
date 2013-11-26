@@ -27,14 +27,15 @@ Int_rel = Int ./ Int_max;
 
 
 %[Int_rel x]
-New_Int = [Int_rel' 1]';
-New_theta = [theta' theta_max]';
+New_Int = [Int_rel' 1]'; % :-) cmq bastava mettere ; al posto di spazio senza trasporre nulla
+New_theta = [theta' theta_max]' .- theta_max;
 x = sin(New_theta);
 New_Int = [New_Int(45)' New_Int(1:25)' New_Int(26:44)']';
 x = [x(45)' x(1:25)' x(26:44)']';
+New_theta = [New_theta(45)' New_theta(1:25)' New_theta(26:44)']';
 [New_Int x]
 
-
+plot(New_theta, New_Int, "o")
 
 % questo può tornare utile
 % inizio analisi% scrivo i dati

@@ -1,2 +1,25 @@
 \section{Analisi}
-blah blah blah blah
+
+Innanzitutto occorre ottenere il valore di intensità massima $I\ped{max}$ e $\vartheta\ped{max}$, poiché abbiamo misurato tre valori distinti.
+Abbiamo quindi fatto la media dei valori registrati. Dopo questo primo passo ci siamo assicurati di esprimere tutti gli angoli rispetto
+all'angolo $\vartheta\ped{max}$, ovvero lo abbiamo sottratto a tutti gli altri angoli.
+
+Abbiamo graficato i dati, ottenendo lo spettacolare grafico in Figura XXX-ANAL-GATE-4-PORNO-GAY-XXX, tracciando una linea orrizzontale
+che corrisponde al 5\% dell'intensità massima. Dal grafico abbiamo trovato i punti tra i quali passa la linea corrispondente al 5\%,
+di cui indicheremo con $I\ped{sopra}$, $I\ped{sotto}$ e $\vartheta\ped{sopra}$, $\vartheta\ped{sotto}$ rispettivamente l'intensità e l'angolo.
+A questo punto si può ottenere il valore di \emph{NA} interpolando linermente tra i due punti e imponendo:
+
+\begin{equation}
+    \begin{split}
+        0.05 \cdot I\ped{max} &= I\ped{sopra} + (I\ped{sotto} - I\ped{sopra}) \cdot \frac{\emph{NA} - \vartheta\ped{sopra}}{\vartheta\ped{sotto} - \vartheta\ped{sopra}} \\
+                              &= I\ped{sopra} + \Delta I \cdot \frac{\emph{NA} - \vartheta\ped{sopra}}{\Delta \vartheta}
+    \end{split}
+\end{equation}
+
+Da cui si ha, banalmente:
+
+\begin{equation}
+    \emph{NA} = \frac{\Delta \vartheta}{\Delta I} (0.05 \cdot I\ped{max}) + \vartheta\ped{sopra}
+\end{equation}
+
+
