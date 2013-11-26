@@ -4,20 +4,28 @@ source("../../algoritmi/alg1.m");
 source("../../algoritmi/utils.m");
 
 % input dei dati
-dat_Imax_pow = csvread("../Dati/Imax.csv")(2:end, 1);
-dat_Imax_gradi = csvread("../Dati/Imax.csv")(2:end, 2);
-dat_Imax_primi = csvread("../Dati/Imax.csv")(2:end, 3);
+dat_Int_max_pow = csvread("../Dati/imax.csv")(2:end, 1);
+dat_Int_max_gradi = csvread("../Dati/imax.csv")(2:end, 2);
+dat_Int_max_primi = csvread("../Dati/imax.csv")(2:end, 3);
+dat_dat_pow = csvread("../Dati/dati.csv")(2:end, 1);
+dat_dat_gradi = csvread("../Dati/dati.csv")(2:end, 2);
+dat_dat_primi = csvread("../Dati/dati.csv")(2:end, 3);
 
-Imax = mean(dat_Imax_pow)
-theta = pi.*(dat_Imax_gradi .+ dat_Imax_primi./60)./180
+Int_max = mean(dat_Int_max_pow);
+theta_max = mean(pi.*(dat_Int_max_gradi .+ dat_Int_max_primi./60)./180);
+Int = dat_dat_pow;
+theta = pi.*(dat_dat_gradi .+ dat_dat_primi./60)./180;
 
 % altri dati
 
 % pulisco la lista variabili
-clear dat_Imax_pow dat_Imax_gradi dat_Imax_primi;
+clear dat_Int_max_pow dat_Int_max_gradi dat_Int_max_primi dat_dat_pow dat_dat_gradi dat_dat_primi;
 
+% analisi dati
+Int_rel = Int ./ Int_max;
+x = sin(theta);
 
-
+[Int_rel x]
 
 
 
