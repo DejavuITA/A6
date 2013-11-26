@@ -11,8 +11,8 @@ dat_dat_pow = csvread("../Dati/dati.csv")(2:end, 1);
 dat_dat_gradi = csvread("../Dati/dati.csv")(2:end, 2);
 dat_dat_primi = csvread("../Dati/dati.csv")(2:end, 3);
 
-Int_max = mean(dat_Int_max_pow);
-theta_max = mean(pi.*(dat_Int_max_gradi .+ dat_Int_max_primi./60)./180);
+Int_max = mean(dat_Int_max_pow)
+theta_max = mean(pi.*(dat_Int_max_gradi .+ dat_Int_max_primi./60)./180)
 Int = dat_dat_pow;
 theta = pi.*(dat_dat_gradi .+ dat_dat_primi./60)./180;
 
@@ -22,7 +22,7 @@ theta = pi.*(dat_dat_gradi .+ dat_dat_primi./60)./180;
 clear dat_Int_max_pow dat_Int_max_gradi dat_Int_max_primi dat_dat_pow dat_dat_gradi dat_dat_primi;
 
 % analisi dati
-Int_rel = Int ./ Int_max;
+Int_rel = Int ./ Int_max
 %x = sin(theta);
 
 
@@ -32,8 +32,15 @@ New_theta = [theta' theta_max]';
 x = sin(New_theta);
 New_Int = [New_Int(45)' New_Int(1:25)' New_Int(26:44)']';
 x = [x(45)' x(1:25)' x(26:44)']';
-[New_Int x]
-
+[New_Int x];
+ 
+ % non so cosa faccio Andrea
+dy = 0.001
+% questi due sotto non c'entrano nulla
+%d_y_1 = sqrt((1./Int.^2)*(dx^2))
+%d_y_2 = sqrt((((theta./(Int.^2)).^2)*(dy^2)))
+% errore sulle y relative.
+dy_tot = sqrt((1/Int_max^2)*(dy^2).+(((Int./(Int_max^2)).^2)*(dy^2)))
 
 
 % questo può tornare utile
