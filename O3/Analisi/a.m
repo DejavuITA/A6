@@ -23,10 +23,16 @@ clear dat_Int_max_pow dat_Int_max_gradi dat_Int_max_primi dat_dat_pow dat_dat_gr
 
 % analisi dati
 Int_rel = Int ./ Int_max;
-x = sin(theta);
+%x = sin(theta);
 
-[Int_rel x]
 
+%[Int_rel x]
+New_Int = [Int_rel' 1]';
+New_theta = [theta' theta_max]';
+x = sin(New_theta);
+New_Int = [New_Int(45)' New_Int(1:25)' New_Int(26:44)']';
+x = [x(45)' x(1:25)' x(26:44)']';
+[New_Int x]
 
 
 
