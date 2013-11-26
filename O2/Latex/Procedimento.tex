@@ -58,32 +58,32 @@ Queste differenze hanno senso perchè, osservando con il canocchiale la distanza
 
 Un altra difficoltà è derivata dal fatto che la lampada al cadmio emette debolmente alle lunghezze d'onda dei rossi 2 e 3, e quindi le righe sono difficilmente visibili.
 
-\subsection{Verifica sperimentale della legge che lega l'angolo di incidenza, sul prisma, di un raggio luminoso col relativo angolo di uscita}
+\subsection{Relazione tra angolo di incidenza e di deviazione}
 
-In questa seconda parte dell'esperienza vogliamo verificare la seguente relazione sperimentale:
+In questa seconda parte dell'esperienza vogliamo verificare la seguente legge. Questa relazione permette di calcolare l'angolo di deviazione di un raggio rispetto alla direzione iniziale, quando questo passa attraverso un prisma.
 
 \begin{equation}
 	\theta \,=\, \arcsin{(n - \sin{r})} + \arcsin{(n \, \sin{(\alpha - r)})} - \alpha
 	\label{eq:brutta}
 \end{equation}
-
-dove: $\theta$ indica l'angolo che ha il raggio monocromatico uscente dal prisma rispetto al prolungamento del raggio incidente, $\alpha$ non è altro che l'angolo di apertura del prisma, e $r$, rappresenta l'angolo di rifrazione interno al prisma, ovvero l'angolo del raggio rifratto rispetto alla perpendicolare. Infatti il suo valore è immediatamente ricavabile dalla legge di Snell:
+%
+dove $n$ indica l'indice di rifrazione del materiale di cui è fatto il prisma, $\theta$ indica l'angolo di deviazione del raggio uscente rispetto al prolungamento del raggio incidente, $\alpha$ non è altro che l'angolo di apertura del prisma, e $r$, rappresenta l'angolo di rifrazione interno al prisma, ovvero l'angolo del raggio rifratto rispetto alla perpendicolare (si veda Figura \ref{fig:prisma}, ricordando che in figura $\theta$ è indicato con $\theta\ped{max}$ e la configurazione in questo caso può non essere simmetrica). L'angolo $r$ si ricava immediatamente dalla legge di Snell:
 
 \begin{equation}
-	 n\ped{i} \, \sin{\theta\ped{i}} = n\ped{r} \, \sin{r}
+	 n\ped{aria} \, \sin{\theta\ped{i}} = \sin{\theta} = n \, \sin{r}
 	 \label{snell}
 \end{equation}
+%
+dove $n\ped{aria}$ rappresenta l'indice di rifrazione dell'aria, che prendiamo uguale a 1, mentre $n$ rappresenta l'indice di rifrazione del materiale di cui è fatto il prisma, che dipende dalla lunghezza d'onda $\lambda$ della luce che colpisce il prisma. Ricordiamo che i valori di $n$ per vari valori di $\lambda$ sono stati ricavati nella prima parte dell'esperienza. Infine $\theta\ped{i}$ rappresenta l'angolo di incidenza del raggio luminoso sulla faccia del prisma.
+Quindi usando la (\ref{snell}) e la (\ref{eq:brutta}), è possibile calcolare l'andolo di deviazione $\theta$ in funzione dell'angolo di incidenza $\theta_i$.
 
-dove $n_i$ rappresenta l'indice di rifrazione dell'aria, mentre $n_r$ rappresenta l'indice di rifrazione che assume il materiale a seconda del raggio considerato in quanto il valore di $n_r$ varia a seconda della lunghezza d'onda ($\lambda$) del raggio in esame. Ricordiamo che i valori di $n_r$ in relazione a $\lambda$ sono stati ricavati nella prima parte dell'esperienza. Infine $\theta\ped{i}$ rappresenta l'angolo di incidenza del raggio luminoso sulla faccia del prisma.
-Quindi usando $r$ come variabile e conoscendo, per misura diretta $\theta\ped{i}$, posso ricavare $\theta$ dalla (\ref{eq:brutta}).
-
-Pertanto quello che dobbiamo fare, in pratica, è misurare $\theta\ped{i}$ col seguente procedimento:
+Pertanto quello che dobbiamo fare, in pratica, è misurare alcuni valori di $\theta$ e $\theta\ped{i}$, e verificare che siano in accordo con la teoria. Abbiamo seguito il seguente procedimento:
 
 \begin{itemize}
-	\item{abbiamo scelto di ricavare $\theta$ per il raggio monocromatico di colore verde, quindi di lunghezza d'onda pari a XXX;}
-	\item{non potendo tuttavia misurare direttamente l'angolo di incidenza ($\theta\ped{i}$) abbiamo misurato l'angolo di riflessione del raggio riflesso allineando il canocchiale col crocifilo la raggio riflesso. Quindi sapendo che l'angolo di incidenza non è altro che la metà dell'angolo misurato abbiamo trovato $\theta\ped{i}$;}
-	\item{quindi per ognuno dei 23 angoli di incidenza misurati abbiamo preso il corrispettivo valore di $\theta$ allineando il canocchiale col crocifilo con il raggio monocromatico verede uscente al prisma;}
-	\item{infine confronteremo i $\theta$ sperimentali con i valori trovati grazie alla relazione (\ref{eq:brutta}) e verificheremo se quest'utima è una relazione valida;}
+	\item{Abbiamo scelto di ricavare $\theta$ per il raggio monocromatico di colore verde, quindi di lunghezza d'onda pari a 508 nm. Per il calcolo delle formule (\ref{eq:brutta}) e (\ref{snell}) serve infatti l'indice di rifrazione del materiale. Abbiamo scelto di usare la luce verde e quindi il rispettivo valore di $n$ riportato in Tabella \ref{tab:enne};}
+	\item{Non potendo misurare direttamente l'angolo di incidenza $\theta\ped{i}$ abbiamo misurato l'angolo di riflessione del raggio riflesso (una componente della luce incidente viene riflessa). Abbiamo mirato con il canocchiale col crocifilo la raggio riflesso, e misurato l'angolo. Quindi sapendo che l'angolo di incidenza non è altro che la metà dell'angolo misurato abbiamo trovato $\theta\ped{i}$;}
+	\item{Quindi per ognuno dei 23 angoli di incidenza misurati, abbiamo preso il corrispettivo valore di $\theta$ allineando il canocchiale con il raggio monocromatico verde uscente al prisma;}
+	\item{Infine confronteremo i $\theta$ sperimentali con i valori trovati grazie alla relazione (\ref{eq:brutta}) e verificheremo se quest'utima è una relazione valida;}
 \end{itemize}
 
 Come si può osservare dal grafico infigura (\ref{fig:dev}) abbimo ottenuto dei datisperimentali che combaciano molto bene con la legge da verificare (\ref{eq:brutta}). Tralasciando due punti, che con molta probabilità non sono stati presi accuratamente come gli altri ci sentiamo di dire che la relazione (\ref{eq:brutta}) che lega $\theta$ con l'angolo di incidenza del raggio luminoso sulla faccia del prisma è verificata.
@@ -95,5 +95,3 @@ Come si può osservare dal grafico infigura (\ref{fig:dev}) abbimo ottenuto dei 
     risoluzione è piccolo e non è mostrato in figura, in quanto le barre d'errore sono invisibili.}
     \label{fig:dev}
 \end{figure}
-
-\input{tabella_dev_gradi.tex}
