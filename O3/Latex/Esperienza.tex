@@ -13,6 +13,8 @@ viene in parte riflesso ed in parte rifratto, e di conseguenza tende a diminuire
 L'apertura numerica è legata strettamente all'ampiezza del cono di accettazione, cioè il cono che contiene tutti i raggi che vengono
 riflessi totalmente. \emph{NA} è quindi un parametro importante sia nella progettazione di certi esperimenti che dal punto
 di vista puramente ingegneristico.
+% forse è meglio invertire le due cose? intendo:
+% "... importante sia dal punto di vista puramente ingegneristico che nella progettazione di alcuni esperimenti" ?
 
 \section{Procedimento}
 
@@ -32,29 +34,32 @@ Da notare che il grafico dell'intensità in funzione dell'angolo ha una forma a 
 scegliere come variabile indipendente l'intensità o l'angolo? Noi abbiamo optato per l'intensità poiché la cima della campana
 ci interessa relativamente poco e poiché dobbiamo essere sicuri di prendere alcuni punti attorno al 5\% dell'intensità massima.
 
+%\begin{figure}[h]
+%    \includegraphics[width=80mm]{grafico.pdf}
+%	\label{In questa figura sono graficati in dati dell'intensità relativa ($I/I\ped{0}$) in funzione del seno dell'angolo ($sen\vartheta$)}
+%\end{figure}
+
 \subsection{Difficoltà nella realizzazione delle misure}
 
-Anche se la misura in teoria è semplice, in pratica la misura risulta difficoltosa per vari motivi che ora chiariremo.
-Le difficoltà che si possono incontrare derivano essenzialmente dal diametro del core della fibra ottica. Generalmente,
-all'assottigliarsi del core si riscontrano le seguenti difficoltà:
-
+Alcune difficoltà di questo esperimento derivano dal diametro del core, infatti all'assottigliarsi del core si riscontrano che:
 \begin{itemize}
     \item{L'allineamento della fibra ottica con il raggio laser risulta via via più difficoltoso.}
     \item{La rotazione della fibra ottica mediante il goniometro richiede che l'estremità della fibra sia esattamente
         al centro del goniometro, in modo da evitare un movimento laterale dell'estremità stessa.}
-    \item{La misura diventa via via più sensibile alle vibrazioni e movimenti del piano di lavoro e delle varie componenti
-        del apparato di misura (come fibra ottica e laser) dovute alle condizioni ambientali, come per esempio dilatazioni termiche
-        (il laser si scalda) o variazioni di pressione.}
+\end{itemize}
+Ma le difficoltà di realizzazione in questo esperimento non sono date principalmente dal procedimento di misura in sè, bensì dalla difficoltà a mantenere le condizioni di contorno costanti. L'apparato infatti è particolarmente sensibile a:
+\begin{itemize}
+	\item{vibrazioni e movimenti del piano di lavoro e relative componenti dell'apparato (posizione relativa di fibra ottica e laser)}
+	\item{dilatazioni termiche (il laser in funzione si scalda) e variazioni di pressione}
 \end{itemize}
 
-È quindi fondamentale tenere sotto controllo le condizioni ambientali del laboratorio, soprattutto se il core è sottile. Poiché
-questo è stato impossibile nel nostro caso, abbiamo controllato più volte che le condizioni ambientali rimanessero costanti.
+È quindi fondamentale tenere sotto controllo le condizioni ambientali del laboratorio, soprattutto se il core è sottile. Poiché tale controllo delle condizioni ambientali è stato impossibile nel nostro caso, abbiamo verificato più volte che esse rimanessero costanti.
 
 Per fare ciò abbiamo adottato la seguente procedura. Si è misurata l'intensità massima e il corrispettivo angolo $\vartheta\ped{max}$.
 Successivamente sono stati misurati svariati valori di intensità per $\vartheta$ crescente, assicurandosi di prendere qualche punto
 al di sotto del 5\% dell'intensità massima. Poi abbiamo misurato nuovamente l'intensità massima, assieme all'angolo $\vartheta\ped{max}$,
-per assicurarsi che non fosse variato in modo significativo. Dopodiché è sono stati presi altri punti, stavolta muovendosi in senso opposto.
-Infine è stato ricontrollato che sia l'angolo $\vartheta\ped{max}$ che l'intensità massima fossero rimasti costanti. In caso
+per assicurarsi che non fosse variato in modo significativo. Dopodiché sono stati presi altri punti, stavolta muovendosi in senso opposto.
+Infine è stato ricontrollato che sia l'angolo $\vartheta\ped{max}$ sia l'intensità massima fossero rimasti costanti. In caso
 contrario si sarebbe dovuta ripetere l'intera misura.
 
 Fortunatamente nel nostro caso la variazione di intensità massima durante l'esperimento è stata minore del 0.5\%, e anche la variazione
