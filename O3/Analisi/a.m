@@ -48,18 +48,33 @@ dx = [dx(25:-1:1); dx(45); dx(26:44)];
 New_theta = [New_theta(25:-1:1); New_theta(45); New_theta(26:44)]
 dNew_theta = [dNew_theta(25:-1:1); dNew_theta(45); dNew_theta(26:44)]
 
-range_theta1 = New_theta(length(x) - 3) - New_theta(length(x) - 4);
-range_Int1 = New_Int(length(x) - 3) - New_Int(length(x) - 4);
+range_theta1 = New_theta(length(x) - 1) - New_theta(length(x) - 2);
+range_Int1 = New_Int(length(x) - 1) - New_Int(length(x) - 2);
 
-na1 = range_theta1 / range_Int1 * 0.05 + New_theta(length(x) - 3)
+na1 = range_theta1 / range_Int1 * (0.05 - New_Int(length(x) - 2)) + New_theta(length(x) - 2)
+# se ci tenete alla vostra integrità mentale lasciate perdere
+dna1 = sqrt(
+	((0.05 .- New_Int(length(x) - 2)) ./ range_Int1 .* dNew_theta(length(x) - 1)).^2 .+ \
+	(((0.05 .- New_Int(length(x) - 2)) ./ range_Int1 .+ 1) .* dNew_theta(length(x) - 2)).^2 .+ \
+	(range_theta1 ./ range_Int1.^2 .* (0.05 - New_Int(length(x) - 2)) .* dNew_Int(length(x) - 1)).^2 .+ \
+	((range_theta1 ./ range_Int1.^2 .* (0.05 - New_Int(length(x) - 2)) .- \
+	range_theta1 ./ range_Int1) .* dNew_Int(length(x) - 2)).^2
+)
 
 range_theta2 = New_theta(3) - New_theta(2);
 range_Int2 = New_Int(3) - New_Int(2);
 
-na2 = range_theta2 / range_Int2 * 0.05 + New_theta(2)
+na2 = range_theta2 / range_Int2 * (0.05 - New_Int(2)) + New_theta(2)
+dna2 = sqrt(
+	((0.05 .- New_Int(2)) ./ range_Int1 .* dNew_theta(3)).^2 .+ \
+	(((0.05 .- New_Int(2)) ./ range_Int1 .+ 1) .* dNew_theta(2)).^2 .+ \
+	(range_theta1 ./ range_Int1.^2 .* (0.05 - New_Int(2)) .* dNew_Int(3)).^2 .+ \
+	((range_theta1 ./ range_Int1.^2 .* (0.05 - New_Int(2)) .- \
+	range_theta1 ./ range_Int1) .* dNew_Int(2)).^2
+)
 
-errorbar([New_theta, New_theta], [New_Int, 0.05 .* ones(length(x), 1)],
-	[dNew_theta, zeros(length(x), 1)], [dNew_Int, zeros(length(x), 1)])
+%errorbar([New_theta, New_theta], [New_Int, 0.05 .* ones(length(x), 1)],
+%>	[dNew_theta, zeros(length(x), 1)], [dNew_Int, zeros(length(x), 1)])
 
  % non so cosa faccio Andrea
 dy = 0.001;

@@ -4,26 +4,32 @@ Innanzitutto occorre ottenere il valore di intensità massima $I\ped{max}$ e $\v
 Abbiamo quindi fatto la media dei valori registrati. Dopo questo primo passo ci siamo assicurati di esprimere tutti gli angoli rispetto
 all'angolo $\vartheta\ped{max}$, ovvero lo abbiamo sottratto a tutti gli altri angoli.
 
+\begin{wrapfigure}{r}{60mm}
+  \begin{center}
+    \includegraphics{drawing.pdf}
+  \end{center}
+\end{wrapfigure}
+
 Abbiamo graficato i dati, ottenendo lo spettacolare grafico in Figura XXX-ANAL-GATE-4-PORNO-GAY-XXX, tracciando una linea orrizzontale
 che corrisponde al 5\% dell'intensità massima. Chiaramente la curva interseca due volte la linea del 5\%, poiché è simmetrica.
 Si possono quindi trovare due valori diversi di apertura numerica, e noi li abbiamo calcolati entrambi, come segue.
 Dal grafico abbiamo trovato i punti tra i quali passa la linea corrispondente al 5\%,
-di cui indicheremo con $I\ped{sopra}$, $I\ped{sotto}$ e $\vartheta\ped{sopra}$, $\vartheta\ped{sotto}$ rispettivamente l'intensità e l'angolo.
-A questo punto si può ottenere il valore di \emph{NA} interpolando linermente tra i due punti e imponendo:
+che indicheremo con $P_1$, $P_2$ rispettivamente. $I_1$, $I_2$ e $\vartheta_1$, $\vartheta_2$ indicano rispettivamente le intensità e gli angoli
+relativi ai due punti. A questo punto si può ottenere il valore di \emph{NA} interpolando linermente tra i due punti e imponendo:
 
 \begin{equation}
-    \begin{split}
-        0.05 \cdot I\ped{max} &= I\ped{sopra} + (I\ped{sotto} - I\ped{sopra}) \cdot \frac{\emph{NA} - \vartheta\ped{sopra}}{\vartheta\ped{sotto} - \vartheta\ped{sopra}} \\
-                              &= I\ped{sopra} + \Delta I \cdot \frac{\emph{NA} - \vartheta\ped{sopra}}{\Delta \vartheta}
-    \end{split}
+        0.05 \cdot I\ped{max} = I_1 + (I_2 - I_1) \cdot \frac{\emph{NA} - \vartheta_1}{\vartheta_2 - \vartheta_1} \\
+                              = I_1 + \Delta I \cdot \frac{\emph{NA} - \vartheta_1}{\Delta \vartheta}
 \end{equation}
 
 Da cui si ha, banalmente:
 
 \begin{equation}
-    \emph{NA} = \frac{\Delta \vartheta}{\Delta I} (0.05 \cdot I\ped{max}) + \vartheta\ped{sopra}
+    \emph{NA} = \frac{\Delta \vartheta}{\Delta I} (0.05 \cdot I\ped{max} - I_1) + \vartheta_1
 \end{equation}
 
 I valori che noi abbiamo calcolato sono i seguenti:
 
-
+\begin{equation}
+    \emph{NA}_1 = 0.50504 \qquad \emph{NA}_2 = -0.50132
+\end{equation}
