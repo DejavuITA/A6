@@ -180,8 +180,11 @@ ax1.set_ylabel(u'Intensità relativa raggio laser',
 
 # creo linee verticali
 #ax1.fill(-0.50132, 0.050018, 'b', -0.50132, 0, 'b') scusa pasa ma questo non sono capace di farlo andare
-ax1.plot([-0.5013177, -0.5013177], [0.05, 0], color='grey', linestyle='-', linewidth=1)
-ax1.plot([0.5050421, 0.5050421], [0.05, 0], color='grey', linestyle='-', linewidth=1)
+# devi usarlo così: ax1.fill([vertici poligono x], [vertici poligono y])
+#ax1.fill([-0.5013177, -0.5013177, 0.5050421, 0.5050421], [0.05, 0, 0, 0.05], 'b')
+# comunque secondo me non serve a molto
+ax1.plot([-0.5013177, -0.5013177], [0.05, 0], color='black', linestyle='-', linewidth=1)
+ax1.plot([0.5050421, 0.5050421], [0.05, 0], color='black', linestyle='-', linewidth=1)
 
 ax1.grid(True)
 ax1.set_ylim((0, 1.1))
@@ -210,12 +213,15 @@ ax2.set_yticks((0.05, 0.1, 0.5, 1))
 ax2.get_yaxis().set_ticklabels(("0.05", "0.1", "0.5", "1"))
 
 # creo linee verticali
-ax2.plot([-0.500544, -0.500544], [0.05, 0], color='b', linestyle='-', linewidth=1)
-ax2.plot([0.504495, 0.504495], [0.05, 0], color='b', linestyle='-', linewidth=1)
+ax2.plot([-0.5013177, -0.5013177], [0.05, 0.02], color='black', linestyle='-', linewidth=1)
+ax2.plot([0.5050421, 0.5050421], [0.05, 0.02], color='black', linestyle='-', linewidth=1)
 # si ma dai fanculo, con me non va un cazzo, sul primo plot va e su questo no, ma si può essere più incompetenti azzo!!!
+# devi considerare che stai plottando su di una scala logaritmica, se metti zero (anche in set_ylim devi stare attento)
+# esplode tutto!
+
 
 ax2.grid(True)
-ax2.set_ylim((0, 1.5))
+ax2.set_ylim((0.02, 1.5))
 ax2.set_xlim((-0.65, 0.65))
 # questo produce una legenda
 ax2.legend((dots2, line2), ("Punti misurati", "Linea 5%"), 'upper right',
