@@ -5,7 +5,7 @@ con cui un raggio luminoso può entrare nel core di una fibra ottica, per il qua
 della fibra (vedi l'immagine sotto).
 
 \begin{figure}[h]
-    \includegraphics[width=160mm]{fiber.pdf}
+    \includegraphics[width=150mm]{fiber.pdf}
 \end{figure}
 
 Un raggio che entra nella fibra ad un angolo maggiore di $\vartheta\ped{max}$ (come il raggio rappresentato in figura con i puntini)
@@ -30,14 +30,9 @@ l'angolo $\vartheta\ped{max}$ per cui l'intensità in uscita era pari al 5\% del
 possono essere presi solo in modo discreto, occorre interpolare linearmente i dati per ottenere l'esatto valore di \emph{NA}.
 
 Da notare che il grafico dell'intensità in funzione dell'angolo ha una forma a campana, con la cima quasi piatta e i lati molto pendenti
-(si veda la Figura XXX-HARDCORE-PORN-XXX). Si presenta quindi la necessità di scegliere la strategia di misurazione: conviene
+(si veda la Figura \ref{fig:graph}). Si presenta quindi la necessità di scegliere la strategia di misurazione: conviene
 scegliere come variabile indipendente l'intensità o l'angolo? Noi abbiamo optato per l'intensità poiché la cima della campana
 ci interessa relativamente poco e poiché dobbiamo essere sicuri di prendere alcuni punti attorno al 5\% dell'intensità massima.
-
-%\begin{figure}[b]
-    %\includegraphics[width=150mm]{double_plot.pdf}
-	%\caption{In questa figura sono graficati in dati dell'intensità relativa ($I/I\ped{0}$) in funzione del seno dell'angolo ($sen\vartheta$)}
-%\end{figure}
 
 \subsection{Difficoltà nella realizzazione delle misure}
 
@@ -49,8 +44,8 @@ Alcune difficoltà di questo esperimento derivano dal diametro del core, infatti
 \end{itemize}
 Ma le difficoltà di realizzazione in questo esperimento non sono date principalmente dal procedimento di misura in sè, bensì dalla difficoltà a mantenere le condizioni di contorno costanti. L'apparato infatti è particolarmente sensibile a:
 \begin{itemize}
-	\item{vibrazioni e movimenti del piano di lavoro e relative componenti dell'apparato (posizione relativa di fibra ottica e laser)}
-	\item{dilatazioni termiche (il laser in funzione si scalda) e variazioni di pressione}
+	\item{Vibrazioni e movimenti del piano di lavoro e relative componenti dell'apparato (posizione relativa di fibra ottica e laser).}
+	\item{Dilatazioni termiche (il laser in funzione si scalda) e variazioni di pressione.}
 \end{itemize}
 
 È quindi fondamentale tenere sotto controllo le condizioni ambientali del laboratorio, soprattutto se il core è sottile. Poiché tale controllo delle condizioni ambientali è stato impossibile nel nostro caso, abbiamo verificato più volte che esse rimanessero costanti.
@@ -64,3 +59,13 @@ contrario si sarebbe dovuta ripetere l'intera misura.
 
 Fortunatamente nel nostro caso la variazione di intensità massima durante l'esperimento è stata minore del 0.5\%, e anche la variazione
 di $\vartheta\ped{max}$ è rimasta al di sotto di mezzo grado. 
+
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=160mm]{double_plot.pdf}
+	\caption{In questa figura sono graficati in dati dell'intensità relativa $I/I\ped{0}$ in funzione dell'angolo $\vartheta$.
+	    Il primo grafico riporta i dati in scala lineare, mentre nel secondo l'asse delle ordinate è in scala logaritmica, per mostrare
+	    meglio l'area attorno alla linea del 5\%. Le barre d'errore non sono mostrate in quanto molto piccole.
+	    L'errore è confrontabile con la dimensione dei punti}
+	\label{fig:graph}
+\end{figure}

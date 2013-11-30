@@ -175,7 +175,7 @@ line = ax1.errorbar(x=[-0.8, 0.8], y=[0.05, 0.05],
     
 ax1.set_xlabel(u'Angolo di incidenza [radianti]',
     labelpad=12, fontsize=14)
-ax1.set_ylabel(u'Intensità relativa raggio laser',
+ax1.set_ylabel(u'Intensità relativa',
     labelpad=6, fontsize=14)
 
 # creo linee verticali
@@ -207,8 +207,6 @@ line2 = ax2.errorbar(x=[-0.8, 0.8], y=[0.05, 0.05],
 
 ax2.set_xlabel(u'Angolo di incidenza [radianti]',
     labelpad=12, fontsize=14)
-ax1.set_ylabel(u'',
-    labelpad=6, fontsize=14)
 ax2.set_yticks((0.05, 0.1, 0.5, 1))
 ax2.get_yaxis().set_ticklabels(("0.05", "0.1", "0.5", "1"))
 
