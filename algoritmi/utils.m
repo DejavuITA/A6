@@ -5,6 +5,19 @@ function s = sigma (dati, medie)
 	s = sqrt(d / N);
 endfunction
 
+function wm = weighted_mean(dati, incertezze)
+	w = incertezze.^-2;
+	wd = dati .* w;
+	
+	wm = sum(wd) ./ sum(w);
+endfunction
+
+function we = weighted_mean_err(incertezze)
+	w = incertezze.^-2;
+	
+	we = sqrt(sum(w) ./ sum(w).^2);
+endfunction
+
 function chi = chi2(y, x, dy, A, B)
 	chi = sum((y - A - B*x).^2 ./ (dy .^ 2));
 endfunction

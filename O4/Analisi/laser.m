@@ -4,7 +4,7 @@ source("../../algoritmi/alg1.m");
 source("../../algoritmi/utils.m");
 
 % tutte unità di misura in millimetri
-er = 0.5;
+er = 1;
 
 % input dei dati
 f160 = csvread("../Dati/fenditura.csv")(2:(end), 1);
@@ -37,16 +37,16 @@ df80 = sqrt(sum(([f80one .- f80, f80bis .-f80]').^2)' .+ df80_ris.^2);
 
 % angoli theta
 t160 = (f160 ./ 2) ./ l;
-dt160 = sqrt((df160./2./l).^2 .+ (f160./2./l.^2).^2);
+dt160 = sqrt((df160./2./l).^2 .+ (f160./2./l.^2.*dl).^2);
 
 t80 = (f80 ./ 2) ./ l;
-dt80 = sqrt((df80./2./l).^2 .+ (f80./2./l.^2).^2);
+dt80 = sqrt((df80./2./l).^2 .+ (f80./2./l.^2.*dl).^2);
 
 t40 = (f40 ./ 2) ./ l;
-dt40 = sqrt((df40./2./l).^2 .+ (f40./2./l.^2).^2);
+dt40 = sqrt((df40./2./l).^2 .+ (f40./2./l.^2.*dl).^2);
 
 t20 = (f20 ./ 2) ./ l;
-dt20 = sqrt((df20./2./l).^2 .+ (f20./2./l.^2).^2);
+dt20 = sqrt((df20./2./l).^2 .+ (f20./2./l.^2.*dl).^2);
 
 % dimensioni fenditura
 s160 = (1:10)' .* red ./ t160
@@ -60,3 +60,16 @@ ds40 = ((1:5)' .* red ./ t40 .^ 2 .* dt40)
 
 s20 = (1:3)' .* red ./ t20
 ds20 = ((1:3)' .* red ./ t20 .^ 2 .* dt20)
+
+% media
+m160 = weighted_mean(s160, ds160)
+dm160= weighted_mean_err(ds160)
+
+m80 = weighted_mean(s80, ds80)
+dm80 = weighted_mean_err(ds80)
+
+m40 = weighted_mean(s40, ds40)
+dm40= weighted_mean_err(ds40)
+
+m20 = weighted_mean(s20, ds20)
+dm20 = weighted_mean_err(ds20)
