@@ -23,7 +23,7 @@ dN = [std([dat_aria_prima'; dat_aria_seconda'; dat_aria_terza'; dat_aria_quarta'
 
 theta = dat_vetro_angolo .- dat_vetro_angolo(1); % [° -->]
 theta = theta.*2.*pi./360; % [--> radianti]
-dtheta = ones(length(theta),1) .* 0.005 .* sqrt(2); % [° -->]
+dtheta = ones(length(theta),1) .* 0.05 .* sqrt(2); % [° -->]
 dtheta = dtheta.*2.*pi./360; % [--> radianti]
 M = (mean([dat_vetro_prima'; dat_vetro_seconda']))';
 dM = [std([dat_vetro_prima'; dat_vetro_seconda'])]';
@@ -61,4 +61,8 @@ lambda = 543.5.*(10^-9).*ones(18,1); % [m] lambda del laser verde
 
 n = ((2.*t.-M.*lambda).*(1.-cos(theta)))./(2.*t.*(1.-cos(theta)) .-M.*lambda)
 % l'errore non viene... @_@
-% dn = (((2.*t .+ M-*lambda).*N.*(sen(theta)).*dtheta).^2 .+ (2.*(cos(theta)).*(1-cos(theta))).^2.*(M.*dt).^2 .+ (t.*dM).^2)).^0.5.*lambda.*((2.*t(1.-cos(theta)) .- M.*lambda).^(-2));
+sqrt_arg = ((2.*t .- M.*lambda) .* M .* sin(theta) .* dtheta).^2 .+ \
+	(2 .* cos(theta) .* (1 - cos(theta))).^2 .* \
+	((M .* dt).^2 .+ (t .* dM).^2);
+
+dn = sqrt(sqrt_arg) .* lambda .* ((2 .* t .* (1.-cos(theta)) .- M.*lambda).^(-2))
