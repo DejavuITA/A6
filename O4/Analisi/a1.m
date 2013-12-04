@@ -15,33 +15,50 @@ dat_vetro_seconda = csvread("../Dati/vetro.csv")(2:end, 3);
 
 % elaborazione dati
 Press = ones(length(dat_aria_press),1).*1000 .+ dat_aria_press; % [mbar]
+Press = 100 .* Press; % [Pa]
 dPress = 20; % [mbar]
+dPress = ones(length(Press),1) .* dPress .* 100; % [Pa]
 N = (mean([dat_aria_prima'; dat_aria_seconda'; dat_aria_terza'; dat_aria_quarta']))'; % [#]
 dN = [std([dat_aria_prima'; dat_aria_seconda'; dat_aria_terza'; dat_aria_quarta'])]'; % [#]
 
-theta = dat_vetro_angolo .- dat_vetro_angolo(1); % theta in radianti o in gradi?
-dtheta = ones(length(theta),1) .* 0.005 .* sqrt(2);
+theta = dat_vetro_angolo .- dat_vetro_angolo(1); % [° -->]
+theta = theta.*2.*pi./360; % [--> radianti]
+dtheta = ones(length(theta),1) .* 0.005 .* sqrt(2); % [° -->]
+dtheta = dtheta.*2.*pi./360; % [--> radianti]
 M = (mean([dat_vetro_prima'; dat_vetro_seconda']))';
 dM = [std([dat_vetro_prima'; dat_vetro_seconda'])]';
 
 % altri dati
-D = 32.5; % [mm] spessore camera a vuoto
-%dD = 
-t = 5.75; % [mm] spessore vetro
-%dt =
-lambda = 543.5; % [um] lambda del laser verde
+D = 32.5.*(10^-3); % [m] spessore camera a vuoto
+dD = 0.05.*(10^-3); % [m]
+t = 5.75.*(10^-3); % [m] spessore vetro
+dt = 0.005.*(10^-3); % [m]
+lambda = 543.5.*(10^-9); % [m] lambda del laser verde
 
-% pulisco la lista variabili % O FORSE NO?
-% clear ans dat_aria_press dat_aria_prima dat_aria_terza dat_aria_quarta dat_vetro_angolo dat_vetro_prima dat_vetro_seconda;
+% pulisco la lista variabili
+clear ans dat_aria_press dat_aria_prima dat_aria_terza dat_aria_quarta dat_vetro_angolo dat_vetro_prima dat_vetro_seconda;
 
 % analisi dati 1
 
-AN = N.*lambda./1000 ./ (2 *D); % non ho idea di quello che sto scrivendo
+An = N.*lambda ./ (2 *D); % non ho idea di quello che sto scrivendo
 % da cui si ricava N0... presumo...
 [A B dA dB] = fit(N, Press,(ones(length(N),1).*0.5).^-2);
-N0 = A;
+N_0 = A;
+dN_0 = dA;
 
-nPatm = 1 + N0.*lambda./1000 ./ (2 *D)
+n_Patm = 1 + N_0.*lambda ./ (2 *D)
+dn_Patm = ((lambda./(2.*D).*dN_0).^2 .+ (N_0.*lambda./2./(D^2).*dD).^2)^0.5
 
 % analisi dati 2
-plot (theta,M)
+
+% vettorizzo tutto
+% altri dati
+D = 32.5.*(10^-3).*ones(18,1); % [m] spessore camera a vuoto
+dD = 0.05.*(10^-3).*ones(18,1); % [m]
+t = 5.75.*(10^-3).*ones(18,1); % [m] spessore vetro
+dt = 0.005.*(10^-3).*ones(18,1); % [m] ?
+lambda = 543.5.*(10^-9).*ones(18,1); % [m] lambda del laser verde
+
+n = ((2.*t.-M.*lambda).*(1.-cos(theta)))./(2.*t.*(1.-cos(theta)) .-M.*lambda)
+% l'errore non viene... @_@
+% dn = (((2.*t .+ M-*lambda).*N.*(sen(theta)).*dtheta).^2 .+ (2.*(cos(theta)).*(1-cos(theta))).^2.*(M.*dt).^2 .+ (t.*dM).^2)).^0.5.*lambda.*((2.*t(1.-cos(theta)) .- M.*lambda).^(-2));
