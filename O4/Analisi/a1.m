@@ -66,3 +66,6 @@ sqrt_arg = ((2.*t .- M.*lambda) .* M .* sin(theta) .* dtheta).^2 .+ \
 	((M .* dt).^2 .+ (t .* dM).^2);
 
 dn = sqrt(sqrt_arg) .* lambda .* ((2 .* t .* (1.-cos(theta)) .- M.*lambda).^(-2))
+
+n_fin = weighted_mean(n(2:end),dn(2:end))
+n_fin_Err = weighted_mean_err(dn(2:end))
