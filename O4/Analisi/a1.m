@@ -41,12 +41,15 @@ clear ans dat_aria_press dat_aria_prima dat_aria_terza dat_aria_quarta dat_vetro
 % analisi dati 1
 
 An = N.*lambda ./ (2 *D); % non ho idea di quello che sto scrivendo
+dAn = sqrt((dN.*lambda ./ (2 .* D)).^2 .+ (N.*lambda ./ (2 .* D.^2) .* dD).^2);
 % da cui si ricava N0... presumo...
 [A B dA dB] = fit(N, Press,(ones(length(N),1).*0.5).^-2);
 N_0 = A;
 dN_0 = dA;
 
-n_Patm = 1 + N_0.*lambda ./ (2 *D)
+[nA nB dnA dnB] = fit(An, Press, dAn.^-2);
+
+n_Patm = 1 + N_0.*lambda ./ (2 * D)
 dn_Patm = ((lambda./(2.*D).*dN_0).^2 .+ (N_0.*lambda./2./(D^2).*dD).^2)^0.5
 
 % analisi dati 2
