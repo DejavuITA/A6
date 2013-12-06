@@ -63,13 +63,13 @@ ds20 = ((1:3)' .* red ./ t20 .^ 2 .* dt20)
 
 % media
 m160 = weighted_mean(s160, ds160)
-dm160= weighted_mean_err(ds160)
+dm160 = weighted_mean_err(ds160)
 
 m80 = weighted_mean(s80, ds80)
 dm80 = weighted_mean_err(ds80)
 
 m40 = weighted_mean(s40, ds40)
-dm40= weighted_mean_err(ds40)
+dm40 = weighted_mean_err(ds40)
 
 m20 = weighted_mean(s20, ds20)
 dm20 = weighted_mean_err(ds20)

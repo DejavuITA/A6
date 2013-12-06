@@ -26,11 +26,13 @@ theta = theta.*2.*pi./360; % [--> radianti]
 dtheta = ones(length(theta),1) .* 0.05 .* sqrt(2); % [° -->]
 dtheta = dtheta.*2.*pi./360; % [--> radianti]
 M = (mean([dat_vetro_prima'; dat_vetro_seconda']))';
+M1 = dat_vetro_prima;
+M2 = dat_vetro_seconda;
 dM = [std([dat_vetro_prima'; dat_vetro_seconda'])]';
 
 % altri dati
 D = 32.5.*(10^-3); % [m] spessore camera a vuoto
-dD = 0.05.*(10^-3); % [m]
+dD = 1e-3;  #0.05.*(10^-3); % [m]
 t = 5.75.*(10^-3); % [m] spessore vetro
 dt = 0.005.*(10^-3); % [m]
 lambda = 543.5.*(10^-9); % [m] lambda del laser verde
@@ -48,6 +50,8 @@ N_0 = A;
 dN_0 = dA;
 
 [nA nB dnA dnB] = fit(An, Press, dAn.^-2);
+1 + nA
+dnA
 
 n_Patm = 1 + N_0.*lambda ./ (2 * D)
 dn_Patm = ((lambda./(2.*D).*dN_0).^2 .+ (N_0.*lambda./2./(D^2).*dD).^2)^0.5
@@ -56,19 +60,22 @@ dn_Patm = ((lambda./(2.*D).*dN_0).^2 .+ (N_0.*lambda./2./(D^2).*dD).^2)^0.5
 
 % vettorizzo tutto
 % altri dati
-D = 32.5.*(10^-3).*ones(18,1); % [m] spessore camera a vuoto
-dD = 0.05.*(10^-3).*ones(18,1); % [m]
-t = 5.75.*(10^-3).*ones(18,1); % [m] spessore vetro
-dt = 0.005.*(10^-3).*ones(18,1); % [m] ?
-lambda = 543.5.*(10^-9).*ones(18,1); % [m] lambda del laser verde
+%t = 5.75.*(10^-3).*ones(18,1); % [m] spessore vetro
+%dt = 0.005.*(10^-3).*ones(18,1); % [m] ?
+%lambda = 543.5.*(10^-9).*ones(18,1); % [m] lambda del laser verde
 
-n = ((2.*t.-M.*lambda).*(1.-cos(theta)))./(2.*t.*(1.-cos(theta)) .-M.*lambda)
+n = ((2.*t .- M.*lambda) .* (1 .- cos(theta))) ./ \
+	(2.*t.*(1 .- cos(theta)) .- M.*lambda);
+n1 = ((2.*t .- M1.*lambda) .* (1 .- cos(theta))) ./ \
+	(2.*t.*(1 .- cos(theta)) .- M1.*lambda);
+n2 = ((2.*t .- M2.*lambda) .* (1 .- cos(theta))) ./ \
+	(2.*t.*(1 .- cos(theta)) .- M2.*lambda);
 % l'errore non viene... @_@
 sqrt_arg = ((2.*t .- M.*lambda) .* M .* sin(theta) .* dtheta).^2 .+ \
 	(2 .* cos(theta) .* (1 - cos(theta))).^2 .* \
 	((M .* dt).^2 .+ (t .* dM).^2);
 
-dn = sqrt(sqrt_arg) .* lambda .* ((2 .* t .* (1.-cos(theta)) .- M.*lambda).^(-2))
+dn = sqrt(sqrt_arg) .* lambda .* ((2 .* t .* (1.-cos(theta)) .- M.*lambda).^(-2));
 
-n_fin = weighted_mean(n(2:end),dn(2:end))
+n_fin = weighted_mean(n(2:end), dn(2:end))
 n_fin_Err = weighted_mean_err(dn(2:end))
