@@ -48,15 +48,15 @@ a =  111.988
 
 if mpl:
     f1 = plt.figure(figsize=(10, 7))
-    f1.suptitle("Intensità in funzione della concentrazione", y=0.95, fontsize=15)
+    f1.suptitle("Intensità in funzione della lunghezza", y=0.95, fontsize=15)
 
     ax = f1.add_subplot(1, 1, 1)
     
     dots = ax.errorbar(x=c, y=I,
-        yerr=0, fmt='o')
+        yerr=1, fmt='o')
     fit = ax.errorbar(x=[x/10 for x in range(-20, 721)], y=[a * exp(-K*x/10) for x in range(-20, 721)], fmt='-')
 
-    ax.set_xlabel(u'Concentrazioni [mol/l]', labelpad=12, fontsize=14)
+    ax.set_xlabel(u'Lunghezza [$10^{-3}$m]', labelpad=12, fontsize=14)
     ax.set_ylabel(u"Intensità [$picodentotricotteri^\\frac{11}{7.5}$]", labelpad=6, fontsize=14)
     ax.grid(True)
 

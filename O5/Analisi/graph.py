@@ -57,7 +57,7 @@ if mpl:
     ax = f1.add_subplot(1, 1, 1)
     
     dots = ax.errorbar(x=c, y=I,
-        yerr=0, fmt='o')
+        yerr=1, fmt='o')
     fit = ax.errorbar(x=[x/100 for x in range(0, 106)], y=[a * exp(-K*x/100) for x in range(0, 106)], fmt='-')
 
     ax.set_xlabel(u'Concentrazioni [mol/l]', labelpad=12, fontsize=14)
