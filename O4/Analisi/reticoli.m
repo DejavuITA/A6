@@ -193,12 +193,18 @@ weight_fin_s100 = weighted_mean([statistic_mr100, statistic_mo100],
 	[statistic_dmr100, statistic_dmo100])
 weight_dfin_s100 = weighted_mean_err([statistic_dmr100, statistic_dmo100])
 
+statistical_fin_s100 = mean([statistic_mr100, statistic_mo100])
+statistical_dfin_s100 = std([statistic_mr100, statistic_mo100])
+
 fin_s300 = weighted_mean([mr300, mo300], [dmr300, dmo300])
 dfin_s300 = weighted_mean_err([dmr300, dmo300])
 
 weight_fin_s300 = weighted_mean([statistic_mr300, statistic_mo300],
 	[statistic_dmr300, statistic_dmo300])
 weight_dfin_s300 = weighted_mean_err([statistic_dmr300, statistic_dmo300])
+
+statistical_fin_s300 = mean([statistic_mr300, statistic_mo300])
+statistical_dfin_s300 = std([statistic_mr300, statistic_mo300])
 
 fin_s600 = weighted_mean([mr600, mo600], [dmr600, dmo600])
 dfin_s600 = weighted_mean_err([dmr600, dmo600])

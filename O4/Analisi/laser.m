@@ -49,27 +49,39 @@ t20 = (f20 ./ 2) ./ l;
 dt20 = sqrt((df20./2./l).^2 .+ (f20./2./l.^2.*dl).^2);
 
 % dimensioni fenditura
-s160 = (1:10)' .* red ./ t160
-ds160 = ((1:10)' .* red ./ t160 .^ 2 .* dt160)
+s160 = (1:10)' .* red ./ t160;
+ds160 = ((1:10)' .* red ./ t160 .^ 2 .* dt160);
+ms160 = [s160, ds160]
 
-s80 = (1:6)' .* red ./ t80
-ds80 = ((1:6)' .* red ./ t80 .^ 2 .* dt80)
+s80 = (1:6)' .* red ./ t80;
+ds80 = ((1:6)' .* red ./ t80 .^ 2 .* dt80);
+ms80 = [s80, ds80]
 
-s40 = (1:5)' .* red ./ t40
-ds40 = ((1:5)' .* red ./ t40 .^ 2 .* dt40)
+s40 = (1:5)' .* red ./ t40;
+ds40 = ((1:5)' .* red ./ t40 .^ 2 .* dt40);
+ms40 = [s40, ds40]
 
-s20 = (1:3)' .* red ./ t20
-ds20 = ((1:3)' .* red ./ t20 .^ 2 .* dt20)
+s20 = (1:3)' .* red ./ t20;
+ds20 = ((1:3)' .* red ./ t20 .^ 2 .* dt20);
+ms20 = [s20, ds20]
 
 % media
-m160 = weighted_mean(s160, ds160)
-dm160 = weighted_mean_err(ds160)
+m160 = weighted_mean(s160, ds160);
+dm160 = weighted_mean_err(ds160);
+statistic_dm160 = std(s160);
+mm160 = [m160, dm160, statistic_dm160]
 
-m80 = weighted_mean(s80, ds80)
-dm80 = weighted_mean_err(ds80)
+m80 = weighted_mean(s80, ds80);
+dm80 = weighted_mean_err(ds80);
+statistic_dm80 = std(s80);
+mm80 = [m80, dm80, statistic_dm80]
 
-m40 = weighted_mean(s40, ds40)
-dm40 = weighted_mean_err(ds40)
+m40 = weighted_mean(s40, ds40);
+dm40 = weighted_mean_err(ds40);
+statistic_dm40 = std(s40);
+mm40 = [m40, dm40, statistic_dm40]
 
-m20 = weighted_mean(s20, ds20)
-dm20 = weighted_mean_err(ds20)
+m20 = weighted_mean(s20, ds20);
+dm20 = weighted_mean_err(ds20);
+statistic_dm20 = std(s20);
+mm20 = [m20, dm20, statistic_dm20]
