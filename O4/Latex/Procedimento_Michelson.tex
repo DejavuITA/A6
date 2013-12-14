@@ -42,12 +42,49 @@ Detto questo la procedura eseguita per ricavare l'indice di rifrazione dell'aria
 
 \subsubsection{Indice di rifrazione del vetro}
 
-Per misurare l'indice di rifrazione del vetro abbiamo adottato una strategia simile. Dobbiamo partire da una data figura di interferenza e variare il cammino ottico di uno dei due raggi. Poi dobbiamo contare il numero di massimi di intensità (ovvero dei punti )
+Per misurare l'indice di rifrazione del vetro abbiamo adottato una strategia simile. Dobbiamo partire da una data figura di interferenza e variare il cammino ottico di uno dei due raggi. Poi dobbiamo contare il numero di massimi di intensità (ovvero delle frange)
 
 \subsection{Analisi Dati}
 
+\subsubsection{Indice di rifrazione dell'aria: quadro teorico}
+
 Per ricavare l'indice di rifrazione dell'aria abbiamo sfruttato la legge fisica che ci dice che:
 
+
+\begin{equation}
+	N \,=\, \frac{d}{\lambda}
+\end{equation}
+%
+dove con $N$  si indica il numero di frange (massimi di intensità) contati, $d$ il cammino ottico e $\lambda$ la lunghezza d'onda del laser.
+
 Ricordiamo che a condizione di pressione costante il cammino ottico percorso dai due raggi luminosi risulta essere lo stesso.
-Quindi lo scopo sarà quello di confrontare il numero di frange contate con la differenza di pressione rilevata. Infatti variando la pressione nella camera da vuoto si varia l'indice di rifrazione dell'aria. Questo provoca una variazione nel cammino ottico del raggio riflesso dallo specchio semitrasparente e quindi fenomeni di diffrazione che saranno sempre più accentuati man mano che l'indice di rifrazione dell'aria varia infunzione della pressione interna alla camera. buzz culo !!!!
-Sapendo che il cammino ottico è pari a due volte la lunghezza della camera da vuoto moltiplicata per lindice di rifrazione del gas ivi contenuto ...
+Quindi lo scopo sarà quello di confrontare il numero di frange contate con la differenza di pressione rilevata. Infatti variando la pressione nella camera da vuoto si varia l'indice di rifrazione dell'aria. Questo provoca una variazione nel cammino ottico del raggio riflesso dallo specchio semitrasparente e quindi fenomeni di diffrazione. Tali fenomeni saranno sempre più accentuati man mano che l'indice di rifrazione dell'aria varia infunzione della pressione interna alla camera. buzz culo !!!!
+Sapendo che il cammino ottico ($D$) è pari a due volte la lunghezza della camera da vuoto moltiplicata per lindice di rifrazione del gas ivi contenuto possiamo ottenere la seguente relazione:
+
+\begin{equation}
+	\Delta{n} \,=\, \frac{N \, \lambda}{D} \qquad \text{con} \qquad \Delta{n} \,=\, (n\ped{p} \,-\, n\ped{vuoto})
+	\label{eq:delta_n}
+\end{equation}
+%
+dove $n\ped{p}$ è l'indice di rifrazione dell'aria alla pressione raggiunta, $n\ped{vuoto}$ è l'indice di rifrazione del vuoto il cui valore è 1 preso senza incertezze, $D$ la differenza di cammino ottico tra i due raggi e $\lambda$ e la lunghezza d'onda del laser.
+
+Quindi per ottenere il valore dell'idice di rifrazione dell'aria alla pressione voluta non dobbiamo fare altro che isolare dall'equazione (\ref{eq:delta_n}) il tremine $n\ped{p}$. Pertanto otteniamo che:
+
+\begin{equation}
+	n\ped{p} \,=\, 1 \,+\, \frac{N \, \lambda}{D}
+	\label{eq:indice_rif_aria}
+\end{equation}
+%
+e quindi grazie all'interpolazione che verrà effettuata sul grafico mostrante il numero di frange contate ($N$) in funzione della pressione raggionta ($P$) possiamo ricavere il numero di massimi ($N\ped{atm}$) relativi alla pressione atmosferica ($P\ped{atm}$). Infine sfruttando la precedente relazione (\ref{eq:indice_rif_aria}) siamo in grado di ottenere il valore dell'indice di rifrazione dell'aria a pressione atmosferica:
+
+\begin{equation}
+	n\ped{patm} \,=\, 1 \,+\, \frac{N\ped{atm} \, \lambda}{D}
+	\label{eq:indice_rif_aria}
+\end{equation}
+%
+
+Quindi ora avendo il quadro teorico che stà alla base dell'esperimento possiamo procedere con l'analizzare i dati che abbiamo ottenuto.
+
+\subsubsection{Valore indice di rifrazione dell'aria}
+
+\subsubsection{Indice di rifrazione del vetro}
