@@ -6,11 +6,34 @@ La prima operazione fatta è stata quella di verificare il corretto allineamento
 % WTF????
 
 La misura dell'indice di rifrazione di un dato materiale con l'interferometro di Michelson si esegue adottando la seguente strategia.
-Si parte da una configurazione base dove 
+Si parte da una configurazione base, per esempio l'interferometro con un ramo su cui e già stata montata la camera da vuoto
+(si veda la Figura \ref{fig:mik}). A questo punto sullo schermo è proiettata una figura di interferenza. Dopodiché si
+varia gradualmente un qualche parametro del materiale sotto esame, per esempio: la pressione (nel caso dell'aria), la lunghezza,
+l'inclinazione oppure la concentrazione (per una soluzione). Questo serve per variare il cammino ottico del raggio che attraversa il materiale.
+In questo modo la figura di interferenza varia e le frange si muovono. La seguente relazione lega il numero $N$ di frange passate sullo schermo,
+alla differenza di cammino ottico $d$.
+
+\begin{equation}
+    N \,=\, \frac{d}{\lambda} = \frac{\Delta n \cdot 2 \ell}{\lambda}
+\end{equation}
+%
+Nella formula $\lambda$ indica la lunghezza d'onda della luce, $\Delta n$ la differenza di indice di rifrazione tra la configurazione base
+e quella attuale, mentre $2\ell$ e la lunghezza della camera (il 2 serve perché la luce attraversa la camera due volte).
+
+Una volta giunti al valore di pressione, lunghezza concentrazione voluto,
+
+
+\begin{SCfigure}[0.70][t]
+    \centering
+    \includegraphics[width=120mm]{drawing.pdf}
+    \caption{Schema semplificato del sistema utilizzato per misurare l'indice di rifrazione dell'aria.}
+    \label{fig:mik}
+\end{SCfigure}
 
 \subsubsection{Indice di rifrazione dell'aria}
 
 Detto questo la procedura eseguita per ricavare l'indice di rifrazione dell'aria è la seguente:
+
 \begin{itemize}
 	\item{Abbiamo installato sul sistema, tra il beam splitter e lo specchio mobile, una piccola camera da vuoto con due pareti in vetro atte a far passare la luce. La camera è stata collegata, mediante la valvola a spillo alla pompa a membrana;} %Infatti variando la pressione dell'aria interna alla camera da vuoto si varia l'indice di rifrazione di quest'ultima. Pertanto il cammino ottico compiuto dal raggio lumnoso riflesso risulta essere differente da quello del raggio luminoso rifratto;}
     \item{Partendo con la camera da vuoto a pressione atmosferica abbiamo man mano creato il vuoto all'interno della camera regolando l'apertura della valvola a spillo. Aprendo la valvola a spillo (ovviamente con la pompa accesa), l'aria esce dalla camera da vuoto e viene pompata fuori;}
@@ -24,12 +47,6 @@ Per misurare l'indice di rifrazione del vetro abbiamo adottato una strategia sim
 \subsection{Analisi Dati}
 
 Per ricavare l'indice di rifrazione dell'aria abbiamo sfruttato la legge fisica che ci dice che:
-
-\begin{equation}
-	N \,=\, \frac{d}{\lambda}
-\end{equation}
-%
-dove con $\lambda$ si indica la lunghezza d'onda del laser, $N$ il numero di frange e $d$ la differenza di cammino ottico.
 
 Ricordiamo che a condizione di pressione costante il cammino ottico percorso dai due raggi luminosi risulta essere lo stesso.
 Quindi lo scopo sarà quello di confrontare il numero di frange contate con la differenza di pressione rilevata. Infatti variando la pressione nella camera da vuoto si varia l'indice di rifrazione dell'aria. Questo provoca una variazione nel cammino ottico del raggio riflesso dallo specchio semitrasparente e quindi fenomeni di diffrazione che saranno sempre più accentuati man mano che l'indice di rifrazione dell'aria varia infunzione della pressione interna alla camera. buzz culo !!!!
