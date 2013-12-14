@@ -10,17 +10,17 @@ Si parte da una configurazione base, per esempio l'interferometro con un ramo su
 (si veda la Figura \ref{fig:mik}). A questo punto sullo schermo è proiettata una figura di interferenza. Dopodiché si
 varia gradualmente un qualche parametro del materiale sotto esame, per esempio: la pressione (nel caso dell'aria), la lunghezza,
 l'inclinazione oppure la concentrazione (per una soluzione). Questo serve per variare il cammino ottico del raggio che attraversa il materiale.
-In questo modo la figura di interferenza varia e le frange si muovono. La seguente relazione lega il numero $N$ di frange passate sullo schermo,
-alla differenza di cammino ottico $d$.
+In questo modo la figura di interferenza varia e le frange si muovono.
 
-\begin{equation}
-    N \,=\, \frac{d}{\lambda} = \frac{\Delta n \cdot 2 \ell}{\lambda}
-\end{equation}
+%La seguente relazione lega il numero $N$ di frange passate sullo schermo, alla differenza di cammino ottico $d$.
+
+%\begin{equation}
+%    N \,=\, \frac{d}{\lambda} = \frac{\Delta n \cdot 2 \ell}{\lambda}
+%\end{equation}
 %
-Nella formula $\lambda$ indica la lunghezza d'onda della luce, $\Delta n$ la differenza di indice di rifrazione tra la configurazione base
-e quella attuale, mentre $2\ell$ e la lunghezza della camera (il 2 serve perché la luce attraversa la camera due volte).
+%Nella formula $\lambda$ indica la lunghezza d'onda della luce, $\Delta n$ la differenza di indice di rifrazione tra la configurazione base e quella attuale, mentre $2\ell$ e la lunghezza della camera (il 2 serve perché la luce attraversa la camera due volte).
 
-Una volta giunti al valore di pressione, lunghezza concentrazione voluto,
+%Una volta giunti al valore di pressione, lunghezza concentrazione voluto,
 
 
 \begin{SCfigure}[0.70][t]
@@ -42,14 +42,22 @@ Detto questo la procedura eseguita per ricavare l'indice di rifrazione dell'aria
 
 \subsubsection{Indice di rifrazione del vetro}
 
-Per misurare l'indice di rifrazione del vetro abbiamo adottato una strategia simile. Dobbiamo partire da una data figura di interferenza e variare il cammino ottico di uno dei due raggi. Poi dobbiamo contare il numero di massimi di intensità (ovvero dei punti )
+Per misurare l'indice di rifrazione del vetro abbiamo adottato una strategia simile. Dobbiamo partire da una data figura di interferenza e variare il cammino ottico di uno dei due raggi. Poi dobbiamo contare il numero di massimi di intensità (ovvero delle frange).
+
+Infatti ponendo un vetro tra il beam splitter e lo specchio fisso si ottiene un effetto analogo a guello del caso precedete. Ovvero il raggio luminoso rifratto è costretto ad attraversare il vetro sia in andata che al ritorno e quindi subirà un variazione del suo cammino ottico.
+Quindi la prima operazione neccessaria è quella di capire dove si trova lo zero di questo allineamento, ovvero quando i due raggi compiono lo stesso cammino ottico. Pertanto dopo aver posizionato il vetro, cercando di allinearlo con lo specchio fisso, si agisce sullo specchio mobile alontanandolo o avvicinandolo al beam spltter. Si fa questo al fine di ottenere una semplice figura di interferenza, che come nel caso precedete e una frangia luminosa.
+% questo punto si segna l'angolo zero, che nel nostro caso ha il seguente vlore:
+
+\begin{equation}
+	\theta_0 \,=\, 2.2 \pm xxx (nonmeloricordo)
+\end{equation}
+%
 
 \subsection{Analisi Dati}
 
 \subsubsection{Indice di rifrazione dell'aria: quadro teorico}
 
 Per ricavare l'indice di rifrazione dell'aria abbiamo sfruttato la legge fisica che ci dice che:
-
 
 \begin{equation}
 	N \,=\, \frac{d}{\lambda}
@@ -58,7 +66,7 @@ Per ricavare l'indice di rifrazione dell'aria abbiamo sfruttato la legge fisica 
 dove con $N$  si indica il numero di frange (massimi di intensità) contati, $d$ il cammino ottico e $\lambda$ la lunghezza d'onda del laser.
 
 Ricordiamo che a condizione di pressione costante il cammino ottico percorso dai due raggi luminosi risulta essere lo stesso.
-Quindi lo scopo sarà quello di confrontare il numero di frange contate con la differenza di pressione rilevata. Infatti variando la pressione nella camera da vuoto si varia l'indice di rifrazione dell'aria. Questo provoca una variazione nel cammino ottico del raggio riflesso dallo specchio semitrasparente e quindi fenomeni di diffrazione. Tali fenomeni saranno sempre più accentuati man mano che l'indice di rifrazione dell'aria varia infunzione della pressione interna alla camera. buzz culo !!!!
+Quindi lo scopo sarà quello di confrontare il numero di frange contate con la differenza di pressione rilevata. Infatti variando la pressione nella camera da vuoto si varia l'indice di rifrazione dell'aria. Questo provoca una variazione nel cammino ottico del raggio riflesso dallo specchio semitrasparente e quindi fenomeni di diffrazione. Tali fenomeni saranno sempre più accentuati man mano che l'indice di rifrazione dell'aria varia infunzione della pressione interna alla camera.
 Sapendo che il cammino ottico ($D$) è pari a due volte la lunghezza della camera da vuoto moltiplicata per lindice di rifrazione del gas ivi contenuto possiamo ottenere la seguente relazione:
 
 \begin{equation}
@@ -86,16 +94,5 @@ e quindi grazie all'interpolazione che verrà effettuata sul grafico mostrante i
 Quindi ora avendo il quadro teorico che stà alla base dell'esperimento possiamo procedere con l'analizzare i dati che abbiamo ottenuto.
 
 \subsubsection{Valore indice di rifrazione dell'aria}
-
-
-%Infatti ponendo un vetro tra il beam splitter e lo specchio fisso si ottiene un effetto analogo a guello del caso precedete. Ovvero il raggio luminoso rifratto è costretto ad attraversare il vetro sia in andata che al ritorno e quindi subirà un variazione del suo cammino ottico.
-%Quindi la prima operazione neccessaria è quella di capire dove si trova lo zero di questo allineamento, ovvero quando i due raggi compiono lo stesso cammino ottico. Pertanto dopo aver posizionato il vetro, cercando di allinearlo con lo specchio fisso, si agisce sullo specchio mobile alontanandolo o avvicinandolo al beam spltter. Si fa questo al fine di ottenere una semplice figura di interferenza, che come nel caso precedete e una frangia luminosa.
-%A questo punto si segna l'angolo zero, che nel nostro caso ha il seguente vlore:
-
-%\begin{equation}
-%	\theta_0 \,=\, 2.2 \pm xxx (nonmeloricordo)
-%\end{equation}
-%
-
 
 \subsubsection{Indice di rifrazione del vetro}
