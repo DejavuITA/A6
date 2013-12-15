@@ -69,19 +69,19 @@ ms20 = [s20, ds20]
 m160 = weighted_mean(s160, ds160);
 dm160 = weighted_mean_err(ds160);
 statistic_dm160 = std(s160);
-mm160 = [m160, dm160, statistic_dm160]
+mm160 = [m160, mean(s160), dm160, statistic_dm160]
 
 m80 = weighted_mean(s80, ds80);
 dm80 = weighted_mean_err(ds80);
 statistic_dm80 = std(s80);
-mm80 = [m80, dm80, statistic_dm80]
+mm80 = [m80, mean(s80), dm80, statistic_dm80]
 
 m40 = weighted_mean(s40, ds40);
 dm40 = weighted_mean_err(ds40);
 statistic_dm40 = std(s40);
-mm40 = [m40, dm40, statistic_dm40]
+mm40 = [m40, mean(s40), dm40, statistic_dm40]
 
 m20 = weighted_mean(s20, ds20);
 dm20 = weighted_mean_err(ds20);
 statistic_dm20 = std(s20);
-mm20 = [m20, dm20, statistic_dm20]
+mm20 = [m20, mean(s20), dm20, statistic_dm20]

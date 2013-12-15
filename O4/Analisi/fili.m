@@ -75,20 +75,32 @@ sc = (1:5)' .* red ./ tc
 dsc = ((1:5)' .* red ./ tc .^ 2 .* dtc)
 
 % media
-m5 = weighted_mean(s5, ds5)
-dm5= weighted_mean_err(ds5)
+m5 = weighted_mean(s5, ds5);
+dm5= weighted_mean_err(ds5);
+statistic_dm5 = std(s5);
+mm5 = [m5, mean(s5), dm5, statistic_dm5]
 
-m10 = weighted_mean(s10, ds10)
-dm10 = weighted_mean_err(ds10)
+m10 = weighted_mean(s10, ds10);
+dm10 = weighted_mean_err(ds10);
+statistic_dm10 = std(s10);
+mm10 = [m10, mean(s10), dm10, statistic_dm10]
 
-m20 = weighted_mean(s20, ds20)
-dm20= weighted_mean_err(ds20)
+m20 = weighted_mean(s20, ds20);
+dm20= weighted_mean_err(ds20);
+statistic_dm20 = std(s20);
+mm20 = [m20, mean(s20), dm20, statistic_dm20]
 
-m40 = weighted_mean(s40, ds40)
-dm40 = weighted_mean_err(ds40)
+m40 = weighted_mean(s40, ds40);
+dm40 = weighted_mean_err(ds40);
+statistic_dm40 = std(s40);
+mm40 = [m40, mean(s40), dm40, statistic_dm40]
 
-m80 = weighted_mean(s80, ds80)
-dm80= weighted_mean_err(ds80)
+m80 = weighted_mean(s80, ds80);
+dm80= weighted_mean_err(ds80);
+statistic_dm80 = std(s80);
+mm80 = [m80, mean(s80), dm80, statistic_dm80]
 
-mc = weighted_mean(sc, dsc)
-dmc = weighted_mean_err(dsc)
+mc = weighted_mean(sc, dsc);
+dmc = weighted_mean_err(dsc);
+statistic_dmc = std(sc);
+mmc = [mc, mean(sc), dmc, statistic_dmc]

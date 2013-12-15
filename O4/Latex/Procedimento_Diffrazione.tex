@@ -31,7 +31,11 @@ L'esecuzione dell'esperienza è molto semplice. Avevamo a nostra disposizione le
         \label{fig:ret}
     \end{subfigure}
     \caption{Figure di diffrazione generate da diversi tipi di ostacoli. Notare che, in maniera contro intuitiva,
-        le aree nere sono quelle illuminate, mentre quelle bianche sono quelle che restano al buio.}
+        le aree nere sono quelle illuminate, mentre quelle bianche sono quelle che restano al buio. La figura nel caso di
+        fili e fessure è identica grazie al principio di Babinet. Quando c'è un foro, invece la luce interferisce lungo
+        tutte le direzioni e non solo nella direzione in cui la fessura è stretta, e genera una figura di diffrazione
+        circolare. Il caso del reticolo è simile al caso della fenditura, solo che le fenditure sono molte, ed interferiscono
+        in maniera diversa.}
     \label{fig:diff}
 \end{figure}
 
@@ -53,6 +57,8 @@ migliori. Dopodiché abbiamo incollato allo schermo una striscia di carta per an
     \item{Nel caso dei reticoli di diffrazione la figura di interferenza presenta dei picchi molto luminosi e dei minimi molto larghi
             (In realtà ci sono anche dei minimi secondari, ma sono talmente deboli da non essere percepibili. Disegno in Figura \ref{fig:ret}).
             La misura dei minimi è quindi esclusa, per cui abbiamo misurato la separazione tra i massimi dello stesso ordine.}
+            Per i reticoli la misura è stata effettuata con entrambi i laser a nostra disposizione. Nei punti precedenti abbiamo
+            usato esclusivamente il laser rosso.
 \end{itemize}
 
 Le Tabelle \ref{tab:ff} e \ref{tab:foret} riportano tutti i dati misurati. Ci teniamo a far notare
@@ -67,7 +73,8 @@ risoluzione di 1 mm, che comunque non influisce in maniera significativa sui val
     \begin{tabular}{l l l l | l l l l l l}
         \toprule
         \multicolumn{4}{c|}{Fessure [mm]} & \multicolumn{6}{c}{Fili [mm]}  \\
-        160 um&    80 um&    40 um&    20 um&  Filo 1&  Filo 2&  Filo 3& Filo 4& Filo 5& Capello \\
+        \SI{160}{\micro\metre}& \SI{80}{\micro\metre}& \SI{40}{\micro\metre}& \SI{20}{\micro\metre}&
+        Filo 1&  Filo 2&  Filo 3& Filo 4& Filo 5& Capello \\[1mm]
         \midrule
         12.65&     24.80&    48.40&   103.30& 34.50&    21.35&   17.50&  10.65&  3.05&   28.55  \\
         25.50&     49.25&    97.10&   209.80& 70.70&    42.15&   34.20&  21.15&  8.30&   56.00  \\
@@ -94,7 +101,7 @@ risoluzione di 1 mm, che comunque non influisce in maniera significativa sui val
     \footnotesize
     \begin{tabular}{l l | l l l | l l l}
         \toprule
-        \multicolumn{2}{c|}{Fori [mm]} & \multicolumn{6}{c}{Reticoli [mm]} \\
+        \multicolumn{2}{c|}{Fori [mm]} & \multicolumn{6}{c}{Reticoli [mm]} \\[1mm]
         Foro 1 &      Foro 2 & R 100 &   R 300 &   R 600 & A 100 & A 300 & A 600\\
         \midrule
         63.50 &           32.75      & 198   &   597   &   1282  & 191   & 576   & 1232 \\
@@ -157,8 +164,8 @@ Durante l'esperimento abbiamo misurato la distanza tra minimi dello stesso ordin
 Abbiamo quindi misurato la grandezza $2h$, i cui valori sono riportati nelle Tabelle \ref{tab:ff} e \ref{tab:foret}.
 Nella (\ref{eq:mindif}) abbiamo bisogno di $\sin(\vartheta)$. Poiché gli angoli in gioco sono molto piccoli, tutti minori
 di 6 gradi, possiamo usare l'approssimazione $\sin(\vartheta) \simeq \vartheta \simeq \tan(\vartheta)$. Inoltre abbiamo
-misurato la distanza $L = \SI{1555}{\milli\metre}$ tra lo schermo e l'ostacolo.
-Di conseguenza possiamo calcolare $\vartheta$ nel seguente modo:
+misurato la distanza $L = \SI{1555}{\milli\metre}$ tra lo schermo e l'ostacolo (unica eccezzione è stata il Filo 5, per
+il quale $L = \SI{1565}{\milli\metre}$). Di conseguenza possiamo calcolare $\vartheta$ nel seguente modo:
 
 \begin{equation}
     \tan(\vartheta) = \frac{h}{L}
@@ -168,8 +175,92 @@ L'equazione (\ref{eq:mindif}) diventa quindi:
 
 \begin{equation}
     d = \frac{m\lambda L}{h}
+    \label{eq:mindifsimpl}
 \end{equation}
 
+Utilizzando questa formula per ogni misura di minimi a nostra disposizione, e propagando l'incertezza in modo opportuno,
+abbiamo ottenuto una serie di valori di $d$ per ogni ostacolo. Nel caso in cui i valori di $d$, per un certo ostacolo,
+fossero compatibili tra loro entro un sigma, abbiamo fatto una media pesata per ottenere il dato definitivo. Quando
+i risultati erano tra di loro incompatibili, abbiamo invece optato per una più robusta media statistica, in modo da
+valutare le fluttuazioni casuali.
+
+I risultati dell'analisi dati sono visibili in Tabella \ref{tab:ost} e sono commentati nella didascalia.
+
+\begin{table}[t!]
+    \centering
+    \begin{tabular}{l | l l || l | l l || l | l l}
+        \toprule
+        Fessura & $d$ & $\sigma(d)$ & Filo & $d$ & $\sigma(d)$ & Foro & $d$ & $\sigma(d)$ \\
+        \midrule
+        \SI{160}{\micro\metre} & 157  & 1    & Filo 1  & 56    &   2   & Foro 1 & 38 & 3 \\
+        \SI{80}{\micro\metre}  & 79.6 & 0.4  & Filo 2  & 94    &   1   & Foro 2 & 78 & 4 \\
+        \SI{40}{\micro\metre}  & 40.4 & 0.3  & Filo 3  & 115   &   1   &        &    &   \\
+        \SI{20}{\micro\metre}  & 18.9 & 0.14 & Filo 4  & 192   &   4   &        &    &   \\
+                               &      &      & Filo 5  & 336   &   3   &        &    &   \\
+                               &      &      & Capello & 70    &   0.7 &        &    &   \\
+        \bottomrule
+    \end{tabular}
+    \caption{La tabella riassume parte dei risultati ottenuti, tutti riportati in micrometri [\si{\micro\metre}].
+    Nelle prime tre colonne sono riportati i risultati dei calcoli
+    nel caso delle fessure. I risultati sono buoni e la larghezza delle fessure è vicina ai valori dichiarati dal costruttore.
+    I valori non sono tuttavia compatibili con le larghezze nominali, probabilmente perché le nostre incertezze sono un po' sottostimate.
+    Le tre colonne al centro sono riferite all'esperienza con i fili. In questo caso in assenza di valori nominali, non possiamo
+    commentare i dati. Interessante il dato del capello, che è in accordo con altre fonti. Nel caso dei fori (ultime 3 colonne)
+    I risultati sono a nostro parere ottimi, sia perché sono in accordo entro un sigma con i valori nominali di \SI{40}{\micro\metre} e
+    \SI{80}{\micro\metre} riportati dal costruttore, sia perché le incertezze sono credibili.}
+    \label{tab:ost}
+\end{table}
+
 \subsubsection{Reticoli}
+
+Nel caso dei reticoli il metodo utilizzato nel paragrafo precedente non si può più usare a causa del fatto che i minimi sono
+indistinguibili dai massimi secondari. La zona scura sullo schermo è molto ampia, e sono presenti pochi punti molto luminosi.
+Inoltre in questo caso la figura di diffrazione non è dovuta alla luce che passa in una sola fenditura ed interferisce con se stessa,
+ma è causata dall'interferenza della luce proveniente da un numero molto alto di fenditure (qualche centinaio).
+La teoria che ci ha permesso di fare i calcoli nel paragrafo precedente non vale più, ma sorprendentemente, facendo i conti per
+tenere in considerazione tutte le fenditure, si ottiene la formula (\ref{eq:mindif})! In questo caso, ovviamente, $\vartheta$
+non è più l'angolo che identifica il \emph{minimo} di ordine $m$, bensi quello che identifica il \emph{massimo} di ordine $m$.
+
+In questo caso per fare i conti abbiamo dovuto usare la formula (\ref{eq:mindif}) e non la sua versione semplificata (\ref{eq:mindifsimpl}).
+Come si vede in Tabella \ref{tab:foret}, per i reticoli la semidistanza $h$ tra i massimi dello stesso ordine è arrivata fino a circa
+\SI{60}{\centi\metre}, e di conseguenza $\vartheta$ è giunto fino a circa 22 gradi. La differenza percentuale tra $\sin(\vartheta)$ e
+$\tan(\vartheta)$ quando $\vartheta = 22^\circ$ è circa l'8\% e quindi non è trascurabile. Per ottenere l'angolo abbiamo usato la formula:
+
+\begin{equation}
+    \vartheta = \arctan\left(\frac{h}{L}\right)
+\end{equation}
+
+Applicando le precedenti formule si ottengono alcune serie di larghezze di fenditura, una per ogni tipo di fenditura e di laser.
+Ricordiamo infatti che nel caso del reticolo sono stati utilizzati entrambi i laser. Il valore di larghezza delle
+fenditure di ogni reticolo è stato ottenuto facendo la media statistica dei valori, provenienti dalle misure con
+entrambi i laser, relativi al reticolo in esame. Si è usata la media statistica poiché le incertezze erano
+evidentemente sottostimate e quindi volevamo prendere in considerazione la dispersione dei valori ottenuti.
+
+Per confrontare i dati ottenuti con i dati del costruttore abbiamo calcolato la densità di fessure per millimetro,
+assumendo che lo spazio tra le fessure sia trascurabile:
+
+\begin{equation}
+    \rho = \frac{1}{d}
+\end{equation}
+
+La Tabella \ref{tab:ostret} mostra i risultati di questa parte dell'analisi dati.
+
+\begin{SCtable}[0.9][b!]
+    \centering
+    \begin{tabular}{l | l l l l}
+        \toprule
+        & \multicolumn{2}{c}{Dimensione [\si{\micro\metre}]} & \multicolumn{2}{c}{Densità [\si{\per\milli\metre}]} \\
+        Reticolo & $d$ & $\sigma(d)$ & $\rho$ & $\sigma(\rho)$ \\
+        \midrule
+        100 & 9.6 & 0.3   & 104 & 4\\
+        200 & 3.25 & 0.07 & 308 & 7 \\
+        300 & 1.59 & 0.04 & 628 & 15 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Le incertezze sui dati sono un po' basse, ma i risultati sono
+        buoni perché concordano entro poco più di un sigma con i valori forniti dal produttore (che sono di 100, 300 e 600 fessure
+        per millimetro rispettivamente).}
+    \label{tab:ostret}
+\end{SCtable}
 
 \subsubsection{Lunghezza d'onda dei laser}

@@ -38,23 +38,29 @@ lst = 1655;
 dlst = 1;
 
 % angoli theta
-tr100 = (r100 ./ 2) ./ l;
+tr100 = atan((r100 ./ 2) ./ l);
 dtr100 = sqrt((dr100./2./l).^2 .+ (r100./2./l.^2.*dl).^2);
+dtr100 = cos(tan(tr100)) ./ (1 + tr100.^2) .* dtr100;
 
-tr300 = (r300 ./ 2) ./ l;
+tr300 = atan((r300 ./ 2) ./ l);
 dtr300 = sqrt((dr300./2./l).^2 .+ (r300./2./l.^2.*dl).^2);
+dtr300 = cos(tan(tr300)) ./ (1 + tr300.^2) .* dtr300;
 
-tr600 = (r600 ./ 2) ./ l;
+tr600 = atan((r600 ./ 2) ./ l);
 dtr600 = sqrt((dr600./2./l).^2 .+ (r600./2./l.^2.*dl).^2);
+dtr600 = cos(tan(tr600)) ./ (1 + tr600.^2) .* dtr600;
 
-to100 = (o100 ./ 2) ./ l;
+to100 = atan((o100 ./ 2) ./ l);
 dto100 = sqrt((do100./2./l).^2 .+ (o100./2./l.^2.*dl).^2);
+dto100 = cos(tan(to100)) ./ (1 + to100.^2) .* dto100;
 
-to300 = (o300 ./ 2) ./ l;
+to300 = atan((o300 ./ 2) ./ l);
 dto300 = sqrt((do300./2./l).^2 .+ (o300./2./l.^2.*dl).^2);
+dto300 = cos(tan(to300)) ./ (1 + to300.^2) .* dto300;
 
-to600 = (o600 ./ 2) ./ l;
+to600 = atan((o600 ./ 2) ./ l);
 dto600 = sqrt((do600./2./l).^2 .+ (o600./2./l.^2.*dl).^2);
+dtro600 = cos(tan(to600)) ./ (1 + to600.^2) .* dto600;
 
 % dimensioni fenditura
 sr100 = (1:3)' .* red ./ tr100
@@ -208,6 +214,26 @@ statistical_dfin_s300 = std([statistic_mr300, statistic_mo300])
 
 fin_s600 = weighted_mean([mr600, mo600], [dmr600, dmo600])
 dfin_s600 = weighted_mean_err([dmr600, dmo600])
+
+display("");
+
+statistic_mro100 = mean([sr100; so100])
+statistic_dmro100 = std([sr100; so100])
+
+dens100 = 1/statistic_mro100
+ddens100 = 1/(statistic_mro100.^2) * statistic_dmro100
+
+statistic_mro300 = mean([sr300; so300])
+statistic_dmro300 = std([sr300; so300])
+
+dens300 = 1/statistic_mro300
+ddens300 = 1/(statistic_mro300.^2) * statistic_dmro300
+
+statistic_mro600 = mean([sr600; so600])
+statistic_dmro600 = std([sr600; so600])
+
+dens600 = 1/statistic_mro600
+ddens600 = 1/(statistic_mro600.^2) * statistic_dmro600
 
 display("");
 
