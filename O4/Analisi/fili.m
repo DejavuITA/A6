@@ -33,7 +33,7 @@ orange = 0.000612;
 l = 1555;
 dl = 1;
 % lunghezza storto
-lst = 1655;
+lst = 1565;
 dlst = 1;
 
 % angoli theta
