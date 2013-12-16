@@ -11,19 +11,57 @@ Quindi il rapporto tra le intensità della luce trasmessa ($I_f$) e incidente su
 	\label{eq:intensita}
 \end{equation}
 %
-dove con $I_0$ indichiamo l'intensità della radiazione incidente sul contenitore, con $L$ indichiamo il cammino ottico (ovvero lo spessore del contenitore) e $c$ indica la concentrazione di $CuSO_4$ presente nella sostanza. Infine con il termine $k$ indichiamo l'estinzione molare o il coefficiente di assorbimento molare. Ricordiamo che il suo valore è considerato costante per una data sostanza ad una data lunghezza d'onda, tuttavia può subire lievi variazioni con la temperatura.
-Quindi poichè la durata delle nostre misure è stata molto breve possiamo escludere che il termine $k$ sia variato a causa della temperatura. Perciò ponendo:
+dove con $I_0$ indichiamo l'intensità della radiazione incidente sul contenitore, con $L$ indichiamo il cammino ottico (ovvero lo spessore del contenitore) e $c$ indica la molarità ovvero la concentrazione di $CuSO_4$ presente nella sostanza (moli su litro). Infine con il termine $k$ indichiamo l'estinzione molare o il coefficiente di assorbimento molare. Ricordiamo che il suo valore è considerato costante per una data sostanza ad una data lunghezza d'onda, tuttavia può subire lievi variazioni con la temperatura.
+Quindi poichè la durata delle nostre misure è stata molto breve possiamo escludere che il termine $k$ sia variato a causa della temperatura, e quindi lo possiamo assumere costante.
+Pertanto possiamo scrivere quanto segue:
 
 \begin{equation}
-	k\,c \,\,=\,\, \alpha\ped{c}
+	k\,c \,\,=\,\, \alpha\ped{(c)}
 \end{equation}
 %
-l'equazione (\ref{eq:intensita}) assume la seguente forma:
+e quindi otteniamo che la relazione (\ref{eq:intensita}) diventa:
 
 \begin{equation}
 	I_f \,\,=\,\, I_0 \,\, e^{-\alpha\ped{(c)}\,L}
+	\label{eq:inutile}
 \end{equation}
 %
+
+Pertanto lo scopo di questa relazione è quello di verificare la bontà di questa legge sfruttando i dati da noi raccolti. In particolare verificare se $I_0$ sarà compatibile colvalore di $I\ped{0\ped{exp}}$ che troveremo dall'analisi dati.
+Per fare quanto acennato sopra dobbiamo semplificare la scrittura della relazione appena trovata (\ref{eq:inutile}).
+A tal fine riscriviamo la legge nel seguente modo:
+
+\begin{equation}
+	\log{I_f} \,\,=\,\, A \,-\, B \, c \qquad \text{dove} \qquad A \,=\, log{I_0} \quad \text{e} \quad B\,=\, kL
+	\label{eq:fit}
+\end{equation}
+%
+Pertanto mediante un fit sulla legge lineare appena trovata (\ref{eq:fit}) siamo in in grado di stimare i valori dei parametri
+$A$ e $B$. Il fit sopracitato è riportato in Figura (%\ref{fig:grafico}).
+Dal fit lineare abbiamo trovato i seguenti valori per $A$ e $B$:
+
+\begin{equation}
+	A \,=\, XXX \pm XXX \qquad \text{e} \qquad B \,=\, XXX \pm XXX
+\end{equation}
+%
+A questo punto rovesiando la formula (\ref{eq:fit}) otteniamo che i valori di $I\ped{0\ped{exp}}$ e di $kL$ sono i seguenti:
+
+\begin{equation}
+	I\ped{0\ped{exp}} \,=\, XXX \pm XXX \qquad \text{e} \qquad kL \,=\, XXX \pm XXX
+\end{equation}
+%
+
+
+
+
+
+%Ora il nostro obbiettivo è quello di trovare una scrittura della legge (\ref{eq:intensita}) che leghi direttamente l'intensità luminosa finale ($I_f$) con la concentrazione molare della sostanza ($c$). Quindi andiamo ad analizzare una relazione di questo tipo:
+
+%\begin{equation}
+%	I_f \,\,=\,\, A \,\, e^{-\alpha\ped{(c)}\,L}
+%\end{equation}
+%
+
 
  
 %\begin{figure}[hbtp]
