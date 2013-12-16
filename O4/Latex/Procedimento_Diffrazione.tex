@@ -56,21 +56,23 @@ migliori. Dopodiché abbiamo incollato allo schermo una striscia di carta per an
         l'inizio e la fine del minimo e poi mediato i valori ottenuti.}
     \item{Nel caso dei reticoli di diffrazione la figura di interferenza presenta dei picchi molto luminosi e dei minimi molto larghi
             (In realtà ci sono anche dei minimi secondari, ma sono talmente deboli da non essere percepibili. Disegno in Figura \ref{fig:ret}).
-            La misura dei minimi è quindi esclusa, per cui abbiamo misurato la separazione tra i massimi dello stesso ordine.}
+            La misura dei minimi è quindi esclusa, per cui abbiamo misurato la separazione tra i massimi dello stesso ordine.
             Per i reticoli la misura è stata effettuata con entrambi i laser a nostra disposizione. Nei punti precedenti abbiamo
-            usato esclusivamente il laser rosso.
+            usato esclusivamente il laser rosso.}
 \end{itemize}
 
 Le Tabelle \ref{tab:ff} e \ref{tab:foret} riportano tutti i dati misurati. Ci teniamo a far notare
 che, sebbene molte misure siano state effettuate con il calibro e siano riportate anche le frazioni di millimetro,
 l'incertezza di queste misure è molto più alta, a causa dello spessore delle tacche segnate sul foglio e a causa del
-fatto che spesso erano storte e magari doppie. A nostro parere l'incertezza più appropiata sarebbe un incertezza di
-risoluzione di 1 mm, che comunque non influisce in maniera significativa sui valori ottenuti dai calcoli.
+fatto che spesso erano storte e magari doppie. A nostro parere l'incertezza più appropiata è un incertezza di
+risoluzione di 1 mm per le misure effettuate con il calibro, incertezza che abbiamo usato nei calcoli.
+Le misure riguardanti i reticoli sono state effettuate con il metro a causa dell'intervallo di misurazione ampio. Anche in questo caso
+l'incertezza di risoluzione è stata posta ad 1 mm, anche se forse si poteva portare fino a 2 mm.
 
 \begin{table}[t!]
     \centering
     \footnotesize
-    \begin{tabular}{l l l l | l l l l l l}
+    \begin{tabular}{c c c c | c c c c c c}
         \toprule
         \multicolumn{4}{c|}{Fessure [mm]} & \multicolumn{6}{c}{Fili [mm]}  \\
         \SI{160}{\micro\metre}& \SI{80}{\micro\metre}& \SI{40}{\micro\metre}& \SI{20}{\micro\metre}&
@@ -99,7 +101,7 @@ risoluzione di 1 mm, che comunque non influisce in maniera significativa sui val
 \begin{table}[b!]
     \centering
     \footnotesize
-    \begin{tabular}{l l | l l l | l l l}
+    \begin{tabular}{c c | c c c | c c c}
         \toprule
         \multicolumn{2}{c|}{Fori [mm]} & \multicolumn{6}{c}{Reticoli [mm]} \\[1mm]
         Foro 1 &      Foro 2 & R 100 &   R 300 &   R 600 & A 100 & A 300 & A 600\\
@@ -126,7 +128,7 @@ risoluzione di 1 mm, che comunque non influisce in maniera significativa sui val
 \subsection{Analisi dati}
 
 L'analisi dati è divisa in 3 parti. Nella prima ci occupiamo di ottenere la dimensione degli ostacoli
-che abbiamo messo sul percorso del raggio laser. La seconda si occupa di determinare la dimensione
+che abbiamo messo sul percorso del raggio laser. La seconda si occupa di determinare la distanza
 delle fessure dei reticoli, prendendo come dato in input la lunghezza d'onda del laser usato.
 La procedura da usare per ricavare la dimensione di fenditure, fili e fori è differente da quella usata
 per i reticoli, per motivi che chiariremo in seguito.
@@ -188,7 +190,7 @@ I risultati dell'analisi dati sono visibili in Tabella \ref{tab:ost} e sono comm
 
 \begin{table}[t!]
     \centering
-    \begin{tabular}{l | l l || l | l l || l | l l}
+    \begin{tabular}{l | c c || l | c c || l | c c }
         \toprule
         Fessura & $d$ & $\sigma(d)$ & Filo & $d$ & $\sigma(d)$ & Foro & $d$ & $\sigma(d)$ \\
         \midrule
@@ -220,6 +222,8 @@ ma è causata dall'interferenza della luce proveniente da un numero molto alto d
 La teoria che ci ha permesso di fare i calcoli nel paragrafo precedente non vale più, ma sorprendentemente, facendo i conti per
 tenere in considerazione tutte le fenditure, si ottiene la formula (\ref{eq:mindif})! In questo caso, ovviamente, $\vartheta$
 non è più l'angolo che identifica il \emph{minimo} di ordine $m$, bensi quello che identifica il \emph{massimo} di ordine $m$.
+Un altra differenza importante riguarda la quantità $d$: essa non indica più la larghezza delle fenditure, ma la separazione tra
+le stesse, assunto che la larghezza sia trascurabile rispetto alla separazione.
 
 In questo caso per fare i conti abbiamo dovuto usare la formula (\ref{eq:mindif}) e non la sua versione semplificata (\ref{eq:mindifsimpl}).
 Come si vede in Tabella \ref{tab:foret}, per i reticoli la semidistanza $h$ tra i massimi dello stesso ordine è arrivata fino a circa
@@ -230,14 +234,13 @@ $\tan(\vartheta)$ quando $\vartheta = 22^\circ$ è circa l'8\% e quindi non è t
     \vartheta = \arctan\left(\frac{h}{L}\right)
 \end{equation}
 
-Applicando le precedenti formule si ottengono alcune serie di larghezze di fenditura, una per ogni tipo di fenditura e di laser.
-Ricordiamo infatti che nel caso del reticolo sono stati utilizzati entrambi i laser. Il valore di larghezza delle
+Applicando le precedenti formule si ottengono alcune serie di distanza tra le fenditure, una per ogni tipo di fenditura e di laser.
+Ricordiamo infatti che nel caso del reticolo sono stati utilizzati entrambi i laser. Il valore di separazione tra
 fenditure di ogni reticolo è stato ottenuto facendo la media statistica dei valori, provenienti dalle misure con
 entrambi i laser, relativi al reticolo in esame. Si è usata la media statistica poiché le incertezze erano
 evidentemente sottostimate e quindi volevamo prendere in considerazione la dispersione dei valori ottenuti.
 
-Per confrontare i dati ottenuti con i dati del costruttore abbiamo calcolato la densità di fessure per millimetro,
-assumendo che lo spazio tra le fessure sia trascurabile:
+Per confrontare i dati ottenuti con i dati del costruttore abbiamo calcolato la densità di fessure per millimetro:
 
 \begin{equation}
     \rho = \frac{1}{d}
@@ -245,22 +248,67 @@ assumendo che lo spazio tra le fessure sia trascurabile:
 
 La Tabella \ref{tab:ostret} mostra i risultati di questa parte dell'analisi dati.
 
-\begin{SCtable}[0.9][b!]
+\begin{SCtable}[1.8][t!]
     \centering
-    \begin{tabular}{l | l l l l}
+    \small
+    \begin{tabular}{l | c c c c }
         \toprule
-        & \multicolumn{2}{c}{Dimensione [\si{\micro\metre}]} & \multicolumn{2}{c}{Densità [\si{\per\milli\metre}]} \\
+        & \multicolumn{2}{c}{Dimensione [\si{\micro\metre}]} & \multicolumn{2}{c}{Densità [\si{\per\milli\metre}]} \\[1mm]
         Reticolo & $d$ & $\sigma(d)$ & $\rho$ & $\sigma(\rho)$ \\
         \midrule
-        100 & 9.6 & 0.3   & 104 & 4\\
-        200 & 3.25 & 0.07 & 308 & 7 \\
-        300 & 1.59 & 0.04 & 628 & 15 \\
+        100 & 9.9 & 0.2   & 101 & 2  \\
+        200 & 3.358 & 0.002 & 297.8 & 0.2  \\
+        300 & 1.661 & 0.001 & 602.0 & 0.3 \\
         \bottomrule
     \end{tabular}
-    \caption{Le incertezze sui dati sono un po' basse, ma i risultati sono
-        buoni perché concordano entro poco più di un sigma con i valori forniti dal produttore (che sono di 100, 300 e 600 fessure
+    \caption{Le incertezze sui dati sono evidentemente sottostimate, a parte nel caso del reticolo da 100 fessure per millimetro.
+        Questo è dovuto alle poche misure a nostra disposizione, che non ci hanno permesso di valutare bene la dispesione.
+        Infatti per i reticoli 300 e 600 i dati provengono da solo 4 e 2 misure rispettivamente.
+        A parte l'incertezza poco credibile, che probabilmente è un ordine di grandezza maggiore, i risultati sono
+        buoni perché sono molto vicini ai valori forniti dal produttore (che sono di 100, 300 e 600 fessure
         per millimetro rispettivamente).}
     \label{tab:ostret}
 \end{SCtable}
 
 \subsubsection{Lunghezza d'onda dei laser}
+
+In quest'ultima parte della relazione vogliamo calcolare la lunghezza d'onda dei laser a nostra disposizione,
+prendendo come input la densità $\rho$ di fessure per millimetro fornite dal construttore. Avevamo a disposizione reticoli
+da 100, 300 e 600 fessure per millimetro. Da questo dato si può ricavare la separazione tra le fenditure:
+
+\begin{equation}
+    d = \frac{1}{\rho}
+\end{equation}
+
+Invertendo la formula (\ref{eq:mindif}) e usando quella appena ricavata:
+
+\begin{equation}
+    \lambda = \frac{\sin(\vartheta)}{m\rho}
+\end{equation}
+
+In questo caso i dati ottenuti sono stati elaborati con la media statistica, per ottenere un valore unico di lunghezza d'onda.
+È stata fatta la media di tutti i dati provenienti dai tre reticoli, ottenuti da misure ottenuti da misure effettuate con lo stesso laser.
+
+La Tabella \ref{tab:lambda} riporta i nostri risultati, che sono a nostro parere buoni.
+
+\begin{table}[b!]
+    \centering
+    \begin{tabular}{l | c c}
+        \toprule
+        Laser & $\lambda [\si{\nano\metre}]$ & $\sigma(\lambda) [\si{\nano\metre}]$ \\
+        \midrule
+        Rosso & 637 & 10  \\
+        Arancione & 612 & 4  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Le lunghezze d'onda che abbiamo ottenuto sono ottime, entrambe compatibili entro un sigma con
+        il valore nominale dei laser usati. Inoltre esse sono compatibili entro due sigma tra di loro, segno che
+        con l'incertezza che abbiamo sono appena distinguibili.}
+    \label{tab:lambda}
+\end{table}
+
+\section{Conclusioni dell'esperienza sulla diffrazione}
+
+Per concludere questa seconda parte della relazione, possiamo dire che i risultati che abbiamo ottenuto dall'analisi dati
+sono buoni, anche se le incertezze sono state in generale sottostimate. Per migliorare l'esperimento si sarebbe potuto
+prendere qualche misura in più in modo da valutare meglio la dispersione dei dati.

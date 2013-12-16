@@ -63,23 +63,23 @@ dto600 = sqrt((do600./2./l).^2 .+ (o600./2./l.^2.*dl).^2);
 dtro600 = cos(tan(to600)) ./ (1 + to600.^2) .* dto600;
 
 % dimensioni fenditura
-sr100 = (1:3)' .* red ./ tr100
-dsr100 = ((1:3)' .* red ./ tr100 .^ 2 .* dtr100)
+sr100 = (1:3)' .* red ./ sin(tr100)
+dsr100 = ((1:3)' .* red ./ sin(tr100) .^ 2 .* cos(tr100) .* dtr100)
 
-sr300 = (1:2)' .* red ./ tr300
-dsr300 = ((1:2)' .* red ./ tr300 .^ 2 .* dtr300)
+sr300 = (1:2)' .* red ./ sin(tr300)
+dsr300 = ((1:2)' .* red ./ sin(tr300) .^ 2 .* cos(tr300)  .* dtr300)
 
-sr600 = red ./ tr600
-dsr600 = red ./ tr600 .^ 2 .* dtr600
+sr600 = red ./ sin(tr600)
+dsr600 = red ./ sin(tr600) .^ 2 .* cos(tr600)  .* dtr600
 
-so100 = (1:3)' .* orange ./ tr100
-dso100 = ((1:3)' .* orange ./ tr100 .^ 2 .* dtr100)
+so100 = (1:3)' .* orange ./ sin(to100)
+dso100 = ((1:3)' .* orange ./ sin(to100) .^ 2 .* cos(to100)  .* dto100)
 
-so300 = (1:2)' .* orange ./ tr300
-dso300 = ((1:2)' .* orange ./ tr300 .^ 2 .* dtr300)
+so300 = (1:2)' .* orange ./ sin(to300)
+dso300 = ((1:2)' .* orange ./ sin(to300) .^ 2 .* cos(to300)  .* dto300)
 
-so600 = orange ./ tr600
-dso600 = orange ./ tr600 .^ 2 .* dtr600
+so600 = orange ./ sin(to600)
+dso600 = orange ./ sin(to600) .^ 2 .* cos(to600)  .* dto600
 
 % ora facciamo il rovescio, troviamo le lunghezze d'onda
 % separazione tra fenditure
@@ -87,24 +87,24 @@ d1 = 100^-1;
 d3 = 300^-1;
 d6 = 600^-1;
 
-lred1 = d1 .* tr100 ./ (1:3)'
-dlred1 = d1 .* dtr100 ./ (1:3)'
+lred1 = d1 .* sin(tr100) ./ (1:3)'
+dlred1 = d1 .* cos(tr100) .* dtr100 ./ (1:3)'
 
-lred3 = d3 .* tr300 ./ (1:2)'
-dlred3 = d3 .* dtr300 ./ (1:2)'
+lred3 = d3 .* sin(tr300) ./ (1:2)'
+dlred3 = d3 .* cos(tr300) .* dtr300 ./ (1:2)'
 
-lred6 = d6 .* tr600
-dlred6 = d6 .* dtr600
+lred6 = d6 .* sin(tr600)
+dlred6 = d6 .* cos(tr600) .* dtr600
 
 
-lorange1 = d1 .* to100 ./ (1:3)'
-dlorange1 = d1 .* dto100 ./ (1:3)'
+lorange1 = d1 .* sin(to100) ./ (1:3)'
+dlorange1 = d1 .* cos(to100) .* dto100 ./ (1:3)'
 
-lorange3 = d3 .* to300 ./ (1:2)'
-dlorange3 = d3 .* dto300 ./ (1:2)'
+lorange3 = d3 .* sin(to300) ./ (1:2)'
+dlorange3 = d3 .* cos(to300) .* dto300 ./ (1:2)'
 
-lorange6 = d6 .* to600
-dlorange6 = d6 .* dto600
+lorange6 = d6 .* sin(to600)
+dlorange6 = d6 .* cos(to600) .* dto600
 
 % ora facciamo le medie
 % medie dimensioni fenditura
@@ -192,28 +192,28 @@ statistic_dmlo600 = std(lorange6)
 
 display("\nValori definitivi mediati ulteriormente");
 
-fin_s100 = weighted_mean([mr100, mo100], [dmr100, dmo100])
-dfin_s100 = weighted_mean_err([dmr100, dmo100])
-
-weight_fin_s100 = weighted_mean([statistic_mr100, statistic_mo100],
-	[statistic_dmr100, statistic_dmo100])
-weight_dfin_s100 = weighted_mean_err([statistic_dmr100, statistic_dmo100])
-
-statistical_fin_s100 = mean([statistic_mr100, statistic_mo100])
-statistical_dfin_s100 = std([statistic_mr100, statistic_mo100])
-
-fin_s300 = weighted_mean([mr300, mo300], [dmr300, dmo300])
-dfin_s300 = weighted_mean_err([dmr300, dmo300])
-
-weight_fin_s300 = weighted_mean([statistic_mr300, statistic_mo300],
-	[statistic_dmr300, statistic_dmo300])
-weight_dfin_s300 = weighted_mean_err([statistic_dmr300, statistic_dmo300])
-
-statistical_fin_s300 = mean([statistic_mr300, statistic_mo300])
-statistical_dfin_s300 = std([statistic_mr300, statistic_mo300])
-
-fin_s600 = weighted_mean([mr600, mo600], [dmr600, dmo600])
-dfin_s600 = weighted_mean_err([dmr600, dmo600])
+%fin_s100 = weighted_mean([mr100, mo100], [dmr100, dmo100])
+%dfin_s100 = weighted_mean_err([dmr100, dmo100])
+%
+%weight_fin_s100 = weighted_mean([statistic_mr100, statistic_mo100],
+	%[statistic_dmr100, statistic_dmo100])
+%weight_dfin_s100 = weighted_mean_err([statistic_dmr100, statistic_dmo100])
+%
+%statistical_fin_s100 = mean([statistic_mr100, statistic_mo100])
+%statistical_dfin_s100 = std([statistic_mr100, statistic_mo100])
+%
+%fin_s300 = weighted_mean([mr300, mo300], [dmr300, dmo300])
+%dfin_s300 = weighted_mean_err([dmr300, dmo300])
+%
+%weight_fin_s300 = weighted_mean([statistic_mr300, statistic_mo300],
+	%[statistic_dmr300, statistic_dmo300])
+%weight_dfin_s300 = weighted_mean_err([statistic_dmr300, statistic_dmo300])
+%
+%statistical_fin_s300 = mean([statistic_mr300, statistic_mo300])
+%statistical_dfin_s300 = std([statistic_mr300, statistic_mo300])
+%
+%fin_s600 = weighted_mean([mr600, mo600], [dmr600, dmo600])
+%dfin_s600 = weighted_mean_err([dmr600, dmo600])
 
 display("");
 
@@ -234,6 +234,26 @@ statistic_dmro600 = std([sr600; so600])
 
 dens600 = 1/statistic_mro600
 ddens600 = 1/(statistic_mro600.^2) * statistic_dmro600
+
+###
+
+w_mro100 = weighted_mean([sr100; so100], [dsr100; dso100])
+w_dmro100 = weighted_mean_err([dsr100; dso100])
+
+wdens100 = 1/w_mro100
+wddens100 = 1/(w_mro100.^2) * w_dmro100
+
+w_mro300 = weighted_mean([sr300; so300], [dsr300; dso300])
+w_dmro300 = weighted_mean_err([dsr300; dso300])
+
+wdens300 = 1/w_mro300
+wddens300 = 1/(w_mro300.^2) * w_dmro300
+
+w_mro600 = weighted_mean([sr600; so600], [dsr600; dso600])
+w_dmro600 = weighted_mean_err([dsr600; dso600])
+
+wdens600 = 1/w_mro600
+wddens600 = 1/(w_mro600.^2) * w_dmro600
 
 display("");
 
