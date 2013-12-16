@@ -38,7 +38,7 @@ La procedura eseguita per ricavare l'indice di rifrazione dell'aria è la seguen
 \begin{itemize}
 	\item{Abbiamo installato sul sistema, tra il beam splitter e lo specchio mobile, una piccola camera da vuoto con due pareti in vetro atte a far passare la luce % diggiuro!
 	 e la camera è stata collegata, mediante la valvola a spillo, alla pompa a membrana;}
-    \item{Partendo con la camera da vuoto a pressione atmosferica abbiamo man mano creato il vuoto all'interno della camera regolando l'apertura della valvola a spillo. Aprendo la valvola a spillo (ovviamente con la pompa accesa), l'aria esce dalla camera da vuoto ed esce in atmosfera;}
+    \item{Partendo con la camera da vuoto a pressione atmosferica abbiamo man mano creato il vuoto all'interno della camera regolando l'apertura della valvola a spillo. Aprendo la valvola a spillo (ovviamente con la pompa accesa), l'aria esce dalla camera da vuoto in atmosfera;}
     \item{Ad intervalli regolari di pressione, ovvero ogni \SI{10}{\kilo\pascal}, abbiamo annotato il numero di frange di interferenza passate sullo schermo;}
 \end{itemize}
 
@@ -50,8 +50,7 @@ Ponendo un vetro tra il beam splitter e lo specchio fisso si tara lo strumento. 
 inclinato il vetro; in questo modo la sezione che viene attraversata dal raggio è maggiore e varia il cammino ottico.
 Inoltre il raggio luminoso è costretto ad attraversare il vetro sia in ``andata'' che al ``ritorno''.
 
-Abbiamo iniziato allineando il vetro in modo che fosse perpendicolare al raggio. Si è posto il raggio su di un goniometro posto
-tragitto del raggio. Ruotando il goniometro è stato cercato l'angolo per cui la figura di diffrazione si fermasse e tornasse indietro.
+Abbiamo iniziato allineando il vetro in modo che fosse perpendicolare al raggio. Ruotando il vetro assieme al goniometro è stato cercato l'angolo per cui la figura di diffrazione si fermasse e tornasse indietro.
 Questo è l'angolo per cui il vetro è perpendicolare al raggio ed il cammino ottico è minore.
 %Pertanto, dopo aver posizionato il vetro,
 %si agisce sullo specchio mobile allontanandolo o avvicinandolo al beam spltte per allinearlo con lo specchio fisso. Si fa questo al fine di ottenere una semplice figura di interferenza, che come nel caso precedente è una frangia luminosa.
@@ -83,37 +82,32 @@ ottico tra la configurazione base e quella raggiunta e $\lambda$ la lunghezza d'
 Lo scopo sarà quello di confrontare il numero di frange contate con la differenza di pressione rilevata.
 Infatti variando la pressione nella camera da vuoto si varia l'indice di rifrazione dell'aria.
 Questo provoca una variazione nel cammino ottico del raggio  e quindi fenomeni di interferenza.
-Tali fenomeni saranno sempre più accentuati man mano che l'indice di rifrazione dell'aria varia in funzione della pressione interna alla camera.
-Sapendo che il cammino ottico ($D$) è pari a due volte la lunghezza della camera da vuoto moltiplicata per l'indice di rifrazione del gas ivi contenuto, possiamo ottenere la seguente relazione:
+Lo sfasamento tra i raggi sarà sempre più accentuato man mano che l'indice di rifrazione dell'aria varia.
+Sapendo che la differenza di cammino ottico è pari a due volte la lunghezza della camera da vuoto ($D = 2\ell$)
+moltiplicata per la differenza dell'indice di rifrazione del gas ivi contenuto
+cioè $d = D\Delta n$, possiamo ottenere la seguente relazione:
 
 \begin{equation}
-	\Delta{n} \,=\, \frac{N \, \lambda}{D} \qquad \text{con} \qquad \Delta{n} \,=\, (n\ped{p} \,-\, n\ped{vuoto})
+	\Delta{n} \,=\, \frac{N \, \lambda}{D} \qquad \text{con} \qquad \Delta{n} \,=\, |n\ped{p} \,-\, n\ped{atm}|
 	\label{eq:delta_n}
 \end{equation}
 %
-dove $n\ped{p}$ è l'indice di rifrazione dell'aria alla pressione raggiunta, $n\ped{vuoto}$ è l'indice di rifrazione del vuoto il cui valore è 1 preso senza incertezze, $D$ la differenza di cammino ottico tra i due raggi e $\lambda$ e la lunghezza d'onda del laser.
+dove $n\ped{p}$ è l'indice di rifrazione dell'aria alla pressione raggiunta, $n\ped{atm}$ è l'indice di rifrazione del aria a pressione atmosferica, $D$ è il cammino geometrico che il raggio percorre all'interno della camera da vuoto e $\lambda$ e la lunghezza d'onda del laser.
 
-Quindi per ottenere il valore dell'idice di rifrazione dell'aria alla pressione voluta non dobbiamo fare altro che isolare dall'equazione (\ref{eq:delta_n}) il tremine $n\ped{p}$. Pertanto otteniamo che:
+Grazie alla formula (\ref{eq:delta_n}), siamo in grado di correlare i dati di pressione con i valori di $\Delta n$. Da questi possiamo
+ricavare, mediante una regressione, la funzione lineare che lega l'indice di rifrazione alla pressione.
+Calcolando l'intercetta di questa retta si può estrapolare la differenza di indice di rifrazione tra il vuoto e l'aria a pressione
+atmosferica, che dai nostri calcoli vale:
 
 \begin{equation}
-	n\ped{p} \,=\, 1 \,+\, \frac{N \, \lambda}{D}
+    \Delta n_0 \,=\, (2.01 \pm 0.03) \times 10^{-4}
+\end{equation}
+
+L'indice di rifrazione del vuoto per definizione è uguale a 1, quindi conoscendo $\Delta n_0$ si trova l'indice di rifrazione dell'aria con:
+
+\begin{equation}
+	n\ped{atm} \,=\, 1 \,+\, \Delta n_0 \,=\, 1.000201 \pm 0.000003 
 	\label{eq:indice_rif_aria}
-\end{equation}
-%
-e quindi grazie all'interpolazione dei dati del numero di frange contate ($N$) in funzione della pressione raggiunta ($P$) possiamo ricavere il numero di massimi ($N\ped{atm}$) relativi alla pressione atmosferica ($P\ped{atm}$).
-Infine sfruttando la precedente relazione (\ref{eq:indice_rif_aria}) siamo in grado di ottenere il valore dell'indice di rifrazione dell'aria a pressione atmosferica:
-
-\begin{equation}
-	n\ped{patm} \,=\, 1 \,+\, \frac{N\ped{atm} \, \lambda}{D}
-	\label{eq:indice_rif_aria_atm}
-\end{equation}
-%
-
-%Quindi ora avendo il quadro teorico che sta alla base dell'esperimento possiamo procedere con l'analizzare i dati che abbiamo ottenuto.
-Il valore da noi ricavato per l'indice di rifrazione è:
-
-\begin{equation}
-	n\ped{atm} \, = \, 1.00020 \pm 0.00001
 \end{equation}
 %
 ricordiamo che l'indice di rifrazione dell'aria a pressione atmosferica e a temperatura di 20 $\si{\degreeCelsius}$ è:
@@ -148,9 +142,10 @@ dove $t$ è la lunghezza del vetro, $\lambda$ è la lunghezza d'onda, $\theta$ �
 e $N$ è il numero di frange contate tra $\theta_0$ e la successiva posizione.
 I valori costanti nel nostro caso sono $t \,=\, 5.75 \pm 0.\textbf{xx} \, mm$ e $\lambda \, = \, 543.5 \, \si{\nano\metre}$
 
-I nostri dati hanno portato, tramite la media pesata dei dati ricavati ad ogni $\theta$, ad ottenere il seguente valore:
+I nostri dati hanno portato, tramite la media statistica degli indici ricavati con la formula precedente (uno per ogni $\theta$),
+ad ottenere il seguente valore:
 \begin{equation}
-	n\ped{vetro} \, = \, 1.59 \pm 0.01
+	n\ped{vetro} \, = \, 1.57 \pm 0.06
 \end{equation}
 
 \begin{figure}[t]

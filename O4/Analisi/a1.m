@@ -38,7 +38,7 @@ dM2 = std(dat_vetro_seconda);
 D = 32.5.*(10^-3); % [m] spessore camera a vuoto
 dD = 1e-3;  #0.05.*(10^-3); % [m]
 t = 5.75.*(10^-3); % [m] spessore vetro
-dt = 0.005.*(10^-3); % [m]
+dt = 0.05.*(10^-3); % [m]
 lambda = 543.5.*(10^-9); % [m] lambda del laser verde
 
 % pulisco la lista variabili
@@ -49,12 +49,12 @@ clear ans dat_aria_press dat_aria_prima dat_aria_terza dat_aria_quarta dat_vetro
 An = N.*lambda ./ (2 *D); % non ho idea di quello che sto scrivendo
 dAn = sqrt((dN.*lambda ./ (2 .* D)).^2 .+ (N.*lambda ./ (2 .* D.^2) .* dD).^2);
 % da cui si ricava N0... presumo...
-[A B dA dB] = fit(N, Press,(dN.+ones(length(N),1).*10).^-2);
+[A B dA dB] = fit(N, Press, (dN .+ ones(length(N),1)).^-2);
 N_0 = A;
 dN_0 = dA;
 
 [nA nB dnA dnB] = fit(An, Press, dAn.^-2);
-1 + nA;
+1 + nA
 dnA
 
 n_Patm = 1 + N_0.*lambda ./ (2 * D)
@@ -96,6 +96,8 @@ dn2 = sqrt(sqrt_arg) .* lambda .* ((2 .* t .* (1.-cos(theta)) .- M2.*lambda).^(-
 printf('\n');
 n_fin = weighted_mean(n(2:end), dn(2:end))
 n_fin_Err = weighted_mean_err(dn(2:end))
+n_stat_fin = mean([n(2:6); n(8:end)])
+n_stat_fin_Err = std([n(2:6); n(8:end)])
 
 % serie singole: 1
 printf('\n');

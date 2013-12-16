@@ -30,6 +30,46 @@ x = (
    0.296705972839036
 )
 
+y = (
+   1.44984657079230,
+   1.49162212837565,
+   1.50585496156217,
+   1.51280904030451,
+   1.54581322501117,
+   1.53410738394246,
+   1.69129130311855,
+   1.63559992571309,
+   1.62289155771000,
+   1.59445604134481,
+   1.58554187468977,
+   1.59018899224073,
+   1.58754640102471,
+   1.58536943229840,
+   1.57915173776017,
+   1.58391702548459,
+   1.57191070720323   
+)
+
+dy = (
+   0.0924221096134440,
+   0.0803436975415741,
+   0.0458259181962946,
+   0.0283009706106488,
+   0.0326572330275497,
+   0.0251560137962034,
+   0.0266449752250218,
+   0.0206307771177067,
+   0.0212117710472141,
+   0.0168544870483647,
+   0.0216038406554617,
+   0.0409082595421520,
+   0.0475762190688006,
+   0.0385968100078015,
+   0.0325837649430058,
+   0.0199061385071261,
+   0.0250155893226873
+)
+
 y1 = (
    1.44984657079230,
    1.44969067131206,
@@ -81,10 +121,10 @@ ax1 = f1.add_subplot(1, 1, 1)
 # crea plot con le barre d'errore (o anche senza)
 dots1 = ax1.errorbar(x=x, y=y2,
     #yerr=dy, #xerr=,
-    fmt='+', c='red')
+    fmt='^', c='red')
 dots2 = ax1.errorbar(x=x, y=y1,
     #yerr=dy, #xerr=,
-    fmt='x', c='black')
+    fmt='v', c='blue')
     
 ax1.set_xlabel(u'Angolo [gradi]',
     labelpad=12, fontsize=14)
@@ -92,18 +132,19 @@ ax1.set_ylabel(u'Indice di rifrazione',
     labelpad=18, fontsize=14)
 
 ax1.grid(True)
-#ax1.set_ylim((1, 1.00022))
-ax1.set_xlim((0, 0.32))
+ax1.set_ylim((1.42, 1.73))
+ax1.set_xlim((0, 0.1))
 
-ax1.get_xaxis().set_ticklabels(["0", "0.05", "0.10", "0.15", "0.20", "0.25", "0.30"])
+ax1.set_xticks([i*pi/180 for i in range(0, 19)])
+ax1.get_xaxis().set_ticklabels([str(i) for i in range(0, 19)])
 ax1.set_yticks([1.45, 1.50, 1.55, 1.60, 1.65, 1.70])
 
 # questo produce una legenda
-ax1.legend((dots1, dots2), ("Ia serie di punti", "IIa serie di punti"), 'upper left',
+ax1.legend((dots1, dots2), ("1^ serie di punti", "2^ serie di punti"), 'upper left',
     prop={'size': 12})
 
 # questo imposta i bordi del grafico
-f1.subplots_adjust(left=0.13, right=0.97,
+f1.subplots_adjust(left=0.10, right=0.97,
     top=0.88, bottom=0.12, hspace=0, wspace=0.1)
 
 labels = ax1.get_yticklabels()
