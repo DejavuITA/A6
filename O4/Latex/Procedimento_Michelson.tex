@@ -115,12 +115,14 @@ Il valore da noi ricavato per l'indice di rifrazione è:
 \begin{equation}
 	n\ped{atm} \, = \, 1.00020 \pm 0.00001
 \end{equation}
-%
-ricordiamo che l'indice di rifrazione dell'aria a pressione atmosferica e a temperatura di 20 $\si{\degreeCelsius}$ è:
+
+L'indice di rifrazione dell'aria a pressione atmosferica e a temperatura di 20 $\si{\degreeCelsius}$ reperibile in letteratura è\footnote{Il valore è stato preso da it.wikipedia.org/wiki/Indice\_di\_rifrazione}:
 \begin{equation}
 n\ped{atm} \, = \, 1.000 292 6
 \end{equation}
-%\footnote{Il valore è stato preso da  it.wikipedia.org/wiki/Indice_di_rifrazione}
+
+Il nostro valore è lontano da quello misurato da gente seria e non è neanche lontanamente compatibile. Evidentemente la nostra incertezza
+è ridicola, poiché si basa quasi solamente sull'incertezza del conteggio e su quella dello spessore della camera che sono entrambe inverosimilmente piccole. In particolare l'incertezza di conteggio deriva dalla fluttuazione statistica dei valori delle serie, che essendo poco numerosi portano ad un'incertezza troppo piccola.
 
 %\subsubsection{Valore indice di rifrazione dell'aria}
 
@@ -128,7 +130,8 @@ n\ped{atm} \, = \, 1.000 292 6
     \centering
 %		[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{graph.pdf}
-        \caption{Indice di rifrazione dell'aria in funzione della pressione.}
+        \caption{Indice di rifrazione dell'aria in funzione della pressione. La relazione è lineare e si vede che, a pressione
+			atmosferica, l'indice di rifrazione è precisamente 1.0002.}
         \label{fig:enne_press}
 \end{figure}
 
@@ -140,13 +143,14 @@ Lo schema in Figura \ref{fig:mik} rappresenta ancora il tavolo di lavoro ad ecce
 Per ricavare l'indice di rifrazione del vetro abbiamo usato un procedimento del tutto simile a quello descritto nel paragrafo precedente.
 Se però per l'aria variavamo la sua pressione tramite una pompa ed una valvola a spillo, ora ruotiamo il vetro in modo tale che il raggio di luce compia un tragitto maggiore nel vetro. % fa un po' schifo sta frase...
 
-Grazie a calcoli di ottica geometrica si riesce \emph{banalmente} a dedurre l'equazione che lega l'indice di rifrazione del vetro all'angolo (e quindi alla differenza di cammino ottico e alle frange contate) è:
+Grazie a \emph{banali} calcoli di ottica geometrica si riesce \emph{immediatamente} a dedurre l'equazione che lega l'indice di rifrazione del vetro all'angolo (e quindi alla differenza di cammino ottico e alle frange contate). Tale \emph{elementare} relazione è:
 \begin{equation}
 	n\ped{vetro} \, = \, \frac{(2t - N \lambda) (1 - cos(\theta))}{2t(1-cos(\theta))-N\lambda}
 \end{equation}
-dove $t$ è la lunghezza del vetro, $\lambda$ è la lunghezza d'onda, $\theta$ è la rotazione del vetro rispetto al fascio di luce %(\theta = 0 equivale al raggio perpendicolare al vetro)
+dove $t$ è la lunghezza del vetro, $\lambda$ è la lunghezza d'onda, $\theta$ è la rotazione del vetro rispetto al fascio di luce
+($\theta = 0$ equivale al raggio perpendicolare al vetro)
 e $N$ è il numero di frange contate tra $\theta_0$ e la successiva posizione.
-I valori costanti nel nostro caso sono $t \,=\, 5.75 \pm 0.\textbf{xx} \, mm$ e $\lambda \, = \, 543.5 \, \si{\nano\metre}$
+I valori costanti nel nostro caso sono $t \,=\, 5.75 \pm 0.05 \, mm$ e $\lambda \, = \, 543.5 \, \si{\nano\metre}$.
 
 I nostri dati hanno portato, tramite la media pesata dei dati ricavati ad ogni $\theta$, ad ottenere il seguente valore:
 \begin{equation}
