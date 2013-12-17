@@ -35,8 +35,8 @@ I = (
      7.3
 )
 
-K =  0.035748
-a =  111.05
+K =  0.036606
+a =  112.80
 
 #with open('../Dati/dati.csv') as csvfile:
 #    data = csv.reader(csvfile)
@@ -53,8 +53,8 @@ if mpl:
     ax = f1.add_subplot(1, 1, 1)
     
     dots = ax.errorbar(x=c, y=I,
-        yerr=1, fmt='o')
-    fit = ax.errorbar(x=[x/10 for x in range(-20, 721)], y=[a * exp(-K*x/10) for x in range(-20, 721)], fmt='-')
+        yerr=1, fmt='o', c="black")
+    fit = ax.errorbar(x=[x/10 for x in range(-20, 721)], y=[a * exp(-K*x/10) for x in range(-20, 721)], fmt='-', c="gray")
 
     ax.set_xlabel(u'Lunghezza [mm]', labelpad=12, fontsize=14)
     ax.set_ylabel(u"Intensità [rpdtc]", labelpad=6, fontsize=14)
