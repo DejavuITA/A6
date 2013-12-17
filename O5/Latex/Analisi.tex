@@ -1,7 +1,7 @@
 \section{Analisi dati}
 
 Come anticipato nell'introduzione in ottica la legge di Lambert-Beer, conosciuta anche come legge di Beer-Lambert-Bouguer, è una relazione empirica che correla la quantità di luce assorbita da un mezzo alla natura chimica, alla concentrazione ed allo spessore del mezzo attraversato.
-Quando un fascio di luce (monocromatica) di intensità $I_0$ attraversa uno strato di spessore $l$ di un mezzo (una soluzione nel nostro caso), una parte di questa intensità viene assorbita dal mezzo stesso e una parte viene trasmessa con intensità residua $I_f$.
+Quando un fascio di luce (monocromatica) di intensità $I_0$ attraversa uno strato di spessore $L$ di un mezzo (una soluzione nel nostro caso), una parte di questa intensità viene assorbita dal mezzo stesso e una parte viene trasmessa con intensità residua $I_f$.
 In questa breve descrizione del processo abbiamo omesso di considerare che una parte della radiazione luminosa subisce anche effetti di riflessione a causa della pareti del contenitore.
 
 Quindi il rapporto tra le intensità della luce trasmessa ($I_f$) e incidente sul mezzo attraversato ($I_0$) è espresso dalla seguente relazione:
@@ -13,7 +13,7 @@ Quindi il rapporto tra le intensità della luce trasmessa ($I_f$) e incidente su
 %
 dove con $I_0$ indichiamo l'intensità della radiazione incidente sul contenitore, con $L$ indichiamo il cammino ottico (ovvero lo spessore del contenitore) e $c$ indica la molarità ovvero la concentrazione di $CuSO_4$ presente nella sostanza (moli su litro). Infine con il termine $k$ indichiamo l'estinzione molare o il coefficiente di assorbimento molare. Ricordiamo che il suo valore è considerato costante per una data sostanza ad una data lunghezza d'onda, tuttavia può subire lievi variazioni con la temperatura.
 
-Facciamo notare che $I_0$ nel nostro caso fa riferimento al valore dell'intensità della radiazione nel caso in cui nella provetta ci sia solamente acqua distillata. Pertanto da ora in avanti faremo riferimento al valore riportato nella formula (\ref{eq:acqua}) che vale:
+Facciamo notare che, nel nostro caso, $I_0$ fa riferimento al valore di intensità della radiazione nel caso in cui nella provetta ci sia solamente acqua distillata. Pertanto da ora in avanti faremo riferimento al valore riportato nella formula (\ref{eq:acqua}) che vale:
 
 \begin{equation}
 	I_0 \,\,=\,\, I\ped{H_2O} \,\,=\,\, 114 \pm 1 \,\,\, \si{\joule}
@@ -48,20 +48,21 @@ Per fare quanto acennato sopra vogliamo semplificare la scrittura della relazion
 \end{equation}
 %
 Pertanto mediante un fit sulla legge lineare appena trovata (\ref{eq:fit}) siamo in in grado di stimare i valori dei parametri
-$A$ e $B$. Il fit sopracitato è riportato in Figura (%\ref{fig:grafico}).
+$A$ e $B$. Il fit sopracitato è riportato in Figura %(\ref{fig:grafico}).
 Dal fit lineare abbiamo trovato i seguenti valori per $A$ e $B$:
 
 \begin{equation*}
-	A \,=\, XXX \pm XXX \qquad \text{e} \qquad B \,=\, XXX \pm XXX
+	A \,=\, 4.72 \pm 0.01 \qquad \text{e} \qquad B \,=\, -0.0360 \pm 0.0005
 \end{equation*}
 %
 A questo punto rovesciando la formula (\ref{eq:fit}) otteniamo che i valori di $I\ped{0\ped{exp}}$ e di $kL$ sono i seguenti:
 
 \begin{equation}
-	I\ped{0\ped{exp}} \,=\, XXX \pm XXX \qquad \text{e} \qquad kL \,=\, XXX \pm XXX
+	I\ped{0\ped{exp}} \,=\, 112 \pm 1 \qquad \text{e} \qquad kL \,=\, 2.70
 \end{equation}
 %
-
+quindi come si può evincere sia dai dati ottenuti che dall'analisi del grafigo Figura %(\ref{fig:grafico})
+il valore delle due intensità $I_0$ $I\ped{0\ped{exp}}$  risultano essere compatibili entro i loro errori sperimentali.
 
 
 %\begin{figure}[hbtp]
