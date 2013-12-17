@@ -24,7 +24,7 @@ c = (
 )
 
 I = (
-   111.6,
+   110.6,
     53.6,
     45.7,
     41.7,
@@ -35,8 +35,8 @@ I = (
      7.3
 )
 
-K =  0.036018
-a =  111.988
+K =  0.035748
+a =  111.05
 
 #with open('../Dati/dati.csv') as csvfile:
 #    data = csv.reader(csvfile)
@@ -56,8 +56,8 @@ if mpl:
         yerr=1, fmt='o')
     fit = ax.errorbar(x=[x/10 for x in range(-20, 721)], y=[a * exp(-K*x/10) for x in range(-20, 721)], fmt='-')
 
-    ax.set_xlabel(u'Lunghezza [$10^{-3}$m]', labelpad=12, fontsize=14)
-    ax.set_ylabel(u"Intensità [$picodentotricotteri^\\frac{11}{7.5}$]", labelpad=6, fontsize=14)
+    ax.set_xlabel(u'Lunghezza [mm]', labelpad=12, fontsize=14)
+    ax.set_ylabel(u"Intensità [rpdtc]", labelpad=6, fontsize=14)
     ax.grid(True)
 
     #ax.set_yticks(range(10000, 110000, 10000))

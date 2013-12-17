@@ -61,7 +61,7 @@ if mpl:
     fit = ax.errorbar(x=[x/100 for x in range(0, 106)], y=[a * exp(-K*x/100) for x in range(0, 106)], fmt='-')
 
     ax.set_xlabel(u'Concentrazioni [mol/l]', labelpad=12, fontsize=14)
-    ax.set_ylabel(u"Intensità [$picodentotricotteri^\\frac{11}{7.5}$]", labelpad=6, fontsize=14)
+    ax.set_ylabel(u"Intensità [rpdtc]", labelpad=6, fontsize=14)
     ax.grid(True)
 
     #ax.set_yticks(range(10000, 110000, 10000))
