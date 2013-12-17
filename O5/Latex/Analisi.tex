@@ -11,7 +11,7 @@ Quindi il rapporto tra le intensità della luce trasmessa ($I_f$) e incidente su
 	\label{eq:intensita}
 \end{equation}
 %
-dove con $I_0$ indichiamo l'intensità della radiazione incidente sul contenitore, con $L$ indichiamo il cammino ottico (ovvero lo spessore del contenitore) e $c$ indica la molarità ovvero la concentrazione di $CuSO_4$ presente nella sostanza (moli su litro). Infine con il termine $k$ indichiamo l'estinzione molare o il coefficiente di assorbimento molare. Ricordiamo che il suo valore è considerato costante per una data sostanza ad una data lunghezza d'onda, tuttavia può subire lievi variazioni con la temperatura.
+dove con $I_0$ indichiamo l'intensità della radiazione incidente sul contenitore, con $L$ indichiamo il cammino geometrico (ovvero lo spessore del contenitore) e $c$ indica la molarità ovvero la concentrazione di $CuSO_4$ presente nella sostanza (moli su litro). Infine con il termine $k$ indichiamo l'estinzione molare o il coefficiente di assorbimento molare. Ricordiamo che il suo valore è considerato costante per una data sostanza ad una data lunghezza d'onda, tuttavia può subire lievi variazioni con la temperatura.
 
 Facciamo notare che, nel nostro caso, $I_0$ fa riferimento al valore di intensità della radiazione nel caso in cui nella provetta ci sia solamente acqua distillata. Pertanto da ora in avanti faremo riferimento al valore riportato nella formula (\ref{eq:acqua}) che vale:
 
@@ -48,24 +48,46 @@ Per fare quanto acennato sopra vogliamo semplificare la scrittura della relazion
 \end{equation}
 %
 Pertanto mediante un fit sulla legge lineare appena trovata (\ref{eq:fit}) siamo in in grado di stimare i valori dei parametri
-$A$ e $B$. Il fit sopracitato è riportato in Figura %(\ref{fig:grafico}).
-Dal fit lineare abbiamo trovato i seguenti valori per $A$ e $B$:
+$A$ e $B$. Il fit sopracitato è riportato in Figura (\ref{fig:grafico}). Dal fit lineare abbiamo trovato i seguenti valori per $A$ e $B$:
 
 \begin{equation*}
-	A \,=\, 4.72 \pm 0.01 \qquad \text{e} \qquad B \,=\, -0.0360 \pm 0.0005
+	A \,=\, 4.72 \pm 0.01 \qquad \text{e} \qquad B \,=\, 0.0360 \pm 0.0005
 \end{equation*}
 %
 A questo punto rovesciando la formula (\ref{eq:fit}) otteniamo che i valori di $I\ped{0\ped{exp}}$ e di $kL$ sono i seguenti:
 
 \begin{equation}
-	I\ped{0\ped{exp}} \,=\, 112 \pm 1 \qquad \text{e} \qquad kL \,=\, 2.70
+	I\ped{0\ped{exp}} \,=\, 112 \pm 1 \qquad \text{e} \qquad kL \,=\, 0.0360
 \end{equation}
 %
-quindi come si può evincere sia dai dati ottenuti che dall'analisi del grafigo Figura %(\ref{fig:grafico})
-il valore delle due intensità $I_0$ $I\ped{0\ped{exp}}$  risultano essere compatibili entro i loro errori sperimentali.
+quindi come si può evincere sia dai dati ottenuti che dall'analisi del grafico in Figura (\ref{fig:grafico}) il valore delle due intensità $I_0$ e $I\ped{0\ped{exp}}$  risultano essere compatibili entro i loro errori sperimentali.
 
+\subsection{Intensità in funzione della lunghezza}
 
-%\begin{figure}[hbtp]
-%        \centering
-%        \includegraphics[scale=0.4]{chem_dog.pdf}
-%\end{figure}
+In questa sezione invece ci proponiamo di verificare se $I_0$ risulta essere compatibile col valore di $I\ped{0\ped{exp}}$ che troveremo dall'analisi dati. L'unica differenza rispetto alla procedura di analisi vista precedentemente è che in questo caso la variabile dell'equazione (\ref{eq:inutile}) è $L$ lo spessore del contintore della sostanza e non la concentrazione molare, che in questo caso è costante.
+Per questa parte dell'analisi dati abbiamo che il valore dell'intensita $I_0$ ha valore di: $I_0 \,=\, 111 \pm 1$
+Quindi otteniamo che:
+
+\begin{equation}
+	\log{I_f} \,\,=\,\, A \,-\, B \, L \qquad \text{dove} \qquad A \,=\, log{I_0} \quad \text{e} \quad B\,=\, kc
+	\label{eq:fit}
+\end{equation}
+%
+e i valori trovati dalla procedura di fit lineare sulla relazione soprariportata sono:
+
+\begin{equation*}
+	A \,=\, 4.714 \pm 0.01 \qquad \text{e} \qquad B \,=\, 2.70 \pm 0.04
+\end{equation*}
+%
+pertanto i valori di $I\ped{0\ped{exp}}$ e $kc$ risultano essere:
+
+\begin{equation}
+	I\ped{0\ped{exp}} \,=\, 111 \pm 1 \qquad \text{e} \qquad kL \,=\, 2.70
+\end{equation}
+%
+e come si può notare anche in questo caso i valori di $I_0$ e $I\ped{0\ped{exp}}$  risultano essere compatibili entro i loro errori sperimentali (infatti sono uguali).
+
+\begin{figure}[hbtp]
+        \centering
+        \includegraphics[scale=0.4]{chem_dog.pdf}
+\end{figure}
