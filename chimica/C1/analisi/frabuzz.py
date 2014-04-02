@@ -8,6 +8,59 @@ data = np.genfromtxt("../dati/dati.csv", delimiter=',', names=True)
 ml = data['millilitri']
 s = data['conducibilita']
 
+dy_corr = (
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.010000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000,
+   0.30000)
+
 
 
 
@@ -23,14 +76,18 @@ f1.suptitle("Conducibilità della soluzione elettrolitica",
 ax1 = f1.add_subplot(1, 1, 1)
 
 # crea plot con le barre d'errore (o anche senza)
-#linea1 = ax1.errorbar(x=f, y=t_dB_corr,
-#    fmt='--', c='black', linewidth=2)
-#linea2 = ax1.errorbar(x=b_freq, y=b_dB,
-#    fmt='o', c="white", linewidth=2,
-#    markersize=7, markeredgewidth=1)
+m1 = -0.22187
+q1 = 10.849
+m2 = 1.0473
+q2 = 3.6451
+linea1 = ax1.errorbar(x=[i for i in range(0,30)], y=[m1*i+q1 for i in range(0,30)],
+    fmt='--', c='red', linewidth=2)
+linea2 = ax1.errorbar(x=[i for i in range(0,30)], y=[m2*i+q2 for i in range(0,30)],
+    fmt='-.', c="green", linewidth=2)
 
 dots = ax1.errorbar(x=ml, y=s,
-    yerr=0.01/sqrt(12), xerr=0.1/sqrt(12),
+#    yerr=0.01/sqrt(12), xerr=0.1/sqrt(12),
+    yerr=dy_corr, #xerr=dx,
     fmt='.', c='gray', linewidth=2,
     markersize=7, markeredgewidth=1)
     
