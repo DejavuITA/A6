@@ -72,7 +72,7 @@ chi_2 = chi2(fine_siem, fine_mill, ones((fine-13),1).*sigma2, A2, B2)
 
 display("");
 w1c_tot = sigma1.^(-2) * ones(13, 1);
-w2c_tot = sigma2.^(-2) * ones(38, 1);
+w2c_tot = sigma2.^(-2) * ones(fine - 13, 1);
 [q1 m1 sq1 sm1] = fit(inizio_siem, inizio_mill, w1c_tot) % w = dy.^(-2)
 [q2 m2 sq2 sm2] = fit(fine_siem, fine_mill, w2c_tot) % w = dy.^(-2)
 
@@ -83,3 +83,13 @@ dx = sqrt(
     ((q2 - q1) / (m1 - m2)^2 * sm1)^2 +
     ((q2 - q1) / (m1 - m2)^2 * sm2)^2
 )
+
+mol_NaCl = x * 1.5e-3
+dmol_NaCl = sqrt((dx * 1.5e-3)**2 + (x * 0.03e-3)**2)
+
+c = mol_NaCl / 0.1
+dc = sqrt((dmol_NaCl / 0.1)**2 + (mol_NaCl / 0.1**2 * 0.0003)**2)
+
+qs = siem .^ 2;
+w_qs = dsiem .^ -4;
+[zero k2 szero sk2] = fit(qs(14:fine), fine_mill, w_qs(14:fine))

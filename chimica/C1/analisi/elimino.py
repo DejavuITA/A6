@@ -41,30 +41,9 @@ dy_corr = (
    0.30000,
    0.30000,
    0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
-   0.30000,
    0.30000)
 
-
+fine = 30
 
 
 rcParams['font.size'] = 15
@@ -73,24 +52,29 @@ rcParams['font.size'] = 15
 f1 = plt.figure(figsize=(11, 8.5), dpi=65)
 # Titolo del grafico
 f1.suptitle("Conducibilità della soluzione elettrolitica",
-    y=0.97, fontsize=18)
+    y=0.97, fontsize=17)
 
 # GRAFICO 1
 ax1 = host_subplot(111, axes_class=AA.Axes)
 #ax1 = f1.add_subplot(1, 1, 1)
 
 # crea plot con le barre d'errore (o anche senza)
+q1 =  10.849
 m1 = -0.22187
-q1 = 10.849
-m2 = 1.0473
-q2 = 3.6451
+sq1 =  0.0047886
+sm1 =  0.0013544
+q2 =  2.4629
+m2 =  1.1565
+sq2 =  0.096006
+sm2 =  0.0089043
+
 
 linea1 = ax1.errorbar(x=[i for i in range(-1,30)], y=[m1*i+q1 for i in range(-1,30)],
     fmt='-', c='red', linewidth=2)
 linea2 = ax1.errorbar(x=[i for i in range(0,30)], y=[m2*i+q2 for i in range(0,30)],
     fmt='-', c="green", linewidth=2)
 
-dots = ax1.errorbar(x=ml, y=s,
+dots = ax1.errorbar(x=ml[:fine], y=s[:fine],
 #    yerr=0.01/sqrt(12), xerr=0.1/sqrt(12),
     yerr=dy_corr, #xerr=dx,
     fmt='.', c='black', linewidth=2,
