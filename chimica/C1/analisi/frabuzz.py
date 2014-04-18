@@ -84,7 +84,7 @@ m1 = -0.22187
 q1 = 10.849
 m2 = 1.0473
 q2 = 3.6451
-linea1 = ax1.errorbar(x=[i for i in range(0,30)], y=[m1*i+q1 for i in range(0,30)],
+linea1 = ax1.errorbar(x=[i for i in range(-1,30)], y=[m1*i+q1 for i in range(-1,30)],
     fmt='-', c='red', linewidth=2)
 linea2 = ax1.errorbar(x=[i for i in range(0,30)], y=[m2*i+q2 for i in range(0,30)],
     fmt='-', c="green", linewidth=2)
@@ -98,9 +98,9 @@ dots = ax1.errorbar(x=ml, y=s,
 intersec = ax1.axvline(x=5.676, linewidth=2, color='gray')
     
 ax1.set_ylabel(u'Conducibilità Λ [μS]',
-    labelpad=8, fontsize=14)
+    labelpad=14, fontsize=14)
 ax1.set_xlabel(u'Volume di soluzione titolante [ml]',
-    labelpad=8, fontsize=14)
+    labelpad=14, fontsize=14)
 
 ax1.grid(True)
 #ax1.set_xscale('log')
@@ -127,7 +127,7 @@ ax1.legend((dots, linea1, linea2, intersec ), ("dati sperimentali", "fit dati in
 
 # questo imposta i bordi del grafico
 f1.subplots_adjust(left=0.07, right=0.98,
-    top=0.90, bottom=0.09, hspace=0.08, wspace=0)
+    top=0.88, bottom=0.09, hspace=0.08, wspace=0)
 
 # mostra grafico
 plt.show() 
