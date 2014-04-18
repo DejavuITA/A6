@@ -70,7 +70,7 @@ dy_corr = (
 rcParams['font.size'] = 15
 ### PASSA-BASSO
 # Creo un grafico la dimensione è in pollici
-f1 = plt.figure(figsize=(13, 7), dpi=65)
+f1 = plt.figure(figsize=(12, 8.5), dpi=65)
 # Titolo del grafico
 f1.suptitle("Conducibilità della soluzione elettrolitica",
     y=0.97, fontsize=17)
@@ -100,7 +100,7 @@ intersec = ax1.axvline(x=5.676, linewidth=2, color='gray')
 ax1.set_ylabel(u'Conducibilità Λ [μS]',
     labelpad=14, fontsize=14)
 ax1.set_xlabel(u'Volume di soluzione titolante [ml]',
-    labelpad=14, fontsize=14)
+    labelpad=60, fontsize=14)
 
 ax1.grid(True)
 #ax1.set_xscale('log')
@@ -127,7 +127,7 @@ ax1.legend((dots, linea1, linea2, intersec ), ("dati sperimentali", "fit dati in
 
 # questo imposta i bordi del grafico
 f1.subplots_adjust(left=0.07, right=0.98,
-    top=0.88, bottom=0.09, hspace=0.08, wspace=0)
+    top=0.89, bottom=0.09, hspace=0.08, wspace=0)
 
 # mostra grafico
 plt.show() 
