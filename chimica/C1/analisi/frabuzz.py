@@ -70,7 +70,7 @@ dy_corr = (
 rcParams['font.size'] = 15
 ### PASSA-BASSO
 # Creo un grafico la dimensione è in pollici
-f1 = plt.figure(figsize=(12, 7), dpi=65)
+f1 = plt.figure(figsize=(13, 7), dpi=65)
 # Titolo del grafico
 f1.suptitle("Conducibilità della soluzione elettrolitica",
     y=0.97, fontsize=17)
