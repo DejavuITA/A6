@@ -67,7 +67,7 @@ dy_corr = (
 rcParams['font.size'] = 15
 ### PASSA-BASSO
 # Creo un grafico la dimensione è in pollici
-f1 = plt.figure(figsize=(9, 6), dpi=65)
+f1 = plt.figure(figsize=(12, 6), dpi=65)
 # Titolo del grafico
 f1.suptitle("Conducibilità della soluzione elettrolitica",
     y=0.97, fontsize=17)
@@ -90,31 +90,34 @@ dots = ax1.errorbar(x=ml, y=s,
     yerr=dy_corr, #xerr=dx,
     fmt='.', c='gray', linewidth=2,
     markersize=7, markeredgewidth=1)
+
+ax1.axvline(x=5.676, linewidth=1, color='gray')
     
 ax1.set_ylabel(u'Conducibilità Λ [μS]',
-    labelpad=10, fontsize=16)
+    labelpad=8, fontsize=14)
 ax1.set_xlabel(u'Volume di soluzione titolante [ml]',
     labelpad=8, fontsize=14)
 
-
 ax1.grid(True)
 #ax1.set_xscale('log')
-ax1.set_ylim(( 7, 32))
-ax1.set_xlim((-1.5, 26.5))
+ax1.set_ylim(( 8, 31))
+ax1.set_xlim((-0.7, 25.7))
 
 # toglie labels
 #for label in ax1.get_xaxis().get_majorticklabels():
 #  label.set_visible(False)
 
+# Setta i custom ticks
+#ax1.xaxis.set_ticks((0,5,5.676,10,15,20,25))
 # Setta labels
 #ax1.set_yticklabels(("", -25, -20, -15, -10, -5, 0))
 
 # questo produce una legenda
-ax1.legend((dots, ), ("dati", ), 'upper left', prop={'size': 12})
+ax1.legend((dots, ), ("dati sperimentali", ), 'lower right', prop={'size': 12})
 
 # questo imposta i bordi del grafico
-f1.subplots_adjust(left=0.10, right=0.95,
-    top=0.92, bottom=0.12, hspace=0.08, wspace=0)
+f1.subplots_adjust(left=0.07, right=0.97,
+    top=0.92, bottom=0.11, hspace=0.08, wspace=0)
 
 # mostra grafico
 plt.show() 
