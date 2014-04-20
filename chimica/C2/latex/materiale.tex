@@ -1,46 +1,70 @@
 \section*{Materiale}
 
+BUZZ NON HA NIENTE DI MEGLIO DA FARE CHE SCRIVERE CHICKEN OVUNQUE... LAVORA, IGNOBILE!!! :-P
+
 \begin{itemize}
         \setlength{\parskip}{-1pt}
-        \item{chicken chicken, chicken chicken chicken chicken chicken, chicken chicken chicken, ``\emph{chicken}'';}
-        \item{chicken chicken chicken chicken;}
-        \item{chicken;}
-        \item{chicken chicken \ce{Chk} chicken chicken 0.1 C chicken 0.01 K chicken chicken chicken chicken chicken,
-                chicken chicken \ce{CkEN3} chicken chicken chicken chicken, \ce{ChKN} chicken chicken;}
-        \item{chicken chicken chicken chicken;}
-        \item{Francesco Pasa, Andrea Miani, Davide Bazzanella, possibilmente con un minimo di comprensione
-                del da farsi.}
+        \item{Vetreria varia: buretta, beker, matracci da 10 ml e 25 ml,
+            contenitori per le varie soluzioni, cuvette per il fotospettrometro,
+            pipette Pasteur;}
+        \item{Solfato di rame (\ce{CuSO4}), acqua distillata e soluzione incognita;}
+        \item{Fotospettrometro;}
 \end{itemize}
 
 \section*{Procedura e incertezze}
 
-Come prima cosa, abbiamo tarato il conduttimetro seguendo la procedura descritta nel manuale e utilizzando
-le soluzioni 0.1 M e 0.01 M di \ce{KCl} a nostra dispozisione. Abbiamo quindi pulito la cella conduttimetrica per evitare contaminazioni.
+Per prima cosa abbiamo preparato, dalla soluzione madre $0.5 \pm 0.001$ M a
+nostra disposizione, $25 \pm 0.3$ ml di soluzione figlia 0.16 M
+di \ce{CuSO4}. Avendo prelevato $8.0 \pm 0.03$ ml di soluzione madre, risulta che
+la concentrazione della soluzione figlia vale $0.160 \pm 0.002 $ M. Abbiamo sempre
+usato incertezze standard.
 
-In seguito, abbiamo preparato 50 mL di soluzione titolante 1.5 M di \ce{NaCl}. Abbiamo considerato un
-incertezza standard\footnote{L'incertezza standard è uguale all'incertezza di risoluzione divisa per $\sqrt{3}$.} sul volume di 0.3 mL 
-(si è ritenuto che il matraccio usato avesse un incertezza di risoluzione di 0.5 mL)
-e sul peso di 0.003 g (era possibile leggere i centesimi di grammo mentre i millesimi fluttuavano, in questo caso abbiamo posto l'errore di risoluzione a 0.005 g).
-Usando queste incertezze tipo, si ottiene che la soluzione titolante aveva una concentrazione $1.50 \pm 0.03$ M.
+Per ricavare la concentrazione della soluzione incognita, si usa la legge di legge
+di Lambert-Beer, che indica come varia l'assorbanza di una soluzione in funzione
+della concentrazione e della lunghezza della sezione di soluzione attraversata dalla luce.
+L'assorbanza $A$ è un numero puro ed è definita come:
 
-Abbiamo lavato la buretta con la soluzione per evitare diluizioni non volute. La buretta è stata riempita con
-la soluzione rimanente ed è stata posta sopra il becker contenente 100 mL di soluzione titolanda a concentrazione incognita.
-Misurando ogni volta la concentrazione con il conduttimetro, la titolante è stata versata nella soluzione di \ce{AgNO3}
-a passi di 0.5 mL. In questo modo avviene la seguente reazione di precipitazione:
+\begin{equation}
+    A = - \log_{10}{\frac{I}{I_0}}
+\end{equation}
+%
+dove $I_0$ è l'intensità della luce trasmessa dall'acqua, mentre $I$ quella trasmessa
+dalla soluzione in esame.
 
-\begin{equation*}
-        \ce{AgNO3\ped{(aq)} + NaCl\ped{(aq)} -> AgCl\ped{(s)} v + NaNO3\ped{(aq)}}
-\end{equation*}
+In termini di assorbanza la legge di Lamber-Beer assume la forma:
 
-La parte interessante della reazione è che l'argento cloruro (\ce{AgCl}) precipita. Di conseguenza gli ioni \ce{Ag^+}
-vengono rimossi dalla soluzione e non contribuiscono più alla sua conducibilità elettrica.
-Poiché gli ioni \ce{Na^+} conducono meno dei \ce{Ag^+} la conducibilità diminuisce man mano che viene aggiunto NaCl,
-finchè l'argento non è completamente precipitato. A questo punto, continuando ad aggiungere NaCl, si aggiungendo nuovi ioni \ce{Na^+} che fanno salire la conducibilità,
-per cui il trend si inverte.
+\begin{equation}
+    A = \epsilon \ell c = \alpha c
+\end{equation}
+%
+dove $\epsilon$ è l'assorbanza molare, $\ell$ la lunghezza della sezione di soluzione
+attraversata dalla luce e $c$ la concentrazione molare. Nel nostro caso $\ell$ è costante
+ed è data dalla lunghezza della cuvetta, per cui eseguiremo i calcoli in termini di
+$\alpha$. In nostro scopo è quindi ricavare $\alpha$ con delle soluzioni a concentrazione
+nota, in modo da poter poi ricavare $c$ conoscendo l'assorbanza della soluzione
+incognita.
 
-Conoscendo il volume della soluzione titolante necessaria per arrivare al punto di inversione, e quindi il numero di moli
-di NaCl, si può risalire alla quantità di \ce{AgNO3} in soluzione e calcolare la concentrazione.
+La legge è dunque una retta che passa per l'origine. Questa legge vale per basse
+concentrazioni, come regola empirica si considera che $A < 1$, per cui è necessario
+usare soluzioni poco concentrate affinche la titolazione risulti corretta.
 
-L'incertezza standard sul volume della soluzione titolanda (nel becker) è stata posta a 0.3 mL, mentre con la
-buretta l'incertezza standard è di 0.03 mL. Per ottenere l'incertezza sul volume versato, che è la differenza tra due volumi,
-occore comporre le incertezze. L'incertezza sul volume versato è quindi di 0.04 mL.
+A questo punto abbiamo misurato la curva di assorbimento della soluzione con il
+fotospettrometro, confrontandolo con quello dell'acqua distillata. Questo passo
+serve per ottenere la lunghezza d'onda in cui si trova il massimo di assorbimento,
+che è risultato essere a $\lambda\ped{max} =$ 825 nm. Inoltre è necessario per
+assicurarsi che la concentrazione resti nell'intervallo di validità della Lambert-Beer.
+
+Poichè la soluzione figlia 0.16 M aveva un'assorbanza $A \simeq 2$ a $\lambda\ped{max}$,
+oltre l'intervallo di validità della legge, abbiamo deciso di usare soluzioni
+0.016 M, 0.032 M, 0.048 M, 0.064 M per ricavare $\alpha$. In questo modo, si dovrebbero
+ottenere curve di assorbimento con assorbanze di picco di circa 0.2, 0.4, 0.6, 0.8,
+equispaziate e contenute nell'intervallo di validità.
+
+Abbiamo quindi eseguito le diluizioni necessarie, avendo cura di lavare la buretta con
+un po' di soluzione per evitare diluizioni non volute. Sono state preparate 4 soluzioni
+da 10 ml, le cui concentrazioni valgono $0.016 \pm 0.001$ M, $0.032 \pm 0.001$ M,
+$0.048 \pm 0.002$ M e $0.064 \pm 0.002$ M.
+
+Abbiamo quindi misurato le curve di assorbimento delle quattro soluzioni e della
+soluzione incognita con il fotospettrometro.
+
