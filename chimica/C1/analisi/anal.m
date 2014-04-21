@@ -93,3 +93,50 @@ dc = sqrt((dmol_NaCl / 0.1)**2 + (mol_NaCl / 0.1**2 * 0.0003)**2)
 qs = siem .^ 2;
 w_qs = dsiem .^ -4;
 [zero k2 szero sk2] = fit(qs(14:fine), fine_mill, w_qs(14:fine))
+
+
+
+% proviamo a eliminare%
+display("");
+display("PROVIAMO A ELIMINARE");
+EL = 30;
+%EL = 31
+
+inizio_siem_EL = siem(1:13);
+inizio_mill_EL = mill(1:13);
+
+fine_siem_EL = siem(14:EL);
+fine_mill_EL = mill(14:EL);
+
+dmill_EL = ones((length(mill)-21),1).*0.1/sqrt(12);
+dsiem_EL = ones((length(siem)-21),1).*0.01/sqrt(12);
+
+% fit preliminari
+display("fit preliminari");
+w_EL = dsiem.^(-2);
+inizio_w_EL = w(1:13);
+fine_w_EL = w(14:EL);
+
+[A1_EL B1_EL sA1_EL sB1_EL] = fit(inizio_siem_EL, inizio_mill_EL, inizio_w_EL) % w = dy.^(-2)
+display("");
+[A2_EL B2_EL sA2_EL sB2_EL] = fit(fine_siem_EL, fine_mill_EL, fine_w_EL) % w = dy.^(-2)
+
+% fit con incertezza x trasferita
+display("");
+display("fit secondari");
+dy1_tot_EL = sqrt(dsiem_EL.^2+B1_EL^2*dmill_EL.^2);
+w1_tot_EL = dy1_tot_EL.^(-2);
+[A1_EL B1_EL sA1_EL sB1_EL] = fit(inizio_siem_EL, inizio_mill_EL, w1_tot_EL(1:13)) % w = dy.^(-2)
+
+display("");
+
+dy2_tot_EL = sqrt(dsiem_EL.^2+B2_EL^2*dmill_EL.^2);
+w2_tot_EL = dy1_tot_EL.^(-2);
+[A2_EL B2_EL sA2_EL sB2_EL] = fit(fine_siem_EL, fine_mill_EL, w2_tot_EL(14:EL)) % w = dy.^(-2)
+
+display("");
+% chi 2
+display("chi2");
+chi_1_EL = chi2(inizio_siem_EL, inizio_mill_EL, dy1_tot_EL(1:13), A1_EL, B1_EL)
+display("");
+chi_2_EL = chi2(fine_siem_EL, fine_mill_EL, dy2_tot_EL(14:EL), A2_EL, B2_EL)
