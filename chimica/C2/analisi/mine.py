@@ -88,12 +88,29 @@ A = [m16.A[n_max], m32.A[n_max], m48.A[n_max], m64.A[n_max]]
 def retta(x, m):
     return m*x
 
-m, cov = scipy.optimize.curve_fit(retta, unumpy.nominal_values(C), A, sigma=unumpy.std_devs(C))
+print util.fit(unumpy.nominal_values(C), A, 11.6*unumpy.std_devs(C))
+m, cov = scipy.optimize.curve_fit(retta, unumpy.nominal_values(C), A, sigma=(11.6*unumpy.std_devs(C))**-2)
 print(m, cov)
 
-print "chi2:", util.chi2_retta(m, 0, unumpy.nominal_values(C), A, 12*unumpy.std_devs(C))
+chi2 = util.chi2_retta(m, 0, unumpy.nominal_values(C), A, 11.6*unumpy.std_devs(C))
+print "chi2:", chi2
+
+j = sqrt(chi2 / 3)
+print j
+
+old_C = C
+u = np.sqrt((11.6*unumpy.std_devs(C)*j)**2 - (11.6*unumpy.std_devs(C))**2)
+print u
+C = unumpy.uarray( unumpy.nominal_values(C), unumpy.std_devs(C)*j)
+
+m, cov = scipy.optimize.curve_fit(retta, unumpy.nominal_values(C), A, sigma=(11.6*unumpy.std_devs(C))**-2)
+print(m, cov)
+
+chi2 = util.chi2_retta(m, 0, unumpy.nominal_values(C), A, 11.6*unumpy.std_devs(C))
+print "chi2:", chi2
 
 # Ora ricaviamo la concentrazione dalla retta di fit
+m = ufloat(m, 0.4279)
 a = incognito.A[n_max]
 c = a / m
 print(a, c)
@@ -107,7 +124,9 @@ if len(sys.argv) == 1:
     f1.suptitle(u"Assorbanza del CuSO₄ in soluzione",
         y=0.97, fontsize=18)
 
-    ax1 = f1.add_subplot(111)
+    gs = matplotlib.gridspec.GridSpec(2, 1, height_ratios=[9, 1]) 
+    ax1 = plt.subplot(gs[0])
+    ax12 = plt.subplot(gs[1])
 
     # crea plot con le barre d'errore (o anche senza)
     line16 = ax1.errorbar(x=m16.l, y=m16.A,
@@ -118,12 +137,9 @@ if len(sys.argv) == 1:
         fmt='-', c='#2683C1', linewidth=3)
     line64 = ax1.errorbar(x=m64.l, y=m64.A,
         fmt='-', c='#FFC700', linewidth=3)
-        
-    ax1.set_xlabel(u'Lunghezza d\'onda [nm]',
-        labelpad=15, fontsize=16)
 
     ax1.set_ylabel(u'Assorbanza',
-        labelpad=15, fontsize=16)
+        labelpad=12, fontsize=16)
 
     ax1.grid(True)
     #ax1.set_xscale('log')
@@ -138,16 +154,45 @@ if len(sys.argv) == 1:
 
     #ax1.set_xticklabels((-50, -40, -30, -20, -10, ""))
 
-    plt.plot((825, 825), (0, 0.9), "-", linewidth=2, color="#bbbbbb", zorder=-3)
-    plt.text(x=815, y=0.91, s="825", fontsize=14)
+    ax1.plot((825, 825), (0, 0.9), "-", linewidth=2, color="#bbbbbb", zorder=-3)
+    ax1.text(x=815, y=0.91, s="825", fontsize=14)
 
     ax1.legend((line16, line32, line48, line64),
             ("0.016 mmol/l", "0.032 mmol/l", "0.048 mmol/l", "0.064 mmol/l"),
             'upper left', prop={'size': 15})
+    
+    clist = [
+        (0, (0, 0, 1)),
+        (0.16, (0, 1, 0)),
+        (0.26, (1, 1, 0)),
+        (0.32, (1, 0.5, 0)),
+        (0.45, (1, 0, 0)),
+        (0.6, (0, 0, 0)),
+        (1, (0, 0, 0))
+    ]
+    
+    cmap = matplotlib.colors.LinearSegmentedColormap.from_list('light_colors', clist, 256)
+    
+    g = np.outer(np.ones(10), np.arange(450, 951, 1))
+    ax12.imshow(g, aspect='auto', cmap=cmap, origin="lower")
+    
+    ax12.set_xticks((50, 150, 250, 350, 450))
+    ax12.set_yticks(list())
+    ax12.set_xticklabels(("",))
+    ax12.set_yticklabels(("",))
+    
+    ax12r = ax12.twiny()
+    ax12r.set_xticks((0.1, 0.3, 0.5, 0.7, 0.9))
+    ax12r.set_xticklabels(("",))
+    
+    ax12.text(400, 3.2, "Infrarosso", color="white", fontsize=16)
+         
+    ax12.set_xlabel(u'Lunghezza d\'onda [nm]',
+        labelpad=12, fontsize=16)
 
     # questo imposta i bordi del grafico
-    f1.subplots_adjust(left=0.1, right=0.97,
-        top=0.9, bottom=0.1, hspace=0, wspace=0)
+    f1.subplots_adjust(left=0.08, right=0.98,
+        top=0.91, bottom=0.07, hspace=0.08, wspace=0)
 
 
     # Creo grafico
@@ -160,10 +205,10 @@ if len(sys.argv) == 1:
 
     # crea plot con le barre d'errore (o anche senza)
     punti = ax2.errorbar(x=unumpy.nominal_values(C), y=A,
-        xerr=unumpy.std_devs(C),
+        xerr=unumpy.std_devs(old_C), yerr=u,
         fmt='o', c='white', ecolor='black', linewidth=1.5,
         markersize=7, markeredgewidth=1.5, capsize=4)
-    reg = ax2.errorbar(x=(0, 0.07), y=(0, 0.07*m),
+    reg = ax2.errorbar(x=(0, 0.07), y=(0, 0.07*m.nominal_value),
         fmt='-', c='#13AC3F', linewidth=3, zorder= -5)
         
     ax2.set_xlabel(u'Concentrazione [mmol/l]',
@@ -186,12 +231,12 @@ if len(sys.argv) == 1:
     ax2.set_yticklabels(("", 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8))
     ax2.set_xticklabels(("0", 10, 20, 30, 40, 50, 60, 70))
 
-    plt.plot((0, c), (a, a), "-", linewidth=2, color="#aaaaaa", zorder=-8)
-    plt.plot((c, c), (a, 0), "-", linewidth=2, color="#aaaaaa", zorder=-8)
+    incogn, = ax2.plot((0, c.nominal_value), (a, a), "-", linewidth=2, color="#aaaaaa", zorder=-8)
+    ax2.plot((c.nominal_value, c.nominal_value), (a, 0), "-", linewidth=2, color="#aaaaaa", zorder=-8)
 
-    #ax2.legend((line16, line32, line48, line64),
-    #        ("0.016 mmol/l", "0.032 mmol/l", "0.048 mmol/l", "0.064 mmol/l"),
-    #        'upper left', prop={'size': 15})
+    ax2.legend((punti, reg, incogn),
+            ("Punti sperimentali", "Regressione", "Soluzione incognita"),
+            'upper left', prop={'size': 15})
 
     # questo imposta i bordi del grafico
     f2.subplots_adjust(left=0.1, right=0.97,
