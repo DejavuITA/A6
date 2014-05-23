@@ -1,22 +1,113 @@
 \section*{Dati e risultati}
 
-%\begin{SCfigure}[0.55][t]
-%    \includegraphics[scale=0.52]{concentrazioni.pdf}
-%    \caption{Nel grafico sono rappresentate le curve di assorbimento in funzione della lunghezza d'onda delle quattro soluzioni note.
-%        \`E stata inoltre evidenziata tramite una linea verticale la lunghezza d'onda di massima assorbanza $\lambda\ped{max} = \SI{825}{\nano\meter}$.
-%        Queste curve sono interessanti poichè spiegano il colore azzurro intenso di una soluzione di \ce{CuSO4}. Il massimo di assorbimento
-%        nel visibile è ad alte lunghezze d'onda, ovvero nel rosso e nell'infrarosso; la luce di colore blu invece, passa indisturbata, per cui la soluzione appare di
-%        colore blu. La barra colorata in basso indica approssimativamente i colori corrispondenti alle lunghezze d'onda del grafico soprastante.}
-%    \label{fig:conc}
-%\end{SCfigure}
+Il grafico della curva di titolazione da noi ottenuto è riportato in Figura \ref{fig:curva}. Abbiamo quindi ricavato
+graficamente il volume $V\ped{eq}$ e il pH del punto di equivalenza. Poichè abbiamo misurato un punto sperimentale che è risultato
+essere molto vicino al flesso (si veda grafico della derivata), si è deciso di considerare quel punto come il ``vero''
+punto equivalente.
 
-%\begin{SCfigure}[0.55][t]
-%    \includegraphics[scale=0.55]{retta.pdf}
-%    \caption{Il grafico in figura mostra l'assorbanza a $\lambda\ped{max} = \SI{825}{nm}$ in funzione della concentrazione
-%        per le quattro soluzioni preparate. Sono riportati sia gli errori sulla concentrazione, che le incertezze sull'assorbanza
-%        stimate dalla correzione delle incertezze. La retta di fit in verde 
-%        indica l'andamento previsto dalla legge di Lambert-Beer e ci permette di calcolare $\alpha$. In grigio è riportato
-%        il valore di assorbanza della soluzione incognita, dall'intersezione con la retta di fit possiamo dire che la concentrazione
-%        di tale soluzione è di circa 0.05 M.}
-%    \label{fig:a_vs_c}
-%\end{SCfigure}
+\begin{SCfigure}
+    \includegraphics[scale=0.6]{curva.pdf}
+    \caption{Le caratteristiche fondamentali della curva di titolazione sono}
+    \label{fig:curva}
+\end{SCfigure}
+
+Quindi poichè in quel punto vale $n(\ce{CH3COOH})_i = n(\ce{NaOH})$, si può ricavare il numero di moli di
+acido acetico inizialmente presenti e quindi la concentrazione (il volume iniziale era di $V_0 = 100$ ml).
+
+\begin{equation}
+    C_0 = \frac{n(\ce{CH3COOH})_i}{V_0} = \frac{n(\ce{NaOH})}{V_0} = \frac{VC}{V_0} = 10.15 \pm 0.04 \; \si{\milli\mol\per\litre}
+\end{equation}
+%
+dove $C = 0.1$ M è la concentrazione della soluzione di \ce{NaOH}.
+
+Occorre notare che questo valore indica la concentrazione iniziale di acido acetico presente nella soluzione
+e non tiene conto dell'acetato già presente. Quindi, se vogliamo sapere quanto acido acetico è stato usato per preparare
+la soluzione, dobbiamo aggiungere la quantità di acetato inizialmente presente. Questo si può ricavare
+dalla legge dell'azione di massa conoscendo
+la costante di equilibrio \textcolor{red}{[si chiama così?]} per l'acido acetico, che a 25$^\circ$C vale
+$K\ped{A} = 1.74 \times 10^{-5}$, e il pH iniziale della soluzione, che era 3.36.
+
+\begin{equation}
+    K\ped{A} = \frac{[\ce{Ac-}][\ce{H3O+}]}{[\ce{HAc}]} \qquad
+    \Longrightarrow \qquad \frac{[\ce{Ac-}]}{[\ce{HAc}]} = \frac{K\ped{A}}{[\ce{H3O+}]} \simeq 4\%
+    \label{eq:massa}
+\end{equation}
+%
+(per brevità si è indicato l'acetato con \ce{Ac-} e l'acido acetico con \ce{HAc})
+
+Dunque la concentrazione ``di preparazione'' (che chiamiamo così per non confonderla con quella iniziale di acido acetico,
+già parzialmente dissociato), ovvero il numero di moli di acido che sono state versate per preparare la soluzione
+diviso il volume iniziale, vale $C_p = (10.15 \pm 0.04) \times 1.04 = 10.56 \pm 0.04 \; \si{\milli\mol\per\litre}$.
+
+\textcolor{red}{[controllate se va bene, che non abbia scritto puttanate... sia qui che di seguito. In particolare mi pare
+di essermi un po' inventato tutto sto bla-bla sulla parte di acetato già presente.]}
+
+\paragraph{Un semplice calcolo alternativo.}
+
+Similmente a quanto fatto nell'ultimo paragrafo, è possibile ricavare in modo grezzo una stima
+della concentrazione di preparazione conoscendo solo il pH iniziale e la costante di equilibrio, senza
+la curva di titolazione.
+
+La formula che ci permette di calcolare la concentrazione si può ricavare impostando il sistema \eqref{eq:sistemone},
+che tiene conto delle costanti di equilibrio e dei bilanci di massa e carica.
+
+\begin{equation}
+    C_p = \frac{10^{-2 \cdot \text{pH}} + K\ped{A} \cdot 10^\text{-pH}}{K\ped{A}} = 11.39 \pm 0.02 \; \si{\milli\mol\per\litre}
+\end{equation}
+
+Il valore ottenuto è simile, anche se non compatibile con quello ottenuto in precedenza. Da comunque una stima indicativa
+della concentrazione.
+
+\paragraph{Stima della costante di equilibrio}
+
+I dati che abbiamo ottenuto sono utili per stimare la costante di equilibrio $K\ped{A}$ dell'acido
+acetico a temperatura ambiente. Per ricavare questo importante parametro, che abbiamo già usato più
+volte, si sfrutta il punto di semiequivalenza.
+
+Sempre sfruttando il fatto che la reazione \eqref{eq:reaz} può essere considerata stechiometrica,
+è interessante considerare cosa accade nel punto $V\ped{eq}/2$. In questo particolare punto,
+trascurando la concentrazione iniziale di acetato, si ha che [\ce{CH3COOH}] = [\ce{CH3COO}].
+Perciò la legge di azione di massa (prima parte della \eqref{eq:massa}), diventa 
+
+\begin{equation}
+    K\ped{A} = \frac{[\ce{Ac-}][\ce{H3O+}]}{[\ce{HAc}]} = [\ce{H3O+}]
+\end{equation}
+
+Misurando il pH possiamo ricavare la costante di equilibrio! Abbiamo quindi preso il punto sperimentale
+più vicino a $V_0/2$ (abbiamo anche provato a fare un interpolazione lineare tra i due punti più
+vicini, ottenendo un risultato identico entro l'incertezza), ottenendo $pK\ped{A} = pH = 4.79$ da cui
+$K\ped{A} = 10^{-pH} = (1.62 \pm 0.01) \times 10^{-5}$. L'ordine di grandezza del risultato è corretto, il valore
+risulta però non compatibile con il valore $1.74 \times 10^{-5}$ riportato in letteratura.
+
+\paragraph{Andamento teorico della curva di titolazione.}
+
+È possibile calcolare a posteriori, conoscendo la concentrazione $C_0$, la costante di dissociazione di
+acqua e acido acetico e la concentrazione della soluzione titolante, calcolare la curva di titolazione.
+Questo si ottiene considerando il seguente sistema di equazioni
+
+\begin{equation}
+    \left\{
+    \begin{array}{l @\qquad l} \smallskip
+        K_w = [\ce{H3O+}][\ce{OH-}] & \text{Protolisi dell'acqua} \\ \smallskip
+        K\ped{A} = [\ce{Ac-]}[\ce{H3O+}]/[\ce{HAc}] & \text{Dissociazione dell'acido acetico} \\ \smallskip
+        C_0 = \ce{[HAc] + [Ac-]} & \text{Bilancio di massa dell'acido} \\ \smallskip
+        CV/(V + V_0) = [\ce{Na+}] & \text{Bilancio di massa dell'idrossido} \\ \smallskip
+        \ce{[H3O+] + [Na+] = [OH-] + [Ac-]} & \text{Conservazione della carica} \\
+    \end{array}
+    \right.
+    \label{eq:sistemone}
+\end{equation}
+%
+dal quale si può ricavare la seguente equazione
+
+\begin{equation}
+    \frac{CV}{C_0V_0} = \frac{K\ped{A}}{K\ped{A} + \ce{[H3O+]}} + \frac{V + V_0}{C_0V_0} \left(\frac{K_w}{\ce{[H3O+]}} - \ce{[H3O+]} \right)
+\end{equation}
+%
+che fornisce la formula della curva di titolazione. In particolare, poichè è difficile ricavare \ce{[H3O+]}, essendo
+un equazione di $3^\circ$ grado per questa variabile, è conveniente prendere $V$ come variabile dipendente 
+(dall'equazione sopra è facile ricavarla). Per graficare la curva è poi sufficiente tracciarla al rovescio (come $y = g(x)$).
+La curva ottenuta è riportata nel grafico in Figura \ref{fig:curva}.
+
+È anche importante notare che dal sistema \eqref{eq:sistemone} si possono ricavare tutte le formula usate nei precedenti
+paragrafi.
