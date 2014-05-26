@@ -13,7 +13,7 @@ punto equivalente.
         della deriva della curva.
         Un altra caratteristica imporante è la zona attorno al punto di semiequivalenza. Questa parte della curva è la
         regione di buffer, dove la soluzione si comporta da tampone, ovvero mantiene il pH circa costante. Infatti la derivata della
-        curva è molto piccola. Questo fatto si può sfruttare se è necessario mantenere il pH circa costante, per esempio per le soluzioni
+        curva è molto piccola. Questo fatto si può sfruttare se è necessario mantenere il pH il più possibile costante, per esempio per le soluzioni
         di taratura del pHmetro. Infine è riportata la curva teorica ricavata dall'equazione \eqref{eq:curv}. Le incertezze non sono riportate
         in quanto non visibili.}
     \label{fig:curva}
@@ -26,15 +26,18 @@ acido acetico inizialmente presenti e quindi la concentrazione (il volume inizia
     C_0 = \frac{n(\ce{CH3COOH})_i}{V_0} = \frac{n(\ce{NaOH})}{V_0} = \frac{VC}{V_0} = 10.15 \pm 0.04 \; \si{\milli\mol\per\litre}
 \end{equation}
 %
-dove $C = 0.1$ M è la concentrazione della soluzione di \ce{NaOH}.
+dove $C = 0.1$ M e $V$ sono rispettivamente la concentrazione e il volume aggiunto della soluzione di \ce{NaOH}.
 
 Occorre notare che questo valore indica la concentrazione iniziale di acido acetico presente nella soluzione
 e non tiene conto dell'acetato già presente. Quindi, se vogliamo sapere quanto acido acetico è stato usato per preparare
 la soluzione, dobbiamo aggiungere la quantità di acetato inizialmente presente. Questo si può ricavare
-dalla legge dell'azione di massa conoscendo
-la costante di equilibrio \textcolor{red}{[si chiama così?]} per l'acido acetico, che a 25$^\circ$C vale
+dalla legge dell'azione di massa, conoscendo
+la costante di equilibrio %penso di sì
+ per l'acido acetico, che a 25$^\circ$C vale
 $K\ped{A} = 1.74 \times 10^{-5}$, e il pH iniziale della soluzione, che era 3.36.
-
+%pH = -log[H3O+] -->[H3O+] = 10^-pH = 10^(-3.36) ~ 1/2290.87
+%Ka = 1.74 x 10^-5
+%[Ac-]/[HAc] = Ka/ [H3O+] = 1.74 x 10^-5 x 1/10^(-3.36) = 1.74*2290.87 x 10^-5 = 3.98 %
 \begin{equation}
     K\ped{A} = \frac{[\ce{Ac-}][\ce{H3O+}]}{[\ce{HAc}]} \qquad
     \Longrightarrow \qquad \frac{[\ce{Ac-}]}{[\ce{HAc}]} = \frac{K\ped{A}}{[\ce{H3O+}]} \simeq 4\%
@@ -49,10 +52,11 @@ diviso il volume iniziale, vale $C_p = (10.15 \pm 0.04) \times 1.04 = 10.56 \pm 
 
 \textcolor{red}{[controllate se va bene, che non abbia scritto puttanate... sia qui che di seguito. In particolare mi pare
 di essermi un po' inventato tutto sto bla-bla sulla parte di acetato già presente.]}
+\textcolor{magenta}{[mi sembra tu abbia scritto puttanate abbastanza XXXXXXX]}
 
 \paragraph{Un semplice calcolo alternativo.}
 
-Similmente a quanto fatto nell'ultimo paragrafo, è possibile ricavare in modo grezzo una stima
+Similmente a quanto fatto nel precedente paragrafo, è possibile ricavare in modo grezzo una stima
 della concentrazione di preparazione conoscendo solo il pH iniziale e la costante di equilibrio, senza
 la curva di titolazione.
 
@@ -63,8 +67,8 @@ che tiene conto delle costanti di equilibrio e dei bilanci di massa e carica.
     C_p = \frac{10^{-2 \cdot \text{pH}} + K\ped{A} \cdot 10^\text{-pH}}{K\ped{A}} = 11.39 \pm 0.02 \; \si{\milli\mol\per\litre}
 \end{equation}
 
-Il valore ottenuto è simile, anche se non compatibile con quello ottenuto in precedenza. Da comunque una stima indicativa
-della concentrazione.
+Il valore ottenuto è simile, anche se non compatibile con quello ottenuto in precedenza.
+Esso dà comunque una stima indicativa della concentrazione.
 
 \paragraph{Stima della costante di equilibrio}
 
@@ -84,13 +88,13 @@ Perciò la legge di azione di massa (prima parte della \eqref{eq:massa}), divent
 Misurando il pH possiamo ricavare la costante di equilibrio! Abbiamo quindi preso il punto sperimentale
 più vicino a $V_0/2$ (abbiamo anche provato a fare un interpolazione lineare tra i due punti più
 vicini, ottenendo un risultato identico entro l'incertezza), ottenendo $pK\ped{A} = pH = 4.79$ da cui
-$K\ped{A} = 10^{-pH} = (1.62 \pm 0.01) \times 10^{-5}$. L'ordine di grandezza del risultato è corretto, il valore
-risulta però non compatibile con il valore $1.74 \times 10^{-5}$ riportato in letteratura.
+$K\ped{A} = 10^{-pH} = (1.62 \pm 0.01) \times 10^{-5}$. Sebbene l'ordine di grandezza del risultato sia corretto, il valore ottenuto non è compatibile con il valore $1.74 \times 10^{-5}$ riportato in letteratura.
 
 \paragraph{Andamento teorico della curva di titolazione.}
 
-È possibile calcolare a posteriori, conoscendo la concentrazione $C_0$, la costante di dissociazione di
-acqua e acido acetico e la concentrazione della soluzione titolante, calcolare la curva di titolazione.
+È possibile, conoscendo la concentrazione $C_0$, la costante di dissociazione di
+acqua e acido acetico e la concentrazione della soluzione titolante,
+calcolare a posteriori la curva di titolazione.
 Questo si ottiene considerando il seguente sistema di equazioni
 
 \begin{equation}
@@ -113,10 +117,10 @@ dal quale si può ricavare la seguente equazione
     \label{eq:curv}
 \end{equation}
 %
-che fornisce la formula della curva di titolazione. In particolare, poichè è difficile ricavare \ce{[H3O+]}, essendo
-un equazione di $3^\circ$ grado per questa variabile, è conveniente prendere $V$ come variabile dipendente 
-(dall'equazione sopra è facile ricavarla). Per graficare la curva è poi sufficiente tracciarla al rovescio (come $y = g(x)$).
+che fornisce la formula della curva di titolazione. In particolare, poichè è difficile isolare la varibile \ce{[H3O+]} in funzione di $V$, essendo
+un equazione di $3^\circ$ grado per la prima variabile, è conveniente prendere $V$ come variabile dipendente 
+(dall'equazione sopra è facile ricavarla). Per graficare la curva è poi sufficiente tracciarla ad assi invertiti (come $x = g(y)$).
 La curva ottenuta è riportata nel grafico in Figura \ref{fig:curva}.
 
-È anche importante notare che dal sistema \eqref{eq:sistemone} si possono ricavare tutte le formula usate nei precedenti
+È anche importante notare che dal sistema \eqref{eq:sistemone} si possono ricavare tutte le formule usate nei precedenti
 paragrafi.
