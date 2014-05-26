@@ -28,32 +28,13 @@ acido acetico inizialmente presenti e quindi la concentrazione (il volume inizia
 %
 dove $C = 0.1$ M è la concentrazione della soluzione di \ce{NaOH}.
 
-Occorre notare che questo valore indica la concentrazione iniziale di acido acetico presente nella soluzione
-e non tiene conto dell'acetato già presente. Quindi, se vogliamo sapere quanto acido acetico è stato usato per preparare
-la soluzione, dobbiamo aggiungere la quantità di acetato inizialmente presente. Questo si può ricavare
-dalla legge dell'azione di massa conoscendo
-la costante di equilibrio \textcolor{red}{[si chiama così?]} per l'acido acetico, che a 25$^\circ$C vale
-$K\ped{A} = 1.74 \times 10^{-5}$, e il pH iniziale della soluzione, che era 3.36.
-
-\begin{equation}
-    K\ped{A} = \frac{[\ce{Ac-}][\ce{H3O+}]}{[\ce{HAc}]} \qquad
-    \Longrightarrow \qquad \frac{[\ce{Ac-}]}{[\ce{HAc}]} = \frac{K\ped{A}}{[\ce{H3O+}]} \simeq 4\%
-    \label{eq:massa}
-\end{equation}
-%
-(per brevità si è indicato l'acetato con \ce{Ac-} e l'acido acetico con \ce{HAc})
-
-Dunque la concentrazione ``di preparazione'' (che chiamiamo così per non confonderla con quella iniziale di acido acetico,
-già parzialmente dissociato), ovvero il numero di moli di acido che sono state versate per preparare la soluzione
-diviso il volume iniziale, vale $C_p = (10.15 \pm 0.04) \times 1.04 = 10.56 \pm 0.04 \; \si{\milli\mol\per\litre}$.
-
-\textcolor{red}{[controllate se va bene, che non abbia scritto puttanate... sia qui che di seguito. In particolare mi pare
-di essermi un po' inventato tutto sto bla-bla sulla parte di acetato già presente.]}
+Occorre notare che questo valore indica la concentrazione $C_0 = \ce{[HAc] + [Ac- ]}$ (per brevità si è indicato l'acetato con \ce{Ac-} e l'acido acetico con \ce{HAc}) presente nella soluzione
+e tiene conto del 4\% di acetato già presente all'inizio.
 
 \paragraph{Un semplice calcolo alternativo.}
 
 Similmente a quanto fatto nell'ultimo paragrafo, è possibile ricavare in modo grezzo una stima
-della concentrazione di preparazione conoscendo solo il pH iniziale e la costante di equilibrio, senza
+della concentrazione conoscendo solo il pH iniziale e la costante di equilibrio, senza
 la curva di titolazione.
 
 La formula che ci permette di calcolare la concentrazione si può ricavare impostando il sistema \eqref{eq:sistemone},
@@ -69,8 +50,8 @@ della concentrazione.
 \paragraph{Stima della costante di equilibrio}
 
 I dati che abbiamo ottenuto sono utili per stimare la costante di equilibrio $K\ped{A}$ dell'acido
-acetico a temperatura ambiente. Per ricavare questo importante parametro, che abbiamo già usato più
-volte, si sfrutta il punto di semiequivalenza.
+acetico a temperatura ambiente. Per ricavare questo importante parametro, che abbiamo usato più
+volte nella relazione, si sfrutta il punto di semiequivalenza.
 
 Sempre sfruttando il fatto che la reazione \eqref{eq:reaz} può essere considerata stechiometrica,
 è interessante considerare cosa accade nel punto $V\ped{eq}/2$. In questo particolare punto,
@@ -83,7 +64,7 @@ Perciò la legge di azione di massa (prima parte della \eqref{eq:massa}), divent
 
 Misurando il pH possiamo ricavare la costante di equilibrio! Abbiamo quindi preso il punto sperimentale
 più vicino a $V_0/2$ (abbiamo anche provato a fare un interpolazione lineare tra i due punti più
-vicini, ottenendo un risultato identico entro l'incertezza), ottenendo $pK\ped{A} = pH = 4.79$ da cui
+vicini, ottenendo un risultato identico entro l'incertezza.), ottenendo $pK\ped{A} = pH = 4.79$ da cui
 $K\ped{A} = 10^{-pH} = (1.62 \pm 0.01) \times 10^{-5}$. L'ordine di grandezza del risultato è corretto, il valore
 risulta però non compatibile con il valore $1.74 \times 10^{-5}$ riportato in letteratura.
 
@@ -118,5 +99,11 @@ un equazione di $3^\circ$ grado per questa variabile, è conveniente prendere $V
 (dall'equazione sopra è facile ricavarla). Per graficare la curva è poi sufficiente tracciarla al rovescio (come $y = g(x)$).
 La curva ottenuta è riportata nel grafico in Figura \ref{fig:curva}.
 
-È anche importante notare che dal sistema \eqref{eq:sistemone} si possono ricavare tutte le formula usate nei precedenti
-paragrafi.
+È anche importante notare che dal sistema \eqref{eq:sistemone} si possono ricavare tutte le formula usate nei precedenti paragrafi. Per esempio si può calcolare il rapporto tra acetato e acido acetico all'inizio dell'esperimento. Basta conoscere la costante di equilibrio per l'acido acetico, che a 25$^\circ$C vale
+$K\ped{A} = 1.74 \times 10^{-5}$, e il pH iniziale della soluzione, che era 3.36.
+
+\begin{equation}
+    K\ped{A} = \frac{[\ce{Ac-}][\ce{H3O+}]}{[\ce{HAc}]} \qquad
+    \Longrightarrow \qquad \frac{[\ce{Ac-}]}{[\ce{HAc}]} = \frac{K\ped{A}}{[\ce{H3O+}]} \simeq 4\%
+    \label{eq:massa}
+\end{equation}
