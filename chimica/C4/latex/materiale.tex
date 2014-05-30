@@ -4,7 +4,7 @@
 
 \begin{itemize}
         \setlength{\parskip}{0pt}
-        \item{Vetreria: 2 beker da 100 ml, uno da 150 ml, uno da 600 ml per il recupero delle acque di lavaggio, 
+        \item{Vetreria: 2 beker da 100 ml, uno da 600 ml per il recupero delle acque di lavaggio, 
             pipetta da 10 ml con aspiratore, pipette Pasteur,
             matraccio da 50 ml, 2 bottiglie da 20 ml;}
         \item{Multimetro, elettrodi di Cu, Zn e Ag,
@@ -32,3 +32,50 @@
 \end{itemize}
 
 \section*{Procedura e incertezze}
+
+\subsection*{Misura del potenziale di alcune celle galvaniche}
+
+In questa parte dell'esperienza abbiamo costruito 3 celle galvaniche: Cu-Zn, Ag-Cu, Ag-Zn. Abbiamo verificato
+le previsioni fatte con i potenziali standard di semicella. Inoltre abbiamo provato a accendere un led con
+due celle galvaniche in serie.
+
+Abbiamo cominciato col preparare il materiale occorrente. Poichè gli elettrodi erano già stati usati abbiamo
+provveuto a pulirli con la carta vetrata, per liberarli dalle incrostazioni.
+
+Successivamente sono state preparate le soluzioni necessarie per le celle, ovvero 50 ml di soluzione 0.1 M
+in acqua per ognuno dei seguenti 3 composti: \ce{CuSO4}, \ce{ZnSO4} e \ce{AgNO3}. Per prepararle abbiamo
+prelevato 10 ml di soluzione madre 0.5 M dei composti e le abbiamo diluite nel matraccio da 50 ml.
+L'incertezza standard sul volume prelevato è di 0.03 ml, poichè abbiamo usato la pipetta con tacche ogni 0.1 ml.
+L'errore sul volume finale è di 0.3 ml, avendo considerato un incertezza di risoluzione del matraccio
+di 1 ml. La deviazione sulle concentrazioni delle soluzioni madri è state poste uguali a zero, non sapendo come sono
+state preparate. Con questi dati si ha che la concentrazione finale vale $100 \pm 0.7$ \si{\milli\mol\per\litre}.
+
+Le soluzioni sono state versate nei beker da 100 ml a due a due. Abbiamo inserito in ogni soluzione l'elettrodo
+del materiale corrispondente (di rame nella soluzione di \ce{CuSO4}, di zinco in quella di \ce{ZnSO4} e di
+argento nella \ce{AgNO3}). Abbiamo collegato gli elettrodi al multimetro digitale per misurare la f.e.m..
+Infine, per far procedere la reazione redox, che porta ad uno scambio di elettroni tra le due soluzioni,
+è necessario usare un ponte salino. Infatti la reazione che avviene è la seguente:
+
+\begin{equation}
+    \begin{array}{l l}
+        \ce{Cu^{2+}_{(aq)} + 2e- -> Cu_{(s)}} & \text{riduzione al catodo} \\
+        \ce{Zn_{(s)} -> Zn^{2+}_{(aq)} + 2e-} & \text{ossidazione all'anodo} \\
+    \end{array}
+\end{equation}
+
+Poichè le reazioni avvengono in beker separati, i due elettroni che perde lo zinco devono passare
+attraverso gli elettrodi e il multimetro (o qualsiasi dispositivo io voglia alimentare)
+per giungere nell'altro beker e ridurre il rame
+(in realtà è un effetto a cascata, ma per semplicità si può considerare un passaggio). Questa reazione 
+tende però a caricare le due soluzioni attraverso lo spostamento di elettroni. La differenza di potenziale che
+si crea si oppone però alla reazione che giunge subito all'equilibrio e poi si arresta. Per evitare questo problema
+è necessario usare il ponte salino menzionato sopra, che non è altro che una soluzione di \ce{KNO3} in agar (una gelatina) in un tubetto a contatto con entrambe le soluzioni. Il sale si dissocia in \ce{K+} e \ce{NO3-} nel tubetto.
+Quando le soluzioni tendono a caricarsi, gli ioni del ponte migrano e si separano. Gli ioni \ce{K+} finiscono
+nella soluzione con il solfato di rame, mentre gli \ce{NO3-} in quella con lo zinco solfato. Questo ristabilisce l'equilibro e permette alla redox di procedere.
+
+La reazione illustrata vale per la coppia rame-zinco, ma per le altre coppie la reazione è simile. 
+
+Per ogni coppia dopo aver immerso il ponte salino abbiamo misurato la f.e.m., verificando che fosse
+uguale a quella prevista dai potenziali standard di semicella. Per concludere, abbiamo collegato due e poi anche tre
+celle in serie (con l'aiuto degli altri gruppi) e abbiamo provato a chiudere il circuito con un LED, verificando
+che il diodo emetteva un po' di luce. 
