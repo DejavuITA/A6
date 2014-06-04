@@ -70,21 +70,29 @@ con i potenziali standard, nonostante la temperatura fosse di 27$^\circ$C invece
 Abbiamo misurato diverse acque, del latte e un succo di frutta, confrontando, ove possibile i valori ottenuti con i dati riportati sull'etichetta. Nella seguente tabella sono esposti i risultati:
 
 \begin{table}
-\centering
+    \centering
+    \footnotesize
 
-\begin{tabular}{r @{\quad} c c c c c c}
-\toprule
- & \multicolumn{4}{c}{acqua} & latte di vacca & succo di frutta \\
- & Guizza & Panna & Ferrarelle & di Piné & diluito & diluito \\
- \midrule
-\phantom{.}[\ce{Ca2+}] (mg/l) & 14.3 & 33.4 & 460 & 14.8 & 6.34 & 10.6 \\
-ddp (\si{\milli\volt}) & 15.1 & 25.2 & 56 & 15.5 & 5.6 & 11.6 \\
- \midrule
-\phantom{.}[\ce{Ca2+}] etichetta & \multirow{2}{*}{10.6} & \multirow{2}{*}{32} & \multirow{2}{*}{392} & \multirow{2}{*}{} & \multirow{2}{*}{} & \multirow{2}{*}{} \\
-(mg/l) &  &  &  &  &  &  \\
-\bottomrule
-\end{tabular}
-
+    \begin{tabular}{r @{\quad} c c c c c c c c}
+    \multicolumn{9}{c}{\textbf{Concentrazioni di \ce{Ca^{2+}} in acqua, latte e succo}} \\
+        \toprule
+        & \multicolumn{4}{c}{Acqua} & Latte & Latte & Succo & Succo \\
+        & Guizza & Panna & Ferrarelle & di Piné & diluito 1:100 & non diluito & diluito 1:4 & non diluito \\
+         \midrule
+         \phantom{.}[\ce{Ca^{2+}}] (mg/l) & 14.3 & 33.4 & 460 & 14.8 & 10.5 & 1050 $\pm$ 8 & 10.6 & 42 $\pm$ 2 \\
+         ddp (\si{\milli\volt}) & 15.1 & 25.2 & 56 & 15.5 & 11.5 & - & 11.6 & - \\
+         Durezza [$^\circ f$] & 3.6 $\pm$ 0.2 & 8.4 $\pm$ 0.3 & 115 $\pm$ 5 & 3.7 $\pm$ 0.2 & 2.6 $\pm$ 0.1 & - & 2.7 $\pm$ 0.1 & - \\
+         \midrule
+         \phantom{.}[\ce{Ca^{2+}}] etichetta & \multirow{2}{*}{10.6} & \multirow{2}{*}{32}
+         & \multirow{2}{*}{392} & \multirow{2}{*}{-} & \multirow{2}{*}{-} & \multirow{2}{*}{1200} & \multirow{2}{*}{-} & \multirow{2}{*}{35} \\
+        (mg/l) &   &  &  &  &  &  \\
+        \bottomrule
+    \end{tabular}
+    \caption{La tabella riporta i dati misurati di concentrazione di \ce{Ca^{2+}} per vari campioni. Sono riportati sia
+        i valori di concentrazione sia quelli di tensione misurata dal lettore. Inoltre per le acque in bottiglia,
+        sono riportati i dati forniti dall'etichetta, mentre per latte e succo abbiamo indicato un valore tipico. Le incertezze
+    dove non esplicitate sono uguali a 0.1 mg/l per le concentrazione e a 0.1 mV per le tensioni.}
+    \label{tab:vaccino}
 \end{table}
 
 Abbiamo misurato erroneamente, le concentrazioni di \ce{Ca2+} in soluzioni prive di ISA ottenendo risultati molto distanti da quelli nominali. Successivamente, una volta scoperto l'errore commesso, abbiamo preso delle nuove misure, le quali risultano molto vicine al valore nominale in nostro possesso.
