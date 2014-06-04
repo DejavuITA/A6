@@ -43,6 +43,28 @@ diodo LED, che siamo riusciti a far funzionare, anche se emetteva pochissima luc
 le celle non sono in grado di fornire tensione o corrente a sufficienza. Il LED necessita di circa 100 mA
 che si ottengono applicando 10 V ai suoi capi.
 
+Per facilità di lettura riportiamo i dati nella Tabella \ref{tab:celle}. Siamo felici di notare che i dati concordano bene
+con i potenziali standard, nonostante la temperatura fosse di 27$^\circ$C invece che 25$^\circ$C. 
+
+\begin{SCtable}[1][h]
+    \centering
+    \begin{tabular}{l c c}
+        \toprule
+        \multicolumn{1}{c}{Cella} & \multicolumn{2}{c}{f.e.m. [V]} \\
+        (anodo-catodo) & Nerst & Misurate \\
+        \midrule
+        Cu-Zn & 1.10 & 1.08 \\
+        Ag-Cu & 0.46 & 0.43 \\
+        Ag-Zn & 1.56 & 1.50 \\
+        Ag-Zn (2x) & 3.12 & 2.94 \\
+        Ag-Zn (3x) & 4.68 & 4.40 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Forze elettromotrici misurate con il multimetro. Nella prima colonna abbiamo riportato le coppie di metalli
+    secondo la convezione anodo-catodo. I (2x) e (3x) indicano il numero di celle in serie. Le incertezze sono di 0.01 V.}
+    \label{tab:celle}
+\end{SCtable}
+
 \subsection*{Misura della concentrazione di \ce{Ca^{2+}}}
 
 Abbiamo misurato diverse acque, del latte e un succo di frutta, confrontando, ove possibile i valori ottenuti con i dati riportati sull'etichetta. Nella seguente tabella sono esposti i risultati:
@@ -50,15 +72,17 @@ Abbiamo misurato diverse acque, del latte e un succo di frutta, confrontando, ov
 \begin{table}
 \centering
 
-\begin{tabular}{c|c c c c c c}
- & acqua & acqua & acqua & acqua & latte & succo \\
- & Guizza & Panna & Ferrarelle & di Piné & diluito & di frutta \\
-  \noalign{\smallskip}\hline\noalign{\smallskip}
-[\ce{Ca2+}] (\si{\milli\gram\per\litre}) & 14.3 & 33.4 & 460 & 14.8 & 6.34 & 10.6 \\
+\begin{tabular}{r @{\quad} c c c c c c}
+\toprule
+ & \multicolumn{4}{c}{acqua} & latte di vacca & succo di frutta \\
+ & Guizza & Panna & Ferrarelle & di Piné & diluito & diluito \\
+ \midrule
+\phantom{.}[\ce{Ca2+}] (mg/l) & 14.3 & 33.4 & 460 & 14.8 & 6.34 & 10.6 \\
 ddp (\si{\milli\volt}) & 15.1 & 25.2 & 56 & 15.5 & 5.6 & 11.6 \\
-  \noalign{\smallskip}\hline\noalign{\smallskip}
-[\ce{Ca2+}] etichetta & \multirow{2}{*}{10.6} & \multirow{2}{*}{32} & \multirow{2}{*}{392} & \multirow{2}{*}{} & \multirow{2}{*}{} & \multirow{2}{*}{} \\
-(\si{\milli\gram\per\litre}) &  &  &  &  &  &  \\
+ \midrule
+\phantom{.}[\ce{Ca2+}] etichetta & \multirow{2}{*}{10.6} & \multirow{2}{*}{32} & \multirow{2}{*}{392} & \multirow{2}{*}{} & \multirow{2}{*}{} & \multirow{2}{*}{} \\
+(mg/l) &  &  &  &  &  &  \\
+\bottomrule
 \end{tabular}
 
 \end{table}
