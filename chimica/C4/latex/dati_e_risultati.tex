@@ -6,7 +6,7 @@
 Ogni metallo ha una diversa tendenza ad ossidarsi e un corrispondente potenziale di Nerst $E^\circ$, che indica la
 forza elettromotrice che il metallo genererebbe se collegato ad un elettrodo di idrogeno (elemento scelto come
 standard) a 25$^\circ$C. Per ottenere la f.e.m. di una generica cella galvanica basta sottrarre i potenziali di
-Nerst dei metalli usati; inoltre quello con il potenzione più alto è l'anodo (+), mentre quello più basso
+Nerst dei metalli usati; inoltre quello con il potenziale più alto è l'anodo (+), mentre quello più basso
 il catodo (-). Riportiamo in Tabella \ref{tab:nerst} i potenziali dei metalli usati:
 
 \begin{table}[h]
@@ -25,7 +25,7 @@ il catodo (-). Riportiamo in Tabella \ref{tab:nerst} i potenziali dei metalli us
 \end{table}
 
 Immergendo l'elettrodo di \ce{Cu} nella soluzione di \ce{CuSO4} e collegandolo, mediante un voltmetro, all'elettrodo
-di \ce{Zn} immerso nella soluzione di \ce{ZnSO4}, abbiamo verificato che, una volta inserito il ponte salino, tra i due materiali si trovava una forza elettromotrice di 1.08 V $\pm$ 0.02 V (l'incertezza è stata assegnata notado di quanto variava il valore sul monitor del multimetro). Osservando il segno riportato dal multimetro abbiamo verificato che l'elettrodo di \ce{Cu} era l'anodo (+), mentre quello \ce{Zn} era il catodo (-).
+di \ce{Zn} immerso nella soluzione di \ce{ZnSO4}, abbiamo verificato che, una volta inserito il ponte salino, tra i due materiali si trovava una forza elettromotrice di 1.08 V $\pm$ 0.02 V (l'incertezza è stata assegnata notando di quanto variava il valore sul monitor del multimetro). Osservando il segno riportato dal multimetro abbiamo verificato che l'elettrodo di \ce{Cu} era l'anodo (+), mentre quello \ce{Zn} era il catodo (-).
 Sia il valore ottenuto che il segno degli elettrodi è in accordo con i potenziali di Nerst, che prevedono
 1.10 V per la coppia di materiali usati.
 
@@ -43,31 +43,9 @@ diodo LED, che siamo riusciti a far funzionare, anche se emetteva pochissima luc
 le celle non sono in grado di fornire tensione o corrente a sufficienza. Il LED necessita di circa 100 mA
 che si ottengono applicando 10 V ai suoi capi.
 
-Per facilità di lettura riportiamo i dati nella Tabella \ref{tab:celle}. Siamo felici di notare che i dati concordano bene
-con i potenziali standard, nonostante la temperatura fosse di 27$^\circ$C invece che 25$^\circ$C. 
-
-\begin{SCtable}[1][h]
-    \centering
-    \begin{tabular}{l c c}
-        \toprule
-        \multicolumn{1}{c}{Cella} & \multicolumn{2}{c}{f.e.m. [V]} \\
-        (anodo-catodo) & Nerst & Misurate \\
-        \midrule
-        Cu-Zn & 1.10 & 1.08 \\
-        Ag-Cu & 0.46 & 0.43 \\
-        Ag-Zn & 1.56 & 1.50 \\
-        Ag-Zn (2x) & 3.12 & 2.94 \\
-        Ag-Zn (3x) & 4.68 & 4.40 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Forze elettromotrici misurate con il multimetro. Nella prima colonna abbiamo riportato le coppie di metalli
-    secondo la convezione anodo-catodo. I (2x) e (3x) indicano il numero di celle in serie. Le incertezze sono di 0.01 V.}
-    \label{tab:celle}
-\end{SCtable}
-
 \subsection*{Misura della concentrazione di \ce{Ca^{2+}}}
 
-Abbiamo misurato diverse acque, del latte e un succo di frutta, confrontando, ove possibile i valori ottenuti con i dati riportati sull'etichetta. Nella seguente tabella sono esposti i risultati:
+Abbiamo misurato diverse acque, del latte e un succo di frutta, confrontando, ove possibile, i valori ottenuti con i dati riportati sull'etichetta. Nella seguente tabella sono esposti i risultati:
 
 \begin{table}
     \centering
@@ -95,6 +73,14 @@ Abbiamo misurato diverse acque, del latte e un succo di frutta, confrontando, ov
     \label{tab:vaccino}
 \end{table}
 
-Abbiamo misurato erroneamente, le concentrazioni di \ce{Ca2+} in soluzioni prive di ISA ottenendo risultati molto distanti da quelli nominali. Successivamente, una volta scoperto l'errore commesso, abbiamo preso delle nuove misure, le quali risultano molto vicine al valore nominale in nostro possesso.
-Per l'acqua Guizza la quale riporta in etichetta una concentrazione di \ce{Ca2+} uguale a $10.6 \text{mg/l}$ mentre senza ISE otteniamo un valore di $26.8 \text{mg/l}$ con l'ISE si ottiene $14.3 \text{mg/l}$.
-Analogamente con il latte, il quale è stato diluito 100 volte, abbiamo misurato senza ISA $6.34 \text{mg/l}$ mentre con si ha 10.5 mg/l. Il valore nominale, non reperibile sull'etichetta è stato ricercato nel web. Abbiamo trovato che un valore tipico è $1200 \text{mg/l}$ la quale, appunto, è molto vicina a quella misurata.
+Abbiamo misurato erroneamente, le concentrazioni di \ce{Ca2+} in soluzioni prive di ISA ottenendo risultati molto distanti da quelli nominali.
+Successivamente, una volta scoperto l'errore commesso, abbiamo preso delle nuove misure, le quali risultano molto vicine al valore nominale in nostro possesso.
+Per l'acqua Guizza, la quale riporta in etichetta una concentrazione di \ce{Ca^{2+}} uguale a 10.6 mg/l, senza ISE otteniamo un valore di 26.8 mg/l mentre con l'ISE si ottiene 14.3 mg/l.
+Analogamente con il latte (diluito in acqua 100 volte), abbiamo misurato senza ISA 6.34 mg/l mentre con l'aggiunta dell'ISA si ottiene un valore di 10.5 mg/l.
+Il valore nominale, non reperibile sull'etichetta è stato ricercato nel web.
+Abbiamo trovato che per il latte un valore tipico di concentrazione di ioni \ce{Ca^{2+}} è 1200 mg/l; tale concentrazione è molto vicina a quella da noi misurata.
+Per l'acqua Panna, riportante in etichetta un valore di 32.9 mg/l, abbiamo ottenuto un valore sperimentale di 33.4 mg/l.
+L'acqua Ferrarelle è un acqua molto dura, infatti l'etichetta riporta una concentrazione di \ce{Ca2+} di 392 mg/l; noi abbiamo misurato invece un valore di 460 mg/l.
+Anche per il succo di frutta, che è stato diluito 4 volte, abbiamo cercato un valore nella rete. A fronte di una concentrazione nominale di 34.5 mg/l (succo di pesca) il nostro valore è 10.6 mg/l.
+Questo breve riassunto qualitativo ci permette di osservare che tutte le misure raccolte hanno valori superiori di quelli previsti e alcune volte discretamente distanti dai valori di etichetta delle soluzioni analizzate.
+
